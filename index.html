@@ -83,9 +83,9 @@
            <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
          </div>
          <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-           <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Chat Live</a>
-           <a href="https://vote.utahcounty.gov" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-full hover:bg-gray-700">Voter Info</a>
-         </div>
+          <a id="chatLiveButton" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Chat Live</a>
+          <a href="https://vote.utahcounty.gov" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-full hover:bg-gray-700">Voter Info</a>
+        </div>
        </div>
      </section>
      <!-- Contact Section -->
@@ -116,7 +116,7 @@
          });
        });
      </script>
-     
+
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -130,5 +130,17 @@
     })();
     </script>
     <!--End of Tawk.to Script--> 
+
+    <script type="text/javascript">
+      document.getElementById('chatLiveButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        if (typeof Tawk_API !== 'undefined' && Tawk_API.toggle) {
+          Tawk_API.toggle();
+        } else {
+          console.log('Tawk.to API not loaded yet. Please wait and try again.');
+        }
+      });
+    </script>
+
   </body>
    </html>
