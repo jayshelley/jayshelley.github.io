@@ -12,19 +12,23 @@
     .chat-live-button {
       cursor: pointer; /* Ensures hand cursor for Chat Live button */
     }
+    .about-content {
+      max-width: 600px; /* Matches typical paragraph width, adjust as needed */
+      margin: 0 auto; /* Centers the content */
+    }
     .expandable-content {
       display: none; /* Hidden by default */
-      margin-top: 1rem;
     }
     .expanded .expandable-content {
       display: block; /* Shown when parent has 'expanded' class */
     }
-    .show-more {
+    .see-more-less {
       color: #2563EB; /* Matches your blue theme */
       cursor: pointer;
-      text-decoration: underline;
+      text-decoration: none; /* Removes underline */
+      margin-left: 0.5rem; /* Small space after sentence */
     }
-    .show-more:hover {
+    .see-more-less:hover {
       color: #1D4ED8; /* Darker blue on hover */
     }
   </style>
@@ -59,11 +63,10 @@
       <div class="flex flex-col md:flex-row items-center">
         <img src="https://via.placeholder.com/300" alt="Jay Shelley" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8">
         <div class="about-content">
-          <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split.</p>
-          <a class="show-more" onclick="toggleExpand(this)">Show more</a>
+          <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split. <a class="see-more-less" onclick="toggleExpand(this)">Show More</a></p>
           <div class="expandable-content">
-            <p class="text-lg mt-4">Jay brings a rich background in technology, having worked for over a decade in software development, which fuels his vision for expanding STEM programs in Timpanogos schools. As a parent of two Timpanogos students, he understands the daily challenges families face and is committed to bridging the gap between home and school.</p>
-            <p class="text-lg mt-4">His campaign is driven by a belief that education should empower every child, not just cater to external mandates. Jay plans to leverage his experience to foster collaboration with teachers and parents, ensuring the district remains responsive and innovative for decades to come.</p>
+            <p class="text-lg">Jay brings a rich background in technology, having worked for over a decade in software development, which fuels his vision for expanding STEM programs in Timpanogos schools. As a parent of two Timpanogos students, he understands the daily challenges families face and is committed to bridging the gap between home and school.</p>
+            <p class="text-lg">His campaign is driven by a belief that education should empower every child, not just cater to external mandates. Jay plans to leverage his experience to foster collaboration with teachers and parents, ensuring the district remains responsive and innovative for decades to come.</p>
           </div>
         </div>
       </div>
