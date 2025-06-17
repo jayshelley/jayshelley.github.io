@@ -58,11 +58,18 @@
       <h2 class="text-3xl font-bold text-center mb-8">About Jay</h2>
       <div class="flex flex-col md:flex-row items-center">
         <img src="https://via.placeholder.com/300" alt="Jay Shelley" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8">
+        <div>
         <div class="about-content">
           <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
           <div class="expandable-content">
             <p class="text-lg">Jay brings a rich background in technology, having worked for over a decade in software development, which fuels his vision for expanding STEM programs in Timpanogos schools. As a parent of two Timpanogos students, he understands the daily challenges families face and is committed to bridging the gap between home and school.</p>
-            <p class="text-lg">His campaign is driven by a belief that education should empower every child, not just cater to external mandates. Jay plans to leverage his experience to foster collaboration with teachers and parents, ensuring the district remains responsive and innovative for decades to come.</p>
+            </div>
+          </div>
+          <div class="about-content mt-4">
+            <p class="text-lg">Jay’s experience extends to community leadership, where he has volunteered with local education initiatives. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+            <div class="expandable-content">
+              <p class="text-lg">He has served on the PTA for five years, advocating for better resources and teacher support. This hands-on role has given him insight into the needs of both educators and students, shaping his commitment to a collaborative district.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -72,11 +79,26 @@
   <section id="platform" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8">My Platform</h2>
-      <ul class="list-disc pl-6 space-y-4 text-lg">
-        <li><strong>Protect Teacher Salaries</strong>: Competitive pay to retain educators during the district transition.</li>
-        <li><strong>Ensure Equitable Funding</strong>: Fair resources for all Timpanogos schools post-split.</li>
-        <li><strong>Expand STEM Programs</strong>: Prepare students for tech careers with enhanced education.</li>
-      </ul>
+      <div>
+        <div class="about-content">
+          <p class="text-lg">Protect Teacher Salaries aims to ensure competitive pay to retain educators during the district transition. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">This initiative includes negotiating with local government for sustainable funding and creating a retention bonus program to address the post-split staffing challenges.</p>
+          </div>
+        </div>
+        <div class="about-content mt-4">
+          <p class="text-lg">Ensure Equitable Funding seeks fair resources for all Timpanogos schools post-split. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">This involves analyzing current disparities and proposing a weighted funding model to prioritize under-resourced schools, ensuring every student has equal opportunity.</p>
+          </div>
+        </div>
+        <div class="about-content mt-4">
+          <p class="text-lg">Expand STEM Programs prepares students for tech careers with enhanced education. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">This plan includes partnering with tech companies for internships and updating curricula with cutting-edge tools, aiming to build a future-ready workforce in Timpanogos.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <!-- FAQ Section -->
@@ -142,7 +164,7 @@
     });
     function toggleExpand(link) {
       const content = link.parentElement.querySelector('.expandable-content');
-      const section = link.parentElement.parentElement; // Adjusted to target the correct parent
+      const section = link.parentElement; // Targets the .about-content div
       section.classList.toggle('expanded');
       link.textContent = section.classList.contains('expanded') ? 'Show Less' : 'Show More';
     }
