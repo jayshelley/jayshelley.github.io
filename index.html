@@ -12,6 +12,21 @@
     .chat-live-button {
       cursor: pointer; /* Ensures hand cursor for Chat Live button */
     }
+    .expandable-content {
+      display: none; /* Hidden by default */
+      margin-top: 1rem;
+    }
+    .expanded .expandable-content {
+      display: block; /* Shown when parent has 'expanded' class */
+    }
+    .show-more {
+      color: #2563EB; /* Matches your blue theme */
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .show-more:hover {
+      color: #1D4ED8; /* Darker blue on hover */
+    }
   </style>
 </head>
 <body class="bg-gray-100">
@@ -43,7 +58,14 @@
       <h2 class="text-3xl font-bold text-center mb-8">About Jay</h2>
       <div class="flex flex-col md:flex-row items-center">
         <img src="https://via.placeholder.com/300" alt="Jay Shelley" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8">
-        <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split. [Add personal details, e.g., family, tech background].</p>
+        <div class="about-content">
+          <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split.</p>
+          <a class="show-more" onclick="toggleExpand(this)">Show more</a>
+          <div class="expandable-content">
+            <p class="text-lg mt-4">Jay brings a rich background in technology, having worked for over a decade in software development, which fuels his vision for expanding STEM programs in Timpanogos schools. As a parent of two Timpanogos students, he understands the daily challenges families face and is committed to bridging the gap between home and school.</p>
+            <p class="text-lg mt-4">His campaign is driven by a belief that education should empower every child, not just cater to external mandates. Jay plans to leverage his experience to foster collaboration with teachers and parents, ensuring the district remains responsive and innovative for decades to come.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -119,6 +141,12 @@
         });
       });
     });
+    function toggleExpand(link) {
+      const content = link.parentElement.querySelector('.expandable-content');
+      const section = link.parentElement;
+      section.classList.toggle('expanded');
+      link.textContent = section.classList.contains('expanded') ? 'Show less' : 'Show more';
+    }
   </script>
 
   <!--Start of Tawk.to Script-->

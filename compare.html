@@ -12,6 +12,21 @@
     .chat-live-button {
       cursor: pointer; /* Ensures hand cursor for Chat Live button */
     }
+    .expandable-content {
+      display: none; /* Hidden by default */
+      margin-top: 1rem;
+    }
+    .expanded .expandable-content {
+      display: block; /* Shown when parent has 'expanded' class */
+    }
+    .show-more {
+      color: #2563EB; /* Matches your blue theme */
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .show-more:hover {
+      color: #1D4ED8; /* Darker blue on hover */
+    }
   </style>
 </head>
 <body class="bg-gray-100">
@@ -43,7 +58,14 @@
       <h2 class="text-3xl font-bold text-center mb-8">About Jay</h2>
       <div class="flex flex-col md:flex-row items-center">
         <img src="https://via.placeholder.com/300" alt="Jay Shelley" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8">
-        <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split. [Add personal details, e.g., family, tech background].</p>
+        <div class="about-content">
+          <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split.</p>
+          <a class="show-more" onclick="toggleExpand(this)">Show more</a>
+          <div class="expandable-content">
+            <p class="text-lg mt-4">Jay brings a rich background in technology, having worked for over a decade in software development, which fuels his vision for expanding STEM programs in Timpanogos schools. As a parent of two Timpanogos students, he understands the daily challenges families face and is committed to bridging the gap between home and school.</p>
+            <p class="text-lg mt-4">His campaign is driven by a belief that education should empower every child, not just cater to external mandates. Jay plans to leverage his experience to foster collaboration with teachers and parents, ensuring the district remains responsive and innovative for decades to come.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -86,7 +108,7 @@
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlCrAat3j5OF-ehGbeu9H3_RUHIUVHaZyssB7Jy1tc2UMoKg/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
       <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-        <a id="chatLiveButton" class="chat-live-button bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Chat Live</a>
+        <a id="chatLiveButton" class="chat-live-button bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500">Chat Live</a>
         <a href="https://vote.utahcounty.gov" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-full hover:bg-gray-700">Voter Info</a>
       </div>
     </div>
@@ -105,7 +127,8 @@
   </section>
   <!-- Footer -->
   <footer class="bg-blue-600 text-white p-4 text-center">
-    <p>Paid for by Jay Shelley for Timpanogos School Board</p>
+    <p>Built FREE by Jay Shelley</p>
+    <p>Grok for FREE coding, GitHub Pages for FREE hosting, Tawk.to for FREE Chat</p>
     <p>© 2025 Jay Shelley. All rights reserved.</p>
   </footer>
   <!-- Smooth Scroll Script -->
@@ -118,6 +141,12 @@
         });
       });
     });
+    function toggleExpand(link) {
+      const content = link.parentElement.querySelector('.expandable-content');
+      const section = link.parentElement;
+      section.classList.toggle('expanded');
+      link.textContent = section.classList.contains('expanded') ? 'Show less' : 'Show more';
+    }
   </script>
 
   <!--Start of Tawk.to Script-->
