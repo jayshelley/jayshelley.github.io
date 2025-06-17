@@ -59,7 +59,7 @@
       <div class="flex flex-col md:flex-row items-center">
         <img src="https://via.placeholder.com/300" alt="Jay Shelley" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8">
         <div class="about-content">
-          <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
+          <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
           <div class="expandable-content">
             <p class="text-lg">Jay brings a rich background in technology, having worked for over a decade in software development, which fuels his vision for expanding STEM programs in Timpanogos schools. As a parent of two Timpanogos students, he understands the daily challenges families face and is committed to bridging the gap between home and school.</p>
             <p class="text-lg">His campaign is driven by a belief that education should empower every child, not just cater to external mandates. Jay plans to leverage his experience to foster collaboration with teachers and parents, ensuring the district remains responsive and innovative for decades to come.</p>
@@ -130,7 +130,7 @@
     <p>Grok for FREE coding, GitHub Pages for FREE hosting, Tawk.to for FREE Chat</p>
     <p>© 2025 Jay Shelley. All rights reserved.</p>
   </footer>
-  <!-- Smooth Scroll Script -->
+  <!-- Smooth Scroll and Toggle Script -->
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -142,9 +142,9 @@
     });
     function toggleExpand(link) {
       const content = link.parentElement.querySelector('.expandable-content');
-      const section = link.parentElement;
+      const section = link.parentElement.parentElement; // Adjusted to target the correct parent
       section.classList.toggle('expanded');
-      link.textContent = section.classList.contains('expanded') ? 'Show less' : 'Show more';
+      link.textContent = section.classList.contains('expanded') ? 'Show Less' : 'Show More';
     }
   </script>
 
