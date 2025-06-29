@@ -8,7 +8,28 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: 'Roboto', sans-serif; }
-    .hero { background-image: url('https://via.placeholder.com/1200x400'); background-size: cover; background-position: center; }
+    .hero {
+      background: none; /* Remove the old background image */
+      min-height: 300px; /* Ensure a minimum height */
+      position: relative;
+      overflow: hidden;
+    }
+    .hero .absolute {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('long-blurred-image.jpg'); /* Replace with your long image URL */
+      background-size: cover;
+      background-position: right; /* Keeps you on the far right by default */
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+    .hero .relative.z-10 {
+      position: relative;
+      z-index: 10;
+    }
     .chat-live-button {
       cursor: pointer; /* Ensures hand cursor for Chat Live button */
     }
@@ -16,16 +37,47 @@
       display: none; /* Hidden by default */
     }
     .expanded .expandable-content {
-      display: block; /* Shown when parent has 'expanded' class */
+      display: block; /* Shown as block for paragraphs when expanded */
     }
     .show-more-less {
       color: #2563EB; /* Matches your blue theme */
       cursor: pointer;
       text-decoration: none; /* Removes underline */
-      margin-left: 0.5rem; /* Small space after sentence */
+      margin-left: 0.125rem; /* Single space approximation (about 2px) */
     }
     .show-more-less:hover {
       color: #1D4ED8; /* Darker blue on hover */
+    }
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 250px;
+      }
+      .hero .flex-col {
+        flex-direction: column;
+      }
+      .hero .absolute {
+        background-position: 70% center; /* Adjusts to keep you visible on tablet screens */
+      }
+      .hero img {
+        width: 24px; /* Smaller images on mobile */
+      }
+    }
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 200px;
+      }
+      .hero .text-4xl {
+        font-size: 2rem;
+      }
+      .hero .text-lg {
+        font-size: 1rem;
+      }
+      .hero .absolute {
+        background-position: 50% center; /* Centers the image to keep you on screen for phones */
+      }
+      .hero img {
+        width: 20px; /* Even smaller on very small screens */
+      }
     }
   </style>
 </head>
@@ -45,11 +97,16 @@
     </div>
   </nav>
   <!-- Hero Section -->
-  <section id="home" class="hero text-white py-20">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-4">Jay Shelley for Timpanogos School Board</h2>
-      <p class="text-lg mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p>
-      <a href="#involved" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500">Ask Me Anything</a>
+  <section id="home" class="hero relative text-white py-20">
+    <div class="absolute inset-0 bg-cover bg-center"></div>
+    <div class="container mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between px-4">
+      <img src="family-image.jpg" alt="My family" class="w-32 h-auto md:w-48 mb-4 md:mb-0">
+      <div class="text-center flex-grow">
+        <h2 class="text-4xl font-bold mb-4">Jay Shelley for Timpanogos School Board</h2>
+        <p class="text-lg mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p>
+        <a href="#involved" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Ask Me Anything</a>
+      </div>
+      <div class="w-32 md:w-48"></div> <!-- Placeholder to balance layout on larger screens -->
     </div>
   </section>
   <!-- About Section -->
@@ -58,7 +115,7 @@
       <h2 class="text-3xl font-bold text-center mb-8">About Jay</h2>
       <div class="flex flex-col md:flex-row items-center">
         <img src="https://via.placeholder.com/300" alt="Jay Shelley" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8">
-        <div> <!-- Removed extra nesting -->
+        <div>
           <div class="about-content">
             <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
             <div class="expandable-content">
@@ -198,6 +255,5 @@
       }
     });
   </script>
-
 </body>
 </html>
