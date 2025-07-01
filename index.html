@@ -25,11 +25,11 @@
       background-size: cover;
     background-position: right;
       background-repeat: no-repeat;
-      z-index: 1;
+    z-index: 1; /* Background stays below nav but above content */
     }
-    .hero .relative.z-10 {
+  .hero .relative.z-0 { /* Updated to match container z-index */
       position: relative;
-      z-index: 10;
+    z-index: 0; /* Below nav's z-10 */
     }
   .hero img {
     object-fit: cover;
@@ -122,7 +122,7 @@
   <!-- Hero Section -->
   <section id="home" class="hero relative text-white py-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
-  <div class="container mx-auto relative z-10 flex flex-col items-start justify-center px-4 pt-16"> <!-- Increased padding-top to 64px (4rem) -->
+  <div class="container mx-auto relative z-0 flex flex-col items-start justify-center px-4 pt-16"> <!-- Changed z-10 to z-0 -->
     <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8 ml-0">
       <div class="text-center flex-grow">
       <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
