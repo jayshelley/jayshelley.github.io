@@ -13,7 +13,7 @@
     min-height: 350px;
       position: relative;
       overflow: hidden;
-    padding-top: 80px; /* Increased to ensure content stays below nav */
+    padding-top: 80px;
     }
     .hero .absolute {
       position: absolute;
@@ -25,11 +25,11 @@
       background-size: cover;
     background-position: right;
       background-repeat: no-repeat;
-    z-index: 1;
+    z-index: 0; /* Profile photo at the back */
     }
-  .hero .relative.z-0 {
+  .hero .relative.z-1 {
       position: relative;
-    z-index: 0;
+    z-index: 1; /* Text container */
     }
   .hero img {
     object-fit: cover;
@@ -49,9 +49,9 @@
       margin-left: 0;
     }
   }
-  /* Increase nav z-index to ensure it stays on top */
+  /* Navigation bar on top */
   nav {
-    z-index: 20; /* Higher than hero's z-0 and z-1 */
+    z-index: 20; /* Highest z-index */
   }
     .chat-live-button {
       cursor: pointer;
@@ -126,9 +126,9 @@
   <!-- Hero Section -->
   <section id="home" class="hero relative text-white py-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
-  <div class="container mx-auto relative z-0 flex flex-col items-start justify-center px-4 pt-20"> <!-- Increased padding-top to 80px -->
-    <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8 ml-0">
-      <div class="text-center flex-grow">
+  <div class="container mx-auto relative z-1 flex flex-col items-start justify-center px-4 pt-20"> <!-- Changed z-0 to z-1 for text container -->
+    <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8 ml-0 z-2" style="position: relative;"> <!-- Added z-2 -->
+    <div class="text-center flex-grow z-1" style="position: relative;"> <!-- Ensured text is z-1 -->
       <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
 for
 Timpanogos
