@@ -20,7 +20,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('images/profile-image.jpg'); /* Updated to correct path */
+    background-image: url('images/profile-image.jpg');
       background-size: cover;
       background-position: right;
       background-repeat: no-repeat;
@@ -30,6 +30,10 @@
       position: relative;
       z-index: 10;
     }
+  .hero img {
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+    border: 4px solid white; /* Optional: Adds a white border for contrast */
+  }
     .chat-live-button {
       cursor: pointer;
     }
@@ -59,7 +63,8 @@
         background-position: 70% center;
       }
       .hero img {
-        width: 24px;
+      width: 48px; /* Adjusted for tablet */
+      height: 48px;
       }
     }
     @media (max-width: 480px) {
@@ -76,7 +81,8 @@
         background-position: 50% center;
       }
       .hero img {
-        width: 20px;
+      width: 40px; /* Adjusted for phone */
+      height: 40px;
       }
     }
   </style>
@@ -100,7 +106,7 @@
   <section id="home" class="hero relative text-white py-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
     <div class="container mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between px-4">
-      <img src="images/family-image.jpg" alt="My family" class="w-32 h-auto md:w-48 mb-4 md:mb-0">
+    <img src="images/family-image.jpg" alt="My family" class="w-64 h-64 md:w-96 md:h-96 rounded-full object-cover mb-4 md:mb-0">
       <div class="text-center flex-grow">
         <h2 class="text-4xl font-bold mb-4">Jay Shelley for Timpanogos School Board</h2>
         <p class="text-lg mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p>
@@ -117,15 +123,15 @@
         <img src="https://via.placeholder.com/300" alt="Jay Shelley" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8">
         <div>
         <div class="about-content">
-          <p class="text-lg">Jay Shelley is a Utah resident passionate about education and innovation. With a focus on student success and community engagement, Jay is running to ensure Timpanogos thrives post-Alpine split. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <p class="text-lg">I am a father of 5 with kids in both public and private schools, so I’ve seen the best of both worlds and seen what we can improve. I have a Masters of Accounting from BYU and studied entrepreneurship. I’ve spent my career in public accounting, four technology startups, and investing in public and private companies, so I care not only about being fiscally responsible, but also about the value we receive for money spent. As PTA Treasurer at Cascade Elementary I implemented changes that have been organically adopted throughout our PTA council and even into Utah State PTA. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
           <div class="expandable-content">
-            <p class="text-lg">Jay brings a rich background in technology, having worked for over a decade in software development, which fuels his vision for expanding STEM programs in Timpanogos schools. As a parent of two Timpanogos students, he understands the daily challenges families face and is committed to bridging the gap between home and school.</p>
+            <p class="text-lg">Check back. More details coming soon.</p>
             </div>
           </div>
           <div class="about-content mt-4">
-            <p class="text-lg">Jay’s experience extends to community leadership, where he has volunteered with local education initiatives. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+            <p class="text-lg">I want to help negotiate the split up of Alpine’s assets, set up our district with more transparency and accountability, and encourage increased parent-teacher involvement. I will work to implement creative solutions that will incentivize administrators to be in touch with what’s happening in the classrooms and reduce school closures, while saving financially in a significant way. Sound impossible? Let’s talk. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
             <div class="expandable-content">
-              <p class="text-lg">He has served on the PTA for five years, advocating for better resources and teacher support. This hands-on role has given him insight into the needs of both educators and students, shaping his commitment to a collaborative district.</p>
+              <p class="text-lg">Check back. More details coming soon.</p>
             </div>
           </div>
         </div>
