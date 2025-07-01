@@ -2,7 +2,7 @@
   body { font-family: 'Roboto', sans-serif; }
   .hero {
     background: none;
-    min-height: 300px;
+    min-height: 500px; /* Increased to accommodate larger family photo */
     position: relative;
     overflow: hidden;
   }
@@ -14,7 +14,7 @@
     height: 100%;
     background-image: url('images/profile-image.jpg');
     background-size: cover;
-    background-position: right;
+    background-position: right; /* Default for small screens */
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -23,8 +23,19 @@
     z-index: 10;
   }
   .hero img {
-    object-fit: cover; /* Ensures the image fills the circle without distortion */
-    border: 4px solid white; /* Optional: Adds a white border for contrast */
+    object-fit: cover;
+    border: 4px solid white;
+  }
+  @media (min-width: 1024px) { /* lg and above (computer screens) */
+    .hero .absolute {
+      background-position: 80% center; /* Moves image further right */
+    }
+    .hero .flex-col {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
   }
   .chat-live-button {
     cursor: pointer;
@@ -46,7 +57,7 @@
   }
   @media (max-width: 768px) {
     .hero {
-      min-height: 250px;
+      min-height: 300px;
     }
     .hero .flex-col {
       flex-direction: column;
@@ -55,13 +66,13 @@
       background-position: 70% center;
     }
     .hero img {
-      width: 48px; /* Adjusted for tablet */
+      width: 48px;
       height: 48px;
     }
   }
   @media (max-width: 480px) {
     .hero {
-      min-height: 200px;
+      min-height: 250px;
     }
     .hero .text-4xl {
       font-size: 2rem;
@@ -73,7 +84,7 @@
       background-position: 50% center;
     }
     .hero img {
-      width: 40px; /* Adjusted for phone */
+      width: 40px;
       height: 40px;
     }
   }
