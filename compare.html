@@ -1,0 +1,118 @@
+<style>
+  body { font-family: 'Roboto', sans-serif; }
+  .hero {
+    background: none;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 64px;
+  }
+  .hero .absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/profile-image.jpg');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+  .hero .relative {
+    position: relative;
+    z-index: 1;
+  }
+  .hero img {
+    object-fit: cover;
+    border: 4px solid white;
+  }
+  .family-image {
+    margin-right: 2rem; /* Space between image and text */
+  }
+  .text-content {
+    width: 100%; /* Ensure text takes full width for centering */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  @media (min-width: 1024px) {
+    .hero .absolute {
+      background-position: 80% center;
+    }
+    .hero .flex {
+      justify-content: flex-start; /* Keep image on left */
+    }
+    .text-content {
+      max-width: 600px; /* Optional: constrain text width for better centering */
+    }
+  }
+  nav {
+    z-index: 10;
+    position: sticky;
+    top: 0;
+  }
+  .about-content {
+    background-color: #f0f0f0; /* Temporary debug for About section */
+  }
+  .chat-live-button {
+    cursor: pointer;
+  }
+  .expandable-content {
+    display: none;
+  }
+  .expanded .expandable-content {
+    display: block;
+  }
+  .show-more-less {
+    color: #2563EB;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 0.125rem;
+  }
+  .show-more-less:hover {
+    color: #1D4ED8;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 300px;
+    }
+    .hero .flex {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .family-image {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+    .hero img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero {
+      min-height: 250px;
+    }
+    .hero .text-4xl {
+      font-size: 2rem;
+    }
+    .hero .text-lg {
+      font-size: 1rem;
+    }
+    .hero .flex {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .family-image {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+    .hero img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>

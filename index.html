@@ -35,21 +35,33 @@
     object-fit: cover;
     border: 4px solid white;
   }
+  .family-image {
+    margin-right: 2rem; /* Space between image and text */
+  }
+  .text-content {
+    width: 100%; /* Ensure text takes full width for centering */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
   @media (min-width: 1024px) {
     .hero .absolute {
       background-position: 80% center;
     }
     .hero .flex {
-      justify-content: space-between; /* Ensure photo stays left, text centers */
+      justify-content: flex-start; /* Keep image on left */
     }
-    .hero img {
-      margin-left: 0;
+    .text-content {
+      max-width: 600px; /* Optional: constrain text width for better centering */
     }
   }
   nav {
     z-index: 10;
     position: sticky;
     top: 0;
+  }
+  .about-content {
+    background-color: #f0f0f0; /* Temporary debug for About section */
   }
     .chat-live-button {
       cursor: pointer;
@@ -78,8 +90,9 @@
         align-items: center;
         justify-content: center;
       }
-      .hero .absolute {
-        background-position: 70% center;
+    .family-image {
+      margin-bottom: 1rem;
+      margin-right: 0;
       }
       .hero img {
       width: 48px;
@@ -102,8 +115,9 @@
       align-items: center;
       justify-content: center;
     }
-      .hero .absolute {
-        background-position: 50% center;
+    .family-image {
+      margin-bottom: 1rem;
+      margin-right: 0;
       }
       .hero img {
       width: 40px;
@@ -131,10 +145,11 @@
   <!-- Hero Section -->
   <section id="home" class="hero relative text-white py-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
-  <div class="container mx-auto relative flex items-center justify-between px-4 pt-16">
+  <div class="container mx-auto relative z-1 flex items-center px-4 pt-16">
+    <div class="family-image">
     <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8">
-    <div class="text-center flex-grow flex items-center justify-center">
-      <div>
+    </div>
+    <div class="text-content flex-grow text-center">
       <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
 for
 Timpanogos
