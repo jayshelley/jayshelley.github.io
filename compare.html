@@ -1,0 +1,101 @@
+<style>
+  body { font-family: 'Roboto', sans-serif; }
+  .hero {
+    background: none;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px; /* Increased to ensure content stays below nav */
+  }
+  .hero .absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/profile-image.jpg');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  .hero .relative.z-0 {
+    position: relative;
+    z-index: 0;
+  }
+  .hero img {
+    object-fit: cover;
+    border: 4px solid white;
+  }
+  @media (min-width: 1024px) {
+    .hero .absolute {
+      background-position: 80% center;
+    }
+    .hero .flex-col {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero img {
+      margin-left: 0;
+    }
+  }
+  /* Increase nav z-index to ensure it stays on top */
+  nav {
+    z-index: 20; /* Higher than hero's z-0 and z-1 */
+  }
+  .chat-live-button {
+    cursor: pointer;
+  }
+  .expandable-content {
+    display: none;
+  }
+  .expanded .expandable-content {
+    display: block;
+  }
+  .show-more-less {
+    color: #2563EB;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 0.125rem;
+  }
+  .show-more-less:hover {
+    color: #1D4ED8;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 300px;
+    }
+    .hero .flex-col {
+      flex-direction: column;
+    }
+    .hero .absolute {
+      background-position: 70% center;
+    }
+    .hero img {
+      width: 48px;
+      height: 48px;
+      margin-left: 0;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero {
+      min-height: 250px;
+    }
+    .hero .text-4xl {
+      font-size: 2rem;
+    }
+    .hero .text-lg {
+      font-size: 1rem;
+    }
+    .hero .absolute {
+      background-position: 50% center;
+    }
+    .hero img {
+      width: 40px;
+      height: 40px;
+      margin-left: 0;
+    }
+  }
+</style>
