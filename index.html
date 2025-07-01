@@ -9,8 +9,8 @@
   <style>
     body { font-family: 'Roboto', sans-serif; }
     .hero {
-      background: none; /* Remove the old background image */
-      min-height: 300px; /* Ensure a minimum height */
+      background: none;
+      min-height: 300px;
       position: relative;
       overflow: hidden;
     }
@@ -20,9 +20,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('profile-image.jpg'); /* Replace with your long image URL */
+      background-image: url('images/profile-image.jpg'); /* Updated to correct path */
       background-size: cover;
-      background-position: right; /* Keeps you on the far right by default */
+      background-position: right;
       background-repeat: no-repeat;
       z-index: 1;
     }
@@ -31,22 +31,22 @@
       z-index: 10;
     }
     .chat-live-button {
-      cursor: pointer; /* Ensures hand cursor for Chat Live button */
+      cursor: pointer;
     }
     .expandable-content {
-      display: none; /* Hidden by default */
+      display: none;
     }
     .expanded .expandable-content {
-      display: block; /* Shown as block for paragraphs when expanded */
+      display: block;
     }
     .show-more-less {
-      color: #2563EB; /* Matches your blue theme */
+      color: #2563EB;
       cursor: pointer;
-      text-decoration: none; /* Removes underline */
-      margin-left: 0.125rem; /* Single space approximation (about 2px) */
+      text-decoration: none;
+      margin-left: 0.125rem;
     }
     .show-more-less:hover {
-      color: #1D4ED8; /* Darker blue on hover */
+      color: #1D4ED8;
     }
     @media (max-width: 768px) {
       .hero {
@@ -56,10 +56,10 @@
         flex-direction: column;
       }
       .hero .absolute {
-        background-position: 70% center; /* Adjusts to keep you visible on tablet screens */
+        background-position: 70% center;
       }
       .hero img {
-        width: 24px; /* Smaller images on mobile */
+        width: 24px;
       }
     }
     @media (max-width: 480px) {
@@ -73,10 +73,10 @@
         font-size: 1rem;
       }
       .hero .absolute {
-        background-position: 50% center; /* Centers the image to keep you on screen for phones */
+        background-position: 50% center;
       }
       .hero img {
-        width: 20px; /* Even smaller on very small screens */
+        width: 20px;
       }
     }
   </style>
@@ -98,15 +98,15 @@
   </nav>
   <!-- Hero Section -->
   <section id="home" class="hero relative text-white py-20">
-    <div class="absolute inset-0 bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
     <div class="container mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between px-4">
-      <img src="family-image.jpg" alt="My family" class="w-32 h-auto md:w-48 mb-4 md:mb-0">
+      <img src="images/family-image.jpg" alt="My family" class="w-32 h-auto md:w-48 mb-4 md:mb-0">
       <div class="text-center flex-grow">
         <h2 class="text-4xl font-bold mb-4">Jay Shelley for Timpanogos School Board</h2>
         <p class="text-lg mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p>
         <a href="#involved" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Ask Me Anything</a>
       </div>
-      <div class="w-32 md:w-48"></div> <!-- Placeholder to balance layout on larger screens -->
+      <div class="w-32 md:w-48"></div>
     </div>
   </section>
   <!-- About Section -->
@@ -221,7 +221,7 @@
     });
     function toggleExpand(link) {
       const content = link.parentElement.querySelector('.expandable-content');
-      const section = link.closest('.about-content'); // Targets the nearest .about-content div
+      const section = link.closest('.about-content');
       if (section) {
       section.classList.toggle('expanded');
       link.textContent = section.classList.contains('expanded') ? 'Show Less' : 'Show More';
@@ -247,7 +247,7 @@
 
   <script type="text/javascript">
     document.getElementById('chatLiveButton').addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent default anchor behavior
+      event.preventDefault();
       if (typeof Tawk_API !== 'undefined' && Tawk_API.toggle) {
         Tawk_API.toggle();
       } else {
