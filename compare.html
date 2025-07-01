@@ -1,91 +1,14 @@
-<style>
-  body { font-family: 'Roboto', sans-serif; }
-  .hero {
-    background: none;
-    min-height: 350px; /* Slightly smaller than 500px, closer to previous 300px */
-    position: relative;
-    overflow: hidden;
-  }
-  .hero .absolute {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/profile-image.jpg');
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
-  .hero .relative.z-10 {
-    position: relative;
-    z-index: 10;
-  }
-  .hero img {
-    object-fit: cover;
-    border: 4px solid white;
-  }
-  @media (min-width: 1024px) {
-    .hero .absolute {
-      background-position: 80% center;
-    }
-    .hero .flex-col {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-  }
-  .chat-live-button {
-    cursor: pointer;
-  }
-  .expandable-content {
-    display: none;
-  }
-  .expanded .expandable-content {
-    display: block;
-  }
-  .show-more-less {
-    color: #2563EB;
-    cursor: pointer;
-    text-decoration: none;
-    margin-left: 0.125rem;
-  }
-  .show-more-less:hover {
-    color: #1D4ED8;
-  }
-  @media (max-width: 768px) {
-    .hero {
-      min-height: 300px;
-    }
-    .hero .flex-col {
-      flex-direction: column;
-    }
-    .hero .absolute {
-      background-position: 70% center;
-    }
-    .hero img {
-      width: 48px;
-      height: 48px;
-    }
-  }
-  @media (max-width: 480px) {
-    .hero {
-      min-height: 250px;
-    }
-    .hero .text-4xl {
-      font-size: 2rem;
-    }
-    .hero .text-lg {
-      font-size: 1rem;
-    }
-    .hero .absolute {
-      background-position: 50% center;
-    }
-    .hero img {
-      width: 40px;
-      height: 40px;
-    }
-  }
-</style>
+<section id="home" class="hero relative text-white py-20">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
+  <div class="container mx-auto relative z-10 flex flex-col items-start justify-center px-4">
+    <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8 ml-0">
+    <div class="text-center flex-grow">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
+for
+Timpanogos
+School Board</h2>
+      <p class="text-lg md:text-xl mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p>
+      <a href="#involved" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Ask Me Anything</a>
+    </div>
+  </div>
+</section>
