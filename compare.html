@@ -1,90 +1,336 @@
-<style>
-  body { font-family: 'Roboto', sans-serif; }
-  .hero {
-    background: none;
-    min-height: 250px;
-    position: relative;
-    overflow: hidden;
-    padding-top: 64px;
-  }
-  .hero .absolute {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/profile-image.jpg');
-    background-size: 50%;
-    background-position: right;
-    background-repeat: no-repeat;
-    z-index: 0;
-  }
-  .hero .relative {
-    position: relative;
-    z-index: 1;
-  }
-  .hero img {
-    object-fit: cover;
-    border: 4px solid white;
-  }
-  .text-content {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px;
-  }
-  @media (min-width: 1024px) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay Shelley for Timpanogos School Board</title>
+  <meta name="description" content="Jay Shelley, candidate for Timpanogos School Board, committed to building stronger schools in Utah.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    .hero {
+      background: none;
+      min-height: 250px;
+      position: relative;
+      overflow: hidden;
+      padding-top: 64px;
+    }
     .hero .absolute {
-      background-position: 80% center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/profile-image.jpg');
+      background-size: cover;
+      background-position: right;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+    .hero .relative {
+      position: relative;
+      z-index: 1;
+    }
+    .hero img {
+      object-fit: cover;
+      border: 4px solid white;
+    }
+    .family-image {
+      float: left;
+      margin-right: 2rem;
     }
     .text-content {
-      margin-left: 0;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 600px;
     }
-  }
-  nav {
-    z-index: 10;
-    position: sticky;
-    top: 0;
-  }
-  .about-content {
-    text-align: left; /* Removed background-color: #f0f0f0 */
-  }
-  .chat-live-button {
-    cursor: pointer;
-  }
-  .expandable-content {
-    display: none;
-  }
-  .expanded .expandable-content {
-    display: block;
-  }
-  .show-more-less {
-    color: #2563EB;
-    cursor: pointer;
-    text-decoration: none;
-    margin-left: 0.125rem;
-  }
-  .show-more-less:hover {
-    color: #1D4ED8;
-  }
-  @media (max-width: 768px) {
-    .hero {
-      min-height: 200px;
+    @media (min-width: 1024px) {
+      .hero .absolute {
+        background-position: 80% center;
+      }
+      .family-image {
+        margin-right: 2rem;
+      }
+      .text-content {
+        margin-left: 0;
+      }
     }
-    .text-content {
-      margin-left: 0;
-      margin-right: 0;
+    nav {
+      z-index: 10;
+      position: sticky;
+      top: 0;
     }
-  }
-  @media (max-width: 480px) {
-    .hero {
-      min-height: 150px;
+    .about-content {
+      text-align: left;
     }
-    .hero .text-4xl {
-      font-size: 2rem;
+    .chat-live-button {
+      cursor: pointer;
     }
-    .hero .text-lg {
-      font-size: 1rem;
+    .expandable-content {
+      display: none;
     }
-  }
-</style>
+    .expanded .expandable-content {
+      display: block;
+    }
+    .show-more-less {
+      color: #2563EB;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 0.125rem;
+    }
+    .show-more-less:hover {
+      color: #1D4ED8;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 200px;
+      }
+      .family-image {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      .hero img {
+        width: 48px;
+        height: 48px;
+      }
+      .text-content {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 150px;
+      }
+      .hero .text-4xl {
+        font-size: 2rem;
+      }
+      .hero .text-lg {
+        font-size: 1rem;
+      }
+      .family-image {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      .hero img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navigation -->
+  <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Jay Shelley</h1>
+      <ul class="flex space-x-4">
+        <li><a href="#home" class="hover:underline">Home</a></li>
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#platform" class="hover:underline">Platform</a></li>
+        <li><a href="#faq" class="hover:underline">FAQ</a></li>
+        <li><a href="#involved" class="hover:underline">Get Involved</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section id="home" class="hero relative text-white py-20">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
+    <div class="container mx-auto relative z-1 px-4 pt-16">
+      <div class="family-image float-left mr-8">
+        <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover">
+      </div>
+      <div class="text-content text-center mx-auto max-w-md">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
+for
+Timpanogos
+School Board</h2>
+        <!-- <p class="text-lg md:text-xl mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p> -->
+        <a href="#involved" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Ask Me Anything</a>
+      </div>
+      <div class="w-32 md:w-48"></div>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">About Jay</h2>
+      <div class="flex flex-col items-center">
+        <div>
+          <div class="about-content">
+            <p class="text-lg">I am a father of 5 with kids in both public and private schools, so I’ve seen the best of both worlds and seen what we can improve. I have a Masters of Accounting from BYU and studied entrepreneurship. I’ve spent my career in public accounting, four technology startups, and investing in public and private companies, so I care not only about being fiscally responsible, but also about the value we receive for money spent. As PTA Treasurer at Cascade Elementary I implemented changes that have been organically adopted throughout our PTA council and even into Utah State PTA. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+            <div class="expandable-content">
+              <p class="text-lg">Check back. More details coming soon.</p>
+            </div>
+          </div>
+          <div class="about-content mt-4">
+            <p class="text-lg">I want to help negotiate the split up of Alpine’s assets, set up our district with more transparency and accountability, and encourage increased parent-teacher involvement. I will work to implement creative solutions that will incentivize administrators to be in touch with what’s happening in the classrooms and reduce school closures, while saving financially in a significant way. Sound impossible? Let’s talk. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+            <div class="expandable-content">
+              <p class="text-lg">Check back. More details coming soon.</p>
+            </div>
+          </div>
+          <div class="about-content mt-4">
+            <p class="text-lg">Most importantly, our children need to like school and thrive academically. We have a huge opportunity to improve the educational lives of our children, let’s not squander it! Learn more at JayShelley.com and please text or call: 925-231-5196 <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+            <div class="expandable-content">
+              <p class="text-lg">Check back. More details coming soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Relevant Experience Section -->
+  <section id="experience" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Relevant Experience</h2>
+      <div>
+        <div class="about-content">
+          <p class="text-lg">Public School Volunteer Experience:<br>Watch DOGS<br>School Parties<br>PTA Treasurer<br>Bi-weekly Reading assessments with 5th graders<br>Battle of the Books Coordinator<br>Nominating Committee<br>Teacher Grants<br>Science/STEM Fair<br>Clothing Drive Fundraising<br>Spirit Wear sales and printing<br>Worked with Betty Shaw and Karen Beebe at UTA PTA to get Venmo accepted, eliminate fees from donations through PayPal’s Giving Fund, get free Zettle card readers, and let them know about how to lower insurance costs and maximize funds to teachers through DonorsChoose. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div>
+        </div>
+        <div class="about-content mt-4">
+          <p class="text-lg">Private School Volunteer Experience:<br>Field Trip Chaperone<br>Recruiting Track Coach<br>Chaperoning for 2 week Choir Tour<br>Advocating for Chinese Classes in Middle School<br>Mock Trial Assistant Coach <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div>
+        </div>
+        <div class="about-content mt-4">
+          <p class="text-lg">Relevant Degrees and Work Experience:<br>Master of Accounting from Brigham Young University<br>Took all entrepreneurship classes offered in undergrad and MBA programs<br>Managed software development teams in four startups (our new district is in essence a new startup)<br>State and County Delegate two times<br>Investing in Public and Private Companies<br>Worked with ASD’s Paul Lewis to improve parent statements on bullying and technology <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Platform Section -->
+  <section id="platform" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">My Platform</h2>
+      <div>
+        <div class="about-content">
+          <p class="text-lg">Protect Teacher Salaries aims to ensure competitive pay to retain educators during the district transition. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">This initiative includes negotiating with local government for sustainable funding and creating a retention bonus program to address the post-split staffing challenges.</p>
+          </div>
+        </div>
+        <div class="about-content mt-4">
+          <p class="text-lg">Ensure Equitable Funding seeks fair resources for all Timpanogos schools post-split. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">This involves analyzing current disparities and proposing a weighted funding model to prioritize under-resourced schools, ensuring every student has equal opportunity.</p>
+          </div>
+        </div>
+        <div class="about-content mt-4">
+          <p class="text-lg">Expand STEM Programs prepares students for tech careers with enhanced education. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">This plan includes partnering with tech companies for internships and updating curricula with cutting-edge tools, aiming to build a future-ready workforce in Timpanogos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Voter Questions</h2>
+      <p class="text-lg text-center mb-6">See what others are asking or submit your own question below!</p>
+      <div class="space-y-4">
+        <div class="bg-gray-100 p-4 rounded">
+          <p class="font-bold">Q: How will you support teachers?</p>
+          <p>A: I’ll advocate for competitive salaries and professional development to retain top educators. [Update with real responses].</p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded">
+          <p class="font-bold">Q: What’s your plan for funding?</p>
+          <p>A: I’ll ensure equitable distribution of state funds to prioritize student needs. [Update with real responses].</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Get Involved Section -->
+  <section id="involved" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Get Involved</h2>
+      <p class="text-lg mb-6">Join our tech-forward campaign for Timpanogos students!</p>
+      <!-- Question Submission Form -->
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-4">Ask Jay a Question</h3>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlCrAat3j5OF-ehGbeu9H3_RUHIUVHaZyssB7Jy1tc2UMoKg/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+        <a id="chatLiveButton" class="chat-live-button bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500">Chat Live</a>
+        <a href="https://vote.utahcounty.gov" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-full hover:bg-gray-700">Voter Info</a>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Contact Jay</h2>
+      <p class="text-lg mb-4">Email: <a href="mailto:votejayshelley@gmail.com" class="text-blue-600">votejayshelley@gmail.com</a></p>
+      <p class="text-lg mb-4">Text/Phone: (925) 231-5196</p>
+      <div class="flex justify-center space-x-4">
+        <a href="https://facebook.com" target="_blank"><img src="https://via.placeholder.com/32" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank"><img src="https://via.placeholder.com/32" alt="Twitter"></a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white p-4 text-center">
+    <p>Built FREE by Jay Shelley</p>
+    <p>Grok for FREE coding, GitHub Pages for FREE hosting, Tawk.to for FREE Chat</p>
+    <p>© 2025 Jay Shelley. All rights reserved.</p>
+  </footer>
+  <!-- Smooth Scroll and Toggle Script -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    function toggleExpand(link) {
+      const content = link.parentElement.querySelector('.expandable-content');
+      const section = link.closest('.about-content');
+      if (section) {
+        section.classList.toggle('expanded');
+        link.textContent = section.classList.contains('expanded') ? 'Show Less' : 'Show More';
+      } else {
+        console.error('No .about-content parent found for this link');
+      }
+    }
+  </script>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/684e1916e0e28c190a926b2a/1itoh40cc';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script--> 
+
+  <script type="text/javascript">
+    document.getElementById('chatLiveButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      if (typeof Tawk_API !== 'undefined' && Tawk_API.toggle) {
+        Tawk_API.toggle();
+      } else {
+        console.log('Tawk.to API not loaded yet. Please wait and try again.');
+      }
+    });
+  </script>
+</body>
+</html>
