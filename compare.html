@@ -92,8 +92,8 @@
         margin-bottom: 1rem;
       }
       .hero img {
-        width: 48px;
-        height: 48px;
+        width: 72px; /* 25% larger than 60px (w-60) */
+        height: 72px; /* 25% larger than 60px (h-60) */
       }
       .text-content {
         margin-left: 0;
@@ -116,8 +116,15 @@
         margin-bottom: 1rem;
       }
       .hero img {
-        width: 40px;
-        height: 40px;
+        width: 50px; /* Adjusted from 40px to 50px (25% larger) */
+        height: 50px; /* Adjusted from 40px to 50px (25% larger) */
+      }
+    }
+    /* Custom size for desktop (min-width: 1024px) */
+    @media (min-width: 1024px) {
+      .family-image img {
+        width: 100px; /* 25% larger than 80px (md:w-80) */
+        height: 100px; /* 25% larger than 80px (md:h-80) */
       }
     }
   </style>
@@ -130,6 +137,7 @@
       <ul class="flex space-x-4">
         <li><a href="#home" class="hover:underline">Home</a></li>
         <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#experience" class="hover:underline">Experience</a></li>
         <li><a href="#platform" class="hover:underline">Platform</a></li>
         <li><a href="#faq" class="hover:underline">FAQ</a></li>
         <li><a href="#involved" class="hover:underline">Get Involved</a></li>
@@ -158,7 +166,7 @@ School Board</h2>
   <!-- About Section -->
   <section id="about" class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">About Jay</h2>
+      <h2 class="text-3xl font-bold text-center mb-8">About</h2>
       <div class="flex flex-col items-center">
         <div>
           <div class="about-content">
@@ -183,10 +191,10 @@ School Board</h2>
       </div>
     </div>
   </section>
-  <!-- Relevant Experience Section -->
+  <!-- Experience Section -->
   <section id="experience" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Relevant Experience</h2>
+      <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
       <div>
         <div class="about-content">
           <h3 class="text-lg font-semibold mb-2">Public School Volunteer Experience</h3>
@@ -203,10 +211,6 @@ School Board</h2>
             <li>Spirit Wear sales and printing</li>
             <li>Worked with Betty Shaw and Karen Beebe at UTA PTA to get Venmo accepted, eliminate fees from donations through PayPal’s Giving Fund, get free Zettle card readers, and let them know about how to lower insurance costs and maximize funds to teachers through DonorsChoose</li>
           </ul>
-          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show More</a>
-          <div class="expandable-content">
-            <p class="text-lg">Check back. More details coming soon.</p>
-          </div> -->
         </div>
         <div class="about-content mt-4">
           <h3 class="text-lg font-semibold mb-2">Private School Volunteer Experience</h3>
@@ -217,10 +221,6 @@ School Board</h2>
             <li>Advocating for Chinese Classes in Middle School</li>
             <li>Mock Trial Assistant Coach</li>
           </ul>
-          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show More</a>
-          <div class="expandable-content">
-            <p class="text-lg">Check back. More details coming soon.</p>
-          </div> -->
         </div>
         <div class="about-content mt-4">
           <h3 class="text-lg font-semibold mb-2">Relevant Degrees and Work Experience</h3>
@@ -232,10 +232,6 @@ School Board</h2>
             <li>Investing in Public and Private Companies</li>
             <li>Worked with ASD’s Paul Lewis to improve parent statements on bullying and technology</li>
           </ul>
-          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show More</a>
-          <div class="expandable-content">
-            <p class="text-lg">Check back. More details coming soon.</p>
-          </div> -->
         </div>
       </div>
     </div>
@@ -243,24 +239,36 @@ School Board</h2>
   <!-- Platform Section -->
   <section id="platform" class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">My Platform</h2>
+      <h2 class="text-3xl font-bold text-center mb-8">Platform</h2>
       <div>
         <div class="about-content">
-          <p class="text-lg">Protect Teacher Salaries aims to ensure competitive pay to retain educators during the district transition. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <p class="text-lg">CREATIVE SOLUTIONS: We can keep more schools open, while reducing costs, and incentivize administrators to understand first-hand the issues in our schools. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
           <div class="expandable-content">
-            <p class="text-lg">This initiative includes negotiating with local government for sustainable funding and creating a retention bonus program to address the post-split staffing challenges.</p>
+            <p class="text-lg">Check back. More details coming soon.</p>
           </div>
         </div>
         <div class="about-content mt-4">
-          <p class="text-lg">Ensure Equitable Funding seeks fair resources for all Timpanogos schools post-split. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <p class="text-lg">PARENT INVOLVEMENT: Teachers, students and parents all benefit when we work together. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
           <div class="expandable-content">
-            <p class="text-lg">This involves analyzing current disparities and proposing a weighted funding model to prioritize under-resourced schools, ensuring every student has equal opportunity.</p>
+            <p class="text-lg">Check back. More details coming soon.</p>
           </div>
         </div>
         <div class="about-content mt-4">
-          <p class="text-lg">Expand STEM Programs prepares students for tech careers with enhanced education. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <p class="text-lg">FISCAL RESPONSIBILITY: Cost of education is rising, while learning outcomes have been diminishing. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
           <div class="expandable-content">
-            <p class="text-lg">This plan includes partnering with tech companies for internships and updating curricula with cutting-edge tools, aiming to build a future-ready workforce in Timpanogos.</p>
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div>
+        </div>
+        <div class="about-content mt-4">
+          <p class="text-lg">TRANSPARENCY: What results are we getting for the taxpayer money we’re spending? <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div>
+        </div>
+        <div class="about-content mt-4">
+          <p class="text-lg">EXCITEMENT FOR LEARNING: How excited are our children to learn? <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
           </div>
         </div>
       </div>
@@ -272,11 +280,11 @@ School Board</h2>
       <h2 class="text-3xl font-bold text-center mb-8">Voter Questions</h2>
       <p class="text-lg text-center mb-6">See what others are asking or submit your own question below!</p>
       <div class="space-y-4">
-        <div class="bg-gray-100 p-4 rounded">
+        <div class="bg-white-100 p-4 rounded">
           <p class="font-bold">Q: How will you support teachers?</p>
           <p>A: I’ll advocate for competitive salaries and professional development to retain top educators. [Update with real responses].</p>
         </div>
-        <div class="bg-gray-100 p-4 rounded">
+        <div class="bg-white-100 p-4 rounded">
           <p class="font-bold">Q: What’s your plan for funding?</p>
           <p>A: I’ll ensure equitable distribution of state funds to prioritize student needs. [Update with real responses].</p>
         </div>

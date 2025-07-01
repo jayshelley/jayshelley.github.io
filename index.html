@@ -92,8 +92,8 @@
       margin-bottom: 1rem;
       }
       .hero img {
-      width: 48px;
-      height: 48px;
+        width: 72px; /* 25% larger than 60px (w-60) */
+        height: 72px; /* 25% larger than 60px (h-60) */
     }
     .text-content {
       margin-left: 0;
@@ -116,8 +116,15 @@
       margin-bottom: 1rem;
       }
       .hero img {
-      width: 40px;
-      height: 40px;
+        width: 50px; /* Adjusted from 40px to 50px (25% larger) */
+        height: 50px; /* Adjusted from 40px to 50px (25% larger) */
+      }
+    }
+    /* Custom size for desktop (min-width: 1024px) */
+    @media (min-width: 1024px) {
+      .family-image img {
+        width: 100px; /* 25% larger than 80px (md:w-80) */
+        height: 100px; /* 25% larger than 80px (md:h-80) */
       }
     }
   </style>
