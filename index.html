@@ -13,7 +13,7 @@
     min-height: 350px;
       position: relative;
       overflow: hidden;
-    padding-top: 80px;
+    padding-top: 64px; /* Matches nav height */
     }
     .hero .absolute {
       position: absolute;
@@ -27,9 +27,9 @@
       background-repeat: no-repeat;
     z-index: 0; /* Profile photo at the back */
     }
-  .hero .relative.z-1 {
+  .hero .relative {
       position: relative;
-    z-index: 1; /* Text container */
+    z-index: 1; /* Text and family photo container */
     }
   .hero img {
     object-fit: cover;
@@ -49,9 +49,11 @@
       margin-left: 0;
     }
   }
-  /* Navigation bar on top */
+  /* Ensure nav is on top */
   nav {
-    z-index: 20; /* Highest z-index */
+    z-index: 10; /* Above hero content */
+    position: sticky;
+    top: 0;
   }
     .chat-live-button {
       cursor: pointer;
@@ -126,9 +128,9 @@
   <!-- Hero Section -->
   <section id="home" class="hero relative text-white py-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
-  <div class="container mx-auto relative z-1 flex flex-col items-start justify-center px-4 pt-20"> <!-- Changed z-0 to z-1 for text container -->
-    <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8 ml-0 z-2" style="position: relative;"> <!-- Added z-2 -->
-    <div class="text-center flex-grow z-1" style="position: relative;"> <!-- Ensured text is z-1 -->
+  <div class="container mx-auto relative flex flex-col items-start justify-center px-4 pt-16">
+    <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8 ml-0">
+    <div class="text-center flex-grow">
       <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
 for
 Timpanogos

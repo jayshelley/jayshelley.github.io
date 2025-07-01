@@ -5,7 +5,7 @@
     min-height: 350px;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;
+    padding-top: 64px; /* Matches nav height */
   }
   .hero .absolute {
     position: absolute;
@@ -19,9 +19,9 @@
     background-repeat: no-repeat;
     z-index: 0; /* Profile photo at the back */
   }
-  .hero .relative.z-1 {
+  .hero .relative {
     position: relative;
-    z-index: 1; /* Text container */
+    z-index: 1; /* Text and family photo container */
   }
   .hero img {
     object-fit: cover;
@@ -41,9 +41,11 @@
       margin-left: 0;
     }
   }
-  /* Navigation bar on top */
+  /* Ensure nav is on top */
   nav {
-    z-index: 20; /* Highest z-index */
+    z-index: 10; /* Above hero content */
+    position: sticky;
+    top: 0;
   }
   .chat-live-button {
     cursor: pointer;
