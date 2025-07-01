@@ -10,7 +10,7 @@
     body { font-family: 'Roboto', sans-serif; }
     .hero {
       background: none;
-    min-height: 350px;
+    min-height: 250px;    /* previously 350px */
       position: relative;
       overflow: hidden;
     padding-top: 64px;
@@ -43,7 +43,7 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 600px; /* Constrain text width for better centering */
+    max-width: 600px;
   }
   @media (min-width: 1024px) {
     .hero .absolute {
@@ -53,7 +53,7 @@
       margin-right: 2rem;
     }
     .text-content {
-      margin-left: 0; /* Reset margin for full centering */
+      margin-left: 0;
     }
   }
   nav {
@@ -62,7 +62,7 @@
     top: 0;
   }
   .about-content {
-    background-color: #f0f0f0; /* Temporary debug for About section */
+    text-align: left; /* Removed background-color: #f0f0f0 */
   }
     .chat-live-button {
       cursor: pointer;
@@ -84,7 +84,7 @@
     }
     @media (max-width: 768px) {
       .hero {
-      min-height: 300px;
+      min-height: 200px;    /* previously 300px */
       }
     .family-image {
       float: none; /* Reset float on mobile */
@@ -102,7 +102,7 @@
     }
     @media (max-width: 480px) {
       .hero {
-      min-height: 250px;
+      min-height: 150px;   /* previously 250px */
       }
       .hero .text-4xl {
         font-size: 2rem;
@@ -159,8 +159,7 @@ School Board</h2>
   <section id="about" class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8">About Jay</h2>
-      <div class="flex flex-col md:flex-row items-center">
-        <img src="https://via.placeholder.com/300" alt="Jay Shelley" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8">
+    <div class="flex flex-col items-center">
         <div>
         <div class="about-content">
           <p class="text-lg">I am a father of 5 with kids in both public and private schools, so I’ve seen the best of both worlds and seen what we can improve. I have a Masters of Accounting from BYU and studied entrepreneurship. I’ve spent my career in public accounting, four technology startups, and investing in public and private companies, so I care not only about being fiscally responsible, but also about the value we receive for money spent. As PTA Treasurer at Cascade Elementary I implemented changes that have been organically adopted throughout our PTA council and even into Utah State PTA. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
