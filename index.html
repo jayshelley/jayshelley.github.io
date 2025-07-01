@@ -39,11 +39,8 @@
     .hero .absolute {
       background-position: 80% center;
     }
-    .hero .flex-col {
-      flex-direction: column;
-      align-items: center; /* Center items on computer screens */
-      justify-content: center; /* Center vertically */
-      text-align: center;
+    .hero .flex {
+      justify-content: space-between; /* Ensure photo stays left, text centers */
     }
     .hero img {
       margin-left: 0;
@@ -76,10 +73,10 @@
       .hero {
       min-height: 300px;
       }
-      .hero .flex-col {
+      .hero .flex {
         flex-direction: column;
-      align-items: center; /* Center on tablets */
-      justify-content: center;
+        align-items: center;
+        justify-content: center;
       }
       .hero .absolute {
         background-position: 70% center;
@@ -100,6 +97,11 @@
       .hero .text-lg {
         font-size: 1rem;
       }
+    .hero .flex {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
       .hero .absolute {
         background-position: 50% center;
       }
@@ -129,9 +131,10 @@
   <!-- Hero Section -->
   <section id="home" class="hero relative text-white py-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
-  <div class="container mx-auto relative flex flex-col items-start justify-center px-4 pt-16">
-    <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8 ml-0">
-    <div class="text-center flex-grow">
+  <div class="container mx-auto relative flex items-center justify-between px-4 pt-16">
+    <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8">
+    <div class="text-center flex-grow flex items-center justify-center">
+      <div>
       <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
 for
 Timpanogos
