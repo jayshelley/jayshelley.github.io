@@ -36,23 +36,24 @@
     border: 4px solid white;
   }
   .family-image {
+    float: left; /* Fix image on left side */
     margin-right: 2rem; /* Space between image and text */
   }
   .text-content {
-    width: 100%; /* Ensure text takes full width for centering */
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    max-width: 600px; /* Constrain text width for better centering */
   }
   @media (min-width: 1024px) {
     .hero .absolute {
       background-position: 80% center;
     }
-    .hero .flex {
-      justify-content: flex-start; /* Keep image on left */
+    .family-image {
+      margin-right: 2rem;
     }
     .text-content {
-      max-width: 600px; /* Optional: constrain text width for better centering */
+      margin-left: 0; /* Reset margin for full centering */
     }
   }
   nav {
@@ -91,13 +92,18 @@
         justify-content: center;
       }
     .family-image {
+      float: none; /* Reset float on mobile */
+      margin-right: 0;
       margin-bottom: 1rem;
       margin-right: 0;
       }
       .hero img {
       width: 48px;
       height: 48px;
+    }
+    .text-content {
       margin-left: 0;
+      margin-right: 0;
       }
     }
     @media (max-width: 480px) {
@@ -116,6 +122,8 @@
       justify-content: center;
     }
     .family-image {
+      float: none;
+      margin-right: 0;
       margin-bottom: 1rem;
       margin-right: 0;
       }
@@ -145,11 +153,11 @@
   <!-- Hero Section -->
   <section id="home" class="hero relative text-white py-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
-  <div class="container mx-auto relative z-1 flex items-center px-4 pt-16">
-    <div class="family-image">
-    <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover mb-8">
+  <div class="container mx-auto relative z-1 px-4 pt-16">
+    <div class="family-image float-left mr-8">
+      <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover">
     </div>
-    <div class="text-content flex-grow text-center">
+    <div class="text-content text-center mx-auto max-w-md">
       <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
 for
 Timpanogos
