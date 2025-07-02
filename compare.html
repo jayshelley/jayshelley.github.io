@@ -13,7 +13,7 @@
       min-height: 250px;
       position: relative;
       overflow: hidden;
-      padding-top: 64px;
+    padding-top: 64px;
     }
     .hero .absolute {
       position: absolute;
@@ -21,53 +21,49 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('images/profile-image.jpg');
+    background-image: url('images/profile-image.jpg');
       background-size: cover;
-      background-position: right;
+    background-position: right;
       background-repeat: no-repeat;
-      z-index: 0;
+    z-index: 0;
     }
-    .hero .relative {
+  .hero .relative {
       position: relative;
-      z-index: 1;
+    z-index: 1;
     }
-    .hero img {
-      object-fit: cover;
-      border: 4px solid white;
+  .hero img {
+    object-fit: cover;
+    border: 4px solid white;
+  }
+  .family-image {
+      float: left;
+      margin-right: 2rem;
+  }
+  .text-content {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+  }
+  @media (min-width: 1024px) {
+    .hero .absolute {
+      background-position: 80% center;
     }
     .family-image {
-      float: left;
       margin-right: 2rem;
     }
     .text-content {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 600px;
+      margin-left: 0;
     }
-    @media (min-width: 1024px) {
-      .hero .absolute {
-        background-position: 80% center;
-      }
-      .family-image {
-        margin-right: 2rem;
-      }
-      .text-content {
-        margin-left: 0;
-      }
-      .family-image img {
-        width: 100px;
-        height: 100px;
-      }
-    }
-    nav {
-      z-index: 10;
-      position: sticky;
-      top: 0;
-    }
-    .about-content {
+  }
+  nav {
+    z-index: 10;
+    position: sticky;
+    top: 0;
+  }
+  .about-content {
       text-align: left;
-    }
+  }
     .chat-live-button {
       cursor: pointer;
     }
@@ -90,57 +86,18 @@
       .hero {
         min-height: 200px;
       }
-      .family-image {
-        display: none;
+    .family-image {
+        float: none;
+      margin-right: 0;
+      margin-bottom: 1rem;
       }
-      .text-content {
-        margin-left: 0;
-        margin-right: 0;
-      }
-      .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #2563EB;
-        padding: 1rem;
-      }
-      .nav-menu.active {
-        display: block;
-      }
-      .nav-toggle {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        z-index: 20;
-      }
-      .nav-toggle span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 5px 0;
-        transition: all 0.3s ease;
-      }
-      .nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-      .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-      }
-      .nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-      }
-      nav ul {
-        display: none;
-      }
-      nav ul.active {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+      .hero img {
+      width: 48px;
+      height: 48px;
+    }
+    .text-content {
+      margin-left: 0;
+      margin-right: 0;
       }
     }
     @media (max-width: 480px) {
@@ -152,9 +109,15 @@
       }
       .hero .text-lg {
         font-size: 1rem;
+    }
+    .family-image {
+      float: none;
+      margin-right: 0;
+      margin-bottom: 1rem;
       }
-      .family-image {
-        display: none;
+      .hero img {
+      width: 40px;
+      height: 40px;
       }
     }
   </style>
@@ -164,12 +127,7 @@
   <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold">Jay Shelley</h1>
-      <button class="nav-toggle md:hidden" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="flex space-x-4 nav-menu md:flex">
+      <ul class="flex space-x-4">
         <li><a href="#home" class="hover:underline">Home</a></li>
         <li><a href="#about" class="hover:underline">About</a></li>
         <li><a href="#experience" class="hover:underline">Experience</a></li>
@@ -183,16 +141,16 @@
   <!-- Hero Section -->
   <section id="home" class="hero relative text-white py-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div>
-    <div class="container mx-auto relative z-1 px-4 pt-16">
-      <div class="family-image float-left mr-8">
-        <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover">
-      </div>
-      <div class="text-content text-center mx-auto max-w-md">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
+  <div class="container mx-auto relative z-1 px-4 pt-16">
+    <div class="family-image float-left mr-8">
+      <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover">
+    </div>
+    <div class="text-content text-center mx-auto max-w-md">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
 for
 Timpanogos
 School Board</h2>
-        <!-- <p class="text-lg md:text-xl mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p> -->
+      <!-- <p class="text-lg md:text-xl mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p> -->
         <a href="#involved" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Ask Me Anything</a>
       </div>
       <div class="w-32 md:w-48"></div>
@@ -202,12 +160,12 @@ School Board</h2>
   <section id="about" class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8">About</h2>
-      <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center">
         <div>
-          <div class="about-content">
-            <p class="text-lg">I am a father of 5 with kids in both public and private schools, so I’ve seen the best of both worlds and seen what we can improve. I have a Masters of Accounting from BYU and studied entrepreneurship. I’ve spent my career in public accounting, four technology startups, and investing in public and private companies, so I care not only about being fiscally responsible, but also about the value we receive for money spent. As PTA Treasurer at Cascade Elementary I implemented changes that have been organically adopted throughout our PTA council and even into Utah State PTA. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
-            <div class="expandable-content">
-              <p class="text-lg">Check back. More details coming soon.</p>
+        <div class="about-content">
+          <p class="text-lg">I am a father of 5 with kids in both public and private schools, so I’ve seen the best of both worlds and seen what we can improve. I have a Masters of Accounting from BYU and studied entrepreneurship. I’ve spent my career in public accounting, four technology startups, and investing in public and private companies, so I care not only about being fiscally responsible, but also about the value we receive for money spent. As PTA Treasurer at Cascade Elementary I implemented changes that have been organically adopted throughout our PTA council and even into Utah State PTA. <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
             </div>
           </div>
           <div class="about-content mt-4">
@@ -216,10 +174,10 @@ School Board</h2>
               <p class="text-lg">Check back. More details coming soon.</p>
             </div>
           </div>
-          <div class="about-content mt-4">
-            <p class="text-lg">Most importantly, our children need to like school and thrive academically. We have a huge opportunity to improve the educational lives of our children, let’s not squander it! Learn more at JayShelley.com and please text or call: 925-231-5196 <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
-            <div class="expandable-content">
-              <p class="text-lg">Check back. More details coming soon.</p>
+        <div class="about-content mt-4">
+          <p class="text-lg">Most importantly, our children need to like school and thrive academically. We have a huge opportunity to improve the educational lives of our children, let’s not squander it! Learn more at JayShelley.com and please text or call: 925-231-5196 <a class="show-more-less" onclick="toggleExpand(this)">Show More</a></p>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
             </div>
           </div>
         </div>
@@ -246,6 +204,10 @@ School Board</h2>
             <li>Spirit Wear sales and printing</li>
             <li>Worked with Betty Shaw and Karen Beebe at UTA PTA to get Venmo accepted, eliminate fees from donations through PayPal’s Giving Fund, get free Zettle card readers, and let them know about how to lower insurance costs and maximize funds to teachers through DonorsChoose</li>
           </ul>
+          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show More</a>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div> -->
         </div>
         <div class="about-content mt-4">
           <h3 class="text-lg font-semibold mb-2">Private School Volunteer Experience</h3>
@@ -256,6 +218,10 @@ School Board</h2>
             <li>Advocating for Chinese Classes in Middle School</li>
             <li>Mock Trial Assistant Coach</li>
           </ul>
+          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show More</a>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div> -->
         </div>
         <div class="about-content mt-4">
           <h3 class="text-lg font-semibold mb-2">Relevant Degrees and Work Experience</h3>
@@ -267,6 +233,10 @@ School Board</h2>
             <li>Investing in Public and Private Companies</li>
             <li>Worked with ASD’s Paul Lewis to improve parent statements on bullying and technology</li>
           </ul>
+          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show More</a>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div> -->
         </div>
       </div>
     </div>
@@ -368,31 +338,18 @@ School Board</h2>
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
-        // Close mobile menu after clicking a link
-        if (window.innerWidth <= 768) {
-          const navToggle = document.querySelector('.nav-toggle');
-          const navMenu = document.querySelector('.nav-menu');
-          navToggle.classList.remove('active');
-          navMenu.classList.remove('active');
-        }
       });
     });
     function toggleExpand(link) {
       const content = link.parentElement.querySelector('.expandable-content');
       const section = link.closest('.about-content');
       if (section) {
-        section.classList.toggle('expanded');
-        link.textContent = section.classList.contains('expanded') ? 'Show Less' : 'Show More';
+      section.classList.toggle('expanded');
+      link.textContent = section.classList.contains('expanded') ? 'Show Less' : 'Show More';
       } else {
         console.error('No .about-content parent found for this link');
       }
     }
-    // Hamburger menu toggle
-    document.querySelector('.nav-toggle').addEventListener('click', function () {
-      this.classList.toggle('active');
-      const navMenu = document.querySelector('.nav-menu');
-      navMenu.classList.toggle('active');
-    });
   </script>
 
   <!--Start of Tawk.to Script-->
