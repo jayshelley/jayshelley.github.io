@@ -55,6 +55,10 @@
     .text-content {
       margin-left: 0;
     }
+      .family-image img {
+        width: 100px; /* 25% larger than 80px */
+        height: 100px; /* 25% larger than 80px */
+      }
   }
   nav {
     z-index: 10;
@@ -87,13 +91,7 @@
         min-height: 200px;
       }
     .family-image {
-        float: none;
-      margin-right: 0;
-      margin-bottom: 1rem;
-      }
-      .hero img {
-      width: 48px;
-      height: 48px;
+        display: none; /* Hide family image on mobile */
     }
     .text-content {
       margin-left: 0;
@@ -111,13 +109,7 @@
         font-size: 1rem;
     }
     .family-image {
-      float: none;
-      margin-right: 0;
-      margin-bottom: 1rem;
-      }
-      .hero img {
-      width: 40px;
-      height: 40px;
+        display: none; /* Hide family image on smaller mobile */
       }
     }
   </style>
@@ -300,7 +292,7 @@ School Board</h2>
   <section id="involved" class="py-16 bg-white">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-8">Get Involved</h2>
-      <p class="text-lg mb-6">Join our tech-forward campaign for Timpanogos students!</p>
+      <p class="text-lg mb-6">Join our campaign for Timpanogos students!</p>
       <!-- Question Submission Form -->
       <div class="mb-8">
         <h3 class="text-xl font-bold mb-4">Ask Jay a Question</h3>
