@@ -137,7 +137,7 @@
         transform: rotate(-45deg) translate(7px, -7px);
       }
       nav ul {
-        display: none; /* Ensure default ul is hidden on mobile */
+        display: none; /* Hide default ul on mobile */
       }
     }
     @media (min-width: 769px) {
@@ -146,10 +146,10 @@
       }
       nav ul {
         display: flex; /* Show default ul on desktop */
-        space-x-4;
       }
       nav ul.nav-menu {
         flex-direction: row; /* Ensure horizontal layout on desktop */
+        space-x-4;
       }
     }
     @media (max-width: 480px) {
@@ -178,7 +178,7 @@
         <span></span>
         <span></span>
       </button>
-      <ul class="nav-menu">
+      <ul class="flex space-x-4 nav-menu">
         <li><a href="#home" class="hover:underline">Home</a></li>
         <li><a href="#about" class="hover:underline">About</a></li>
         <li><a href="#experience" class="hover:underline">Experience</a></li>
