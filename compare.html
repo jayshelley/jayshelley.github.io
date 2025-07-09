@@ -278,8 +278,18 @@ School Board</h2> <!-- Main heading with line breaks -->
         <div> <!-- Content wrapper -->
           <div class="about-content"> <!-- First about paragraph -->
             <p class="text-lg">I am a father of 5 with kids in both public and private schools, so I’ve seen the best of both worlds and seen what we can improve. I have a Masters of Accounting from BYU and studied entrepreneurship. I’ve spent my career in public accounting, four technology startups, and investing in public and private companies, so I care not only about being fiscally responsible, but also about the value we receive for money spent. As PTA Treasurer at Cascade Elementary I implemented changes that have been organically adopted throughout our PTA council and even into Utah State PTA. 
+              <ul>
+                <li>Here are bulleted lists</li>
+                <li>Shown in the 'less' state</li>
+              </ul>
+              <p>Since you're writing bespoke markup for each of these show less/more sections, you shouldn't have a problem hiding or showing. You're already manually partitioning the markup.</p>
+              <p>Simply write complete, valid markup outside expandable-content and inside expandable-content. Don't split anything over that boundary.</p>
               <a class="show-more-less" onclick="toggleExpand(this)" role="button" aria-expanded="false">Show More</a>
               <span class="expandable-content text-lg">
+                <ul>
+                  <li>Here are bulleted lists</li>
+                  <li>Shown in the 'more' state</li>
+                </ul>
                 <div>Check back. More details coming soon.</div>
               </span>
             </p>
