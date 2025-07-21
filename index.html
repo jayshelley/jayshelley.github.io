@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design by setting viewport to device width and initial zoom level -->
   <title>Jay Shelley for Timpanogos School Board</title> <!-- Sets the page title displayed in the browser tab -->
   <meta name="description" content="Jay Shelley, candidate for Timpanogos School Board, committed to building stronger schools in Utah."> <!-- Provides a description for search engines -->
+  
+  <!-- Professional Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script> <!-- Imports Tailwind CSS for styling via CDN -->
   
   <!-- Google tag (gtag.js) -->
@@ -18,8 +24,139 @@
   </script>
   
   <style>
-    /* General styling for the body, setting a custom font */
-    body { font-family: 'Roboto', sans-serif; }
+    /* Professional Typography System */
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      --font-serif: 'Merriweather', 'Georgia', serif;
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 1.875rem;
+      --text-4xl: 2.25rem;
+      --text-5xl: 3rem;
+      --leading-tight: 1.25;
+      --leading-normal: 1.5;
+      --leading-relaxed: 1.75;
+      --tracking-tight: -0.025em;
+      --tracking-normal: 0em;
+      --tracking-wide: 0.025em;
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #4a5568;
+      --color-text-muted: #718096;
+    }
+    
+    /* Base typography */
+    body { 
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      line-height: var(--leading-normal);
+      color: var(--color-text-primary);
+      font-weight: 400;
+      letter-spacing: var(--tracking-normal);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      color: var(--color-text-primary);
+    }
+    
+    h1 {
+      font-size: var(--text-4xl);
+      font-weight: 700;
+    }
+    
+    h2 {
+      font-size: var(--text-3xl);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    
+    h3 {
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    h4 {
+      font-size: var(--text-xl);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    
+    /* Body text */
+    p {
+      margin-bottom: 1.25rem;
+      line-height: var(--leading-relaxed);
+    }
+    
+    p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Links */
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    
+    a:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+    
+    /* Lists */
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+      line-height: var(--leading-relaxed);
+    }
+    
+    /* Strong text */
+    strong {
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    
+    /* Improved section spacing */
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    
+    @media (min-width: 768px) {
+      section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+    }
+    
+    /* Text sizes for different contexts */
+    .text-xs { font-size: var(--text-xs); }
+    .text-sm { font-size: var(--text-sm); }
+    .text-base { font-size: var(--text-base); }
+    .text-lg { 
+      font-size: var(--text-lg); 
+      line-height: var(--leading-relaxed);
+    }
+    .text-xl { font-size: var(--text-xl); }
+    .text-2xl { font-size: var(--text-2xl); }
+    .text-3xl { font-size: var(--text-3xl); }
+    .text-4xl { font-size: var(--text-4xl); }
+    .text-5xl { font-size: var(--text-5xl); }
 
     /* Hero section styling, creating a full-width background with content overlay */
     .hero {
@@ -99,9 +236,23 @@
       top: 0; /* Aligns to the top of the viewport */
   }
 
-    /* Aligns about content to the left */
+    /* About content styling */
   .about-content {
       text-align: left; /* Left-aligns text in about sections */
+      margin-bottom: 2rem;
+  }
+  
+  .about-content:last-child {
+      margin-bottom: 0;
+  }
+  
+  /* Platform section improvements */
+  .platform-item {
+      margin-bottom: 2.5rem;
+  }
+  
+  .platform-item:last-child {
+      margin-bottom: 0;
   }
 
     /* Styling for the chat live button to indicate interactivity */
@@ -117,7 +268,83 @@
     /* Shows expandable content when parent has .expanded class */
     .expanded .expandable-content {
       display: block; /* Displays content when expanded */
+      margin-top: 1rem; /* Add space above expandable content */
+      padding: 1.5rem 0; /* Add vertical padding */
     }
+    
+    /* Improved typography for expandable content */
+    .expandable-content p {
+      margin-bottom: 1.25rem; /* Space between paragraphs */
+      line-height: var(--leading-relaxed); /* Better line height for readability */
+      color: var(--color-text-secondary);
+    }
+    
+    .expandable-content p:last-child {
+      margin-bottom: 0; /* Remove margin from last paragraph */
+    }
+    
+    /* Better list formatting in expandable content */
+    .expandable-content ul, 
+    .expandable-content ol {
+      margin: 1.25rem 0; /* Vertical spacing around lists */
+      padding-left: 1.75rem; /* Proper indentation */
+    }
+    
+    .expandable-content li {
+      margin-bottom: 0.625rem; /* Space between list items */
+      line-height: var(--leading-relaxed); /* Readable line height for lists */
+      color: var(--color-text-secondary);
+    }
+    
+    .expandable-content li:last-child {
+      margin-bottom: 0; /* Remove margin from last item */
+    }
+    
+    /* Headers within expandable content */
+    .expandable-content h3,
+    .expandable-content h4 {
+      margin-top: 1.5rem; /* Space above headers */
+      margin-bottom: 0.75rem; /* Space below headers */
+      font-weight: 600; /* Semi-bold headers */
+    }
+    
+    .expandable-content h3:first-child,
+    .expandable-content h4:first-child {
+      margin-top: 0; /* No top margin for first header */
+    }
+    
+    /* Strong text emphasis */
+    .expandable-content strong {
+      font-weight: 600; /* Make bold text slightly less heavy */
+      color: var(--color-text-primary); /* Slightly darker color for emphasis */
+    }
+    
+    /* Button styling */
+    .btn {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      transition: all 0.2s ease;
+    }
+    
+    /* Card styling */
+    .card {
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+      transition: box-shadow 0.2s ease;
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    /* Professional color adjustments */
+    .bg-blue-500 { background-color: #3b82f6; }
+    .bg-blue-600 { background-color: #2563eb; }
+    .hover\:bg-blue-600:hover { background-color: #2563eb; }
+    .hover\:bg-blue-700:hover { background-color: #1d4ed8; }
 
     /* Styling for show more/less links */
     .show-more-less {
@@ -129,6 +356,26 @@
 
     .show-more-less:hover {
       color: #1D4ED8; /* Darkens color on hover for interactivity */
+      text-decoration: underline;
+    }
+    
+    /* FAQ section styling */
+    .faq-item {
+      background-color: #f9fafb;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: background-color 0.2s ease;
+    }
+    
+    .faq-item:hover {
+      background-color: #f3f4f6;
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
     }
 
     /* Media query for mobile devices (max-width: 768px) */
@@ -211,26 +458,26 @@
     }
   </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50">
   <!-- Navigation section, sticky at the top -->
-  <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
+  <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10 shadow-lg">
     <div class="container mx-auto flex justify-between items-center"> <!-- Centers content and spaces nav items -->
-      <h1 class="text-xl font-bold">Jay Shelley</h1> <!-- Site title or logo -->
+      <h1 class="text-xl font-semibold tracking-wide">Jay Shelley</h1> <!-- Site title or logo -->
       <button class="nav-toggle md:hidden" aria-label="Toggle menu"> <!-- Hamburger toggle, hidden on desktop -->
         <span></span> <!-- First line of hamburger -->
         <span></span> <!-- Second line of hamburger -->
         <span></span> <!-- Third line of hamburger -->
       </button>
       <ul> <!-- Single navigation list, styling controlled by media queries -->
-        <li><a href="#home" class="hover:underline">Home</a></li> <!-- Home link -->
-        <li><a href="#about" class="hover:underline">About</a></li> <!-- About link -->
-        <li><a href="#platform" class="hover:underline">Platform</a></li> <!-- Platform link -->
-        <li><a href="#ideas" class="hover:underline">Ideas</a></li> <!-- Platform link -->        
-        <li><a href="#experience" class="hover:underline">Experience</a></li> <!-- Experience link -->
-        <li><a href="#faq" class="hover:underline">FAQ</a></li> <!-- FAQ link -->
-        <li><a href="#involved" class="hover:underline">Ask</a></li> <!-- Get Involved link -->
-        <li><a href="#expenses" class="hover:underline">Expenses</a></li> <!-- Get Involved link -->
-        <li><a href="#contact" class="hover:underline">Contact</a></li> <!-- Contact link -->
+        <li><a href="#home" class="hover:underline font-medium">Home</a></li> <!-- Home link -->
+        <li><a href="#about" class="hover:underline font-medium">About</a></li> <!-- About link -->
+        <li><a href="#platform" class="hover:underline font-medium">Platform</a></li> <!-- Platform link -->
+        <li><a href="#ideas" class="hover:underline font-medium">Ideas</a></li> <!-- Platform link -->        
+        <li><a href="#experience" class="hover:underline font-medium">Experience</a></li> <!-- Experience link -->
+        <li><a href="#faq" class="hover:underline font-medium">FAQ</a></li> <!-- FAQ link -->
+        <li><a href="#involved" class="hover:underline font-medium">Ask</a></li> <!-- Get Involved link -->
+        <li><a href="#expenses" class="hover:underline font-medium">Expenses</a></li> <!-- Get Involved link -->
+        <li><a href="#contact" class="hover:underline font-medium">Contact</a></li> <!-- Contact link -->
       </ul>
     </div>
   </nav>
@@ -376,17 +623,63 @@ School Board</h2> <!-- Main heading with line breaks -->
   <section id="ideas" class="py-16 bg-white">
     <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
       <h2 class="text-3xl font-bold mb-8">Share Your Ideas</h2> <!-- Section heading -->
-      <!-- <p class="text-lg mb-6">Join our campaign for Timpanogos students!</p> Call to action -->
+      <p class="text-lg mb-6">I want to hear from you! Share your ideas, concerns, and questions about our new school district.</p>
       <!-- Question Submission Form -->
       <div class="mb-8"> <!-- Form container with margin below -->
         <!-- <h3 class="text-xl font-bold mb-4">Submit your own ideas!</h3> Form heading -->
-        <iframe src="https://jayshelley.fider.io" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" class="rounded-lg shadow-md">Loading Fider.io Feedback…</iframe>
+        <!-- Fider.io integration with cookie warning and alternative access -->
+        <div id="fider-container" class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div id="fider-iframe-wrapper">
+            <iframe src="https://jayshelley.fider.io" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" class="rounded-lg" sandbox="allow-same-origin allow-scripts allow-forms allow-popups">Loading Fider.io Feedback…</iframe>
+          </div>
+          <div id="fider-cookie-notice" class="hidden bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-yellow-700">
+                  If you're having trouble accessing the feedback form due to browser cookie restrictions, you can:
+                </p>
+                <div class="mt-2">
+                  <a href="https://jayshelley.fider.io" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-yellow-700 underline hover:text-yellow-600">
+                    Open feedback form in a new tab →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          // Check if iframe loads properly and show alternative if needed
+          window.addEventListener('load', function() {
+            const iframe = document.querySelector('#fider-container iframe');
+            const cookieNotice = document.getElementById('fider-cookie-notice');
+            
+            // Give iframe time to load
+            setTimeout(function() {
+              try {
+                // Try to access iframe content (will fail if blocked)
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                if (!iframeDoc || iframeDoc.body.innerHTML.length < 100) {
+                  cookieNotice.classList.remove('hidden');
+                }
+              } catch (e) {
+                // Cross-origin or cookie blocking error
+                cookieNotice.classList.remove('hidden');
+              }
+            }, 3000);
+          });
+        </script>
       </div>
     </div>
   </section>
 
   <!-- Experience section with detailed lists -->
-  <section id="experience" class="py-16 bg-gray-100">
+  <section id="experience" class="bg-gray-50">
     <div class="container mx-auto px-4"> <!-- Container with padding -->
       <h2 class="text-3xl font-bold text-center mb-8">Experience</h2> <!-- Section heading -->
       <div> <!-- Content wrapper -->
@@ -446,7 +739,7 @@ School Board</h2> <!-- Main heading with line breaks -->
   
 
   <!-- FAQ section with sample questions -->
-  <section id="faq" class="py-16 bg-white">
+  <section id="faq" class="bg-white">
     <div class="container mx-auto px-4"> <!-- Container with padding -->
       <h2 class="text-3xl font-bold text-center mb-8">Voter Questions</h2> <!-- Section heading -->
       <p class="text-lg text-center mb-6">See what others are asking or <a href="#involved" class="hover:underline text-blue-600 hover:text-blue-700">ask your own question</a> below!</p> <!-- Introductory text -->
@@ -813,7 +1106,7 @@ want:</p>
   </section>
 
   <!-- Get Involved section with form and buttons -->
-  <section id="involved" class="py-16 bg-gray-100">
+  <section id="involved" class="bg-gray-50">
     <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
       <h2 class="text-3xl font-bold mb-8">Ask your own question</h2> <!-- Section heading -->
       <!-- <p class="text-lg mb-6">Join our campaign for Timpanogos students!</p> Call to action -->
@@ -826,7 +1119,7 @@ want:</p>
   </section>
 
   <!-- Contact section with contact details -->
-  <section id="expenses" class="py-16 bg-white">
+  <section id="expenses" class="bg-white">
     <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
       <h2 class="text-3xl font-bold mb-8">Campaign Expenses</h2> <!-- Section heading -->
       <p>Do you want a fiscally responsible Board Member?</p>
@@ -866,9 +1159,17 @@ want:</p>
 
 
   <!-- Footer section with credits -->
-  <footer class="bg-blue-600 text-white p-4 text-center">
-    <p>Built FREE by Jay Shelley</p> <!-- Credit for building the site -->
-    <p>FREE Website coding from Grok AI</p>
+  <footer class="bg-gray-900 text-gray-300 py-12 text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6 text-white">Contact Jay Shelley</h2>
+      <p class="mb-3">Phone: <a href="tel:925-231-5196" class="hover:text-white transition-colors">925-231-5196</a></p>
+      <p class="mb-3">Email: <a href="mailto:info@jayshelley.com" class="hover:text-white transition-colors">info@jayshelley.com</a></p>
+      <div class="mt-8 pt-8 border-t border-gray-700">
+        <p class="text-sm text-gray-400">Built FREE by Jay Shelley</p>
+        <p class="text-sm text-gray-400">FREE Website coding from Grok AI</p>
+        <p class="mt-4 text-sm text-gray-400">&copy; 2024 Jay Shelley for School Board. All rights reserved.</p>
+      </div>
+    </div>
     <p>FREE Hosting from GitHub Pages, FREE Chat from Tawk.to</p>
     <p>© 2025 Jay Shelley. All rights reserved.</p> <!-- Copyright notice -->
   </footer>
