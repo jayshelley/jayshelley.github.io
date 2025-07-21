@@ -16,8 +16,29 @@
     gtag('js', new Date());
     gtag('config', 'G-LV6YBHPD87');
   </script>
-  
+  <style class="wp-fonts-local">
+@font-face{font-family:Figtree;font-style:normal;font-weight:300;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_chQF5bwkEU4HTy.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:normal;font-weight:400;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_d_QF5bwkEU4HTy.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:normal;font-weight:500;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_dNQF5bwkEU4HTy.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:normal;font-weight:600;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_ehR15bwkEU4HTy.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:normal;font-weight:700;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_eYR15bwkEU4HTy.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:normal;font-weight:800;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_f_R15bwkEU4HTy.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:normal;font-weight:900;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_fWR15bwkEU4HTy.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:italic;font-weight:300;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xm9-HUzqDCFdgfMm4GnA4aZFrUvtOK3A-gdyEA25WTybO8.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:italic;font-weight:400;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xm9-HUzqDCFdgfMm4GnA4aZFrUvtOK3A7YdyEA25WTybO8.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:italic;font-weight:500;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xm9-HUzqDCFdgfMm4GnA4aZFrUvtOK3A4QdyEA25WTybO8.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:italic;font-weight:600;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xm9-HUzqDCFdgfMm4GnA4aZFrUvtOK3A2gayEA25WTybO8.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:italic;font-weight:700;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xm9-HUzqDCFdgfMm4GnA4aZFrUvtOK3A1EayEA25WTybO8.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:italic;font-weight:800;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xm9-HUzqDCFdgfMm4GnA4aZFrUvtOK3AzYayEA25WTybO8.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:italic;font-weight:900;font-display:fallback;src:url('https://fonts.wp.com/s/figtree/v5/_Xm9-HUzqDCFdgfMm4GnA4aZFrUvtOK3Ax8ayEA25WTybO8.woff2') format('woff2');}
+@font-face{font-family:Figtree;font-style:normal;font-weight:300 700;font-display:fallback;src:url('https://s0.wp.com/wp-content/themes/pub/retrospect/assets/fonts/figtree/Figtree-VariableFont_wght.ttf') format('truetype');}
+@font-face{font-family:Figtree;font-style:italic;font-weight:300 700;font-display:fallback;src:url('https://s0.wp.com/wp-content/themes/pub/retrospect/assets/fonts/figtree/Figtree-Italic-VariableFont_wght.ttf') format('truetype');}
+</style>
   <style>
+    * {
+      font-family: "Figtree", sans-serif; /* Applies Figtree font to all elements */
+      font-weight: 300;
+    }
     /* General styling for the body, setting a custom font */
     body { font-family: 'Roboto', sans-serif; }
 
@@ -112,8 +133,21 @@
     /* Hides expandable content by default */
     .expandable-content {
       display: none; /* Hidden until toggled */
+      font-weight: 300;
+      padding: 16px 0;
     }
 
+     strong {
+      font-weight: 700!important; /* Makes strong text bold */
+     }
+
+     .font-bold {
+       font-weight: 600!important;
+     } /* Ensures bold text is applied */
+
+     .space-y-0 {
+      font-size:18px;
+     }
     /* Shows expandable content when parent has .expanded class */
     .expanded .expandable-content {
       display: block; /* Displays content when expanded */
@@ -125,6 +159,7 @@
       cursor: pointer; /* Indicates clickable element */
       text-decoration: none; /* Removes underline */
       margin-left: 0.125rem; /* Adds small left margin */
+      font-weight: 500; /* Sets font weight for emphasis */
     }
 
     .show-more-less:hover {
@@ -296,7 +331,7 @@ School Board</h2> <!-- Main heading with line breaks -->
     <div class="container mx-auto px-4"> <!-- Container with padding -->
       <h2 class="text-3xl font-bold text-center mb-8">Platform</h2> <!-- Section heading -->
       <div> <!-- Content wrapper -->
-        <div class="about-content"> <!-- Creative solutions -->
+        <div class="about-content mt-4"> <!-- Creative solutions -->
           <p class="text-lg"><strong>CREATIVE SOLUTIONS:</strong> We can keep more schools open, while reducing costs, and incentivize administrators to understand first-hand the issues in our schools. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
           <div class="expandable-content text-lg">
             <p>Most everyone I’ve met agrees that we want:</p>
@@ -313,7 +348,8 @@ School Board</h2> <!-- Main heading with line breaks -->
             </ol>
           <p>Where most people see insurmountable problems, I look for creative solutions.</p>
         </div>
-          <div class="about-content mt-4">
+        </div>
+        <div class="about-content mt-4">
             <!-- Parent involvement -->
             <p class="text-lg">
               <strong>PARENT INVOLVEMENT:</strong> Teachers, students and parents all benefit
@@ -326,6 +362,7 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>It further results in lower test scores and increased costs, which leads to increased class sizes and hiring more teacher aides.</p>
               <p>Students benefit most when they have the support of both teachers and parents. Parents can better provide support when they are able to observe classes and be directly involved both at home and at school. Teachers do best when students and parents are both involved in the classroom and care about what’s best for all.</p>
               <p><strong>When we break the cycle of distrust between educators and parents and work for the good of children, we achieve the best learning outcomes for students, more sanity for teachers, and a fiscally responsible school district.</strong></p>
+            </div>
         </div>
         <div class="about-content mt-4">
           <!-- Fiscal responsibility -->
@@ -368,8 +405,6 @@ School Board</h2> <!-- Main heading with line breaks -->
             <p><strong>We ought to listen to our children to create an environment where they want to learn, rather than obligatory learning.</strong></p>
           </div>
         </div>
-      </div>
-    </div>
   </section>
 
 <!-- Your Ideas -->
