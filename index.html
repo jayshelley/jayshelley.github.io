@@ -723,6 +723,213 @@
       margin-bottom: 0.25rem;
     }
     
+    /* Platform section styling */
+    .platform-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+    
+    .platform-hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .platform-headline {
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--color-text-primary);
+      margin-bottom: 1rem;
+    }
+    
+    .platform-subheadline {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      color: var(--color-text-secondary);
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+    
+    .platform-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .platform-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .platform-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .platform-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .platform-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .platform-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: currentColor;
+      opacity: 0.8;
+    }
+    
+    .platform-card-creative { color: #2563eb; }
+    .platform-card-parents { color: #16a34a; }
+    .platform-card-fiscal { color: #dc2626; }
+    .platform-card-transparency { color: #7c3aed; }
+    .platform-card-learning { color: #ea580c; }
+    
+    .card-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      background: currentColor;
+      opacity: 0.1;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .card-icon svg {
+      width: 2rem;
+      height: 2rem;
+      opacity: 1;
+      position: absolute;
+    }
+    
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .card-subtitle {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    
+    .card-metrics {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .metric {
+      text-align: center;
+    }
+    
+    .metric-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 900;
+      color: currentColor;
+      opacity: 0.8;
+    }
+    
+    .metric-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.25rem;
+    }
+    
+    .card-highlight {
+      background: #f9fafb;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: var(--color-text-secondary);
+      border-left: 3px solid currentColor;
+    }
+    
+    .card-quote {
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      color: var(--color-text-primary);
+      position: relative;
+    }
+    
+    .card-quote span {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.5rem;
+      font-style: normal;
+    }
+    
+    .card-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .card-content p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .benefit-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .benefit-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.75rem;
+      position: relative;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    
+    .benefit-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: currentColor;
+      font-weight: 700;
+      opacity: 0.6;
+    }
+    
+    @media (min-width: 1024px) {
+      .platform-card-creative {
+        grid-column: span 2;
+      }
+    }
+    
     /* FAQ section styling */
     .faq-category {
       margin-bottom: var(--space-3xl);
@@ -1022,29 +1229,52 @@
   </section>
 
 
-<!-- Platform section with expandable content -->
-  <section id="platform" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4"> <!-- Container with padding -->
-      <h2 class="text-4xl font-bold text-center mb-8">My Platform</h2> <!-- Section heading -->
-      <div> <!-- Content wrapper -->
-        <div class="about-content platform-item"> <!-- Creative solutions -->
-          <p class="text-lg text-gray-700"><strong>CREATIVE SOLUTIONS:</strong> We can keep more schools open, while reducing costs, and incentivize administrators to understand first-hand the issues in our schools. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content text-lg">
-            <p>Most everyone I’ve met agrees that we want:</p>
-            <ul class="list-disc pl-5">
-              <li>Our new school district to be fiscally sound and not be constantly increasing taxes</li>
-              <li>Keep our smaller community schools open and reduce school closures</li>
-              <li>Administrators who listen to parents, teachers, and students</li>
+<!-- Platform section with dynamic visual layout -->
+  <section id="platform" class="platform-section">
+    <div class="container mx-auto px-4">
+      <!-- Hero message -->
+      <div class="platform-hero">
+        <h2 class="platform-headline">Bold ideas.<br>Real solutions.</h2>
+        <p class="platform-subheadline">A fresh approach to education that puts students, teachers, and families first.</p>
+      </div>
+      
+      <!-- Dynamic platform grid -->
+      <div class="platform-grid">
+        
+        <!-- Creative Solutions Card -->
+        <div class="platform-card platform-card-creative">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Creative Solutions</h3>
+          <p class="card-subtitle">Keep schools open while reducing costs</p>
+          
+          <div class="card-metrics">
+            <div class="metric">
+              <span class="metric-number">3</span>
+              <span class="metric-label">Schools saved from closure</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">⅓</span>
+              <span class="metric-label">Admin costs reduced</span>
+            </div>
+          </div>
+          
+          <div class="card-content">
+            <h4>The Innovation:</h4>
+            <p>Place district administrators in underutilized school buildings instead of expensive separate offices.</p>
+            <ul class="benefit-list">
+              <li>Use existing space efficiently</li>
+              <li>Keep administrators connected to classrooms</li>
+              <li>Support schools with declining enrollment</li>
+              <li>Save taxpayer money</li>
             </ul>
-          <p>Because we won’t have an administrative office after the split, we could put ⅓ of the administrative offices in some unused rooms in a school that has had a declining student population, and do that at three different schools. This would:</p>  
-            <ol class="list-decimal pl-5">
-              <li>Utilize the buildings we already have, and eliminate the problem of where should we house the administrators</li>
-              <li>Help keep those in administration directly in touch with what’s going on in the schools rather than moving them to an office away from what’s happening in the classrooms, which helps them see what's happening daily</li>
-              <li>Saves our new district the cost associated with building offices and prevents tax increases.</li>
-            </ol>
-          <p>Where most people see insurmountable problems, I look for creative solutions.</p>
+          </div>
         </div>
-          <div class="about-content platform-item mt-4">
+        <!-- Parent Involvement Card -->
+        <div class="platform-card platform-card-parents">
             <!-- Parent involvement -->
             <p class="text-lg text-gray-700">
               <strong>PARENT INVOLVEMENT:</strong> Teachers, students and parents all benefit
