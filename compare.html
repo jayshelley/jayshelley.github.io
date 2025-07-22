@@ -3,10 +3,10 @@
 <head>
   <!-- Setting the document type to HTML5 and language to English -->
   <meta charset="UTF-8"> <!-- Defines character encoding as UTF-8 for broad character support -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design -->
-  <title>Jay Shelley for Timpanogos School Board</title> <!-- Page title -->
-  <meta name="description" content="Jay Shelley, candidate for Timpanogos School Board, committed to building stronger schools in Utah."> <!-- SEO description -->
-  <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS via CDN -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design by setting viewport to device width and initial zoom level -->
+  <title>Jay Shelley for Timpanogos School Board</title> <!-- Sets the page title displayed in the browser tab -->
+  <meta name="description" content="Jay Shelley, candidate for Timpanogos School Board, committed to building stronger schools in Utah."> <!-- Provides a description for search engines -->
+  <script src="https://cdn.tailwindcss.com"></script> <!-- Imports Tailwind CSS for styling via CDN -->
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV6YBHPD87"></script>
@@ -18,287 +18,381 @@
   </script>
   
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-    }
+    /* General styling for the body, setting a custom font */
+    body { font-family: 'Roboto', sans-serif; }
 
-    h1, h2, h3 {
-      font-weight: 700;
-    }
-    h2 {
-      font-size: 1.875rem; /* 30px */
-      margin-bottom: 1.25rem; /* 20px */
-    }
-    h3 {
-      font-size: 1.25rem; /* 20px */
-      margin-bottom: 0.75rem; /* 12px */
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-    .about-content p, .expandable-content p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #0073aa;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #005177;
-      text-decoration: underline;
-    }
-
+    /* Hero section styling, creating a full-width background with content overlay */
     .hero {
-      background: none;
-      min-height: 250px;
-      position: relative;
-      overflow: hidden;
-      padding-top: 3rem; /* Adjusted from 64px */
+      background: none; /* No background color, relying on image */
+      min-height: 250px; /* Minimum height for the hero section */
+      position: relative; /* Relative positioning for absolute child elements */
+      overflow: hidden; /* Prevents content overflow */
+      padding-top: 64px; /* Adds space at the top for navigation overlap */
     }
 
+    /* Styles for the background image within the hero section */
     .hero .absolute {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image: url('images/profile-image-800.webp');
-      background-size: cover;
-      background-position: right;
-      background-repeat: no-repeat;
-      z-index: 0;
+      position: absolute; /* Positions the background image absolutely within .hero */
+      top: 0; left: 0; /* Aligns to the top-left corner */
+      width: 100%; height: 100%; /* Covers the entire hero area */
+      background-image: url('images/profile-image.jpg'); /* Background image source */
+      background-size: cover; /* Scales image to cover the area */
+      background-position: right; /* Aligns image to the right */
+      background-repeat: no-repeat; /* Prevents image tiling */
+      z-index: 0; /* Places behind other content */
     }
 
-    .hero .relative {
-      position: relative;
-      z-index: 1;
+    /* Styles for content overlaying the hero background */
+  .hero .relative {
+      position: relative; /* Ensures content stays above background */
+      z-index: 1; /* Places above the background image */
     }
 
-    .hero img {
-      object-fit: cover;
-      border: 4px solid white;
-    }
+    /* Styling for images within the hero, ensuring proper fit and border */
+  .hero img {
+      object-fit: cover; /* Ensures image fits within its container */
+      border: 4px solid white; /* Adds a white border around images */
+  }
 
+    /* Styling for the family image, floating it left with margin */
+  .family-image {
+      float: left; /* Positions image to the left of text */
+      margin-right: 2rem; /* Adds space between image and text */
+  }
+
+    /* Styling for the text content within the hero */
+  .text-content {
+      text-align: center; /* Centers the text */
+      margin-left: auto; margin-right: auto; /* Centers the block horizontally */
+      max-width: 600px; /* Limits text width for readability */
+  }
+
+/* Media query for screens up to 1024px */
+@media (max-width: 1024px) {
+  .family-image {
+    display: none; /* Hides the family image on smaller screens */
+  }
+  .text-content {
+    margin-left: 0; /* Removes left margin */
+    margin-right: 0; /* Removes right margin */
+  }
+}
+
+    /* Media query for larger screens (1024px and up) */
+  @media (min-width: 1024px) {
+    .hero .absolute {
+        background-position: 80% center; /* Adjusts image position for larger screens */
+    }
     .family-image {
-      flex-shrink: 0;
-      margin-right: 2rem;
+        margin-right: 2rem; /* Maintains right margin */
     }
-
     .text-content {
-      text-align: center;
-      max-width: 600px;
+      margin-left: 0; /* Removes left margin for alignment */
     }
+    /* do not accept the image width 100px */
+  }
 
-    section {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
+    /* Navigation bar styling, keeping it sticky at the top */
+  nav {
+      z-index: 10; /* Ensures nav stays above other content */
+      position: sticky; /* Sticks nav to the top on scroll */
+      top: 0; /* Aligns to the top of the viewport */
+  }
 
-    .space-y-0 {
-      margin-bottom: 0.625rem; /* 10px */
-    }
+    /* Aligns about content to the left */
+  .about-content {
+      text-align: left; /* Left-aligns text in about sections */
+  }
 
-    nav {
-      z-index: 10;
-      position: sticky;
-      top: 0;
-    }
-
-    .about-content {
-      text-align: left;
-    }
-
+    /* Styling for the chat live button to indicate interactivity */
     .chat-live-button {
-      cursor: pointer;
+      cursor: pointer; /* Changes cursor to pointer on hover */
     }
 
+    /* Hides expandable content by default */
     .expandable-content {
-      display: none;
+      display: none; /* Hidden until toggled */
     }
 
+    /* Shows expandable content when parent has .expanded class */
     .expanded .expandable-content {
-      display: block;
+      display: block; /* Displays content when expanded */
     }
 
+    /* Styling for show more/less links */
     .show-more-less {
-      color: #0073aa;
-      cursor: pointer;
-      text-decoration: none;
-      margin-left: 0.125rem;
+      color: #2563EB; /* Sets link color */
+      cursor: pointer; /* Indicates clickable element */
+      text-decoration: none; /* Removes underline */
+      margin-left: 0.125rem; /* Adds small left margin */
     }
 
     .show-more-less:hover {
-      color: #005177;
+      color: #1D4ED8; /* Darkens color on hover for interactivity */
     }
 
-    @media (max-width: 1024px) {
-      .family-image {
-        display: none;
-      }
-      .text-content {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .hero .absolute {
-        background-position: 80% center;
-      }
-    }
-
+    /* Media query for mobile devices (max-width: 768px) */
     @media (max-width: 768px) {
       .hero {
-        min-height: 200px;
+        min-height: 200px; /* Reduces hero height on mobile */
       }
-      .family-image {
-        display: none;
-      }
-      .text-content {
-        margin-left: 0;
-        margin-right: 0;
+    .family-image {
+        display: none; /* Hides family image on mobile */
+    }
+    .text-content {
+        margin-left: 0; /* Removes left margin */
+        margin-right: 0; /* Removes right margin */
       }
       nav ul {
-        display: none;
+        display: none; /* Hides default nav list on mobile */
       }
       nav ul.active {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        position: absolute;
-        top: 100%;
-        left: 0; right: 0;
-        background-color: #2563EB;
-        padding: 1rem;
+        display: flex; /* Shows navigation list when active */
+        flex-direction: column; /* Stacks links vertically */
+        gap: 1rem; /* Adds space between list items */
+        position: absolute; /* Positions menu absolutely below nav */
+        top: 100%; /* Places menu below nav bar */
+        left: 0; right: 0; /* Full width of container */
+        background-color: #2563EB; /* Matches nav background */
+        padding: 1rem; /* Adds padding inside menu */
       }
       .nav-toggle {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        z-index: 20;
+        display: block; /* Shows hamburger toggle on mobile */
+        background: none; /* No background */
+        border: none; /* No border */
+        cursor: pointer; /* Indicates clickable */
+        padding: 0.5rem; /* Adds padding */
+        z-index: 20; /* Ensures above other elements */
       }
       .nav-toggle span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 5px 0;
-        transition: all 0.3s ease;
+        display: block; /* Displays each span as a block */
+        width: 25px; /* Width of hamburger lines */
+        height: 3px; /* Height of hamburger lines */
+        background-color: white; /* Line color */
+        margin: 5px 0; /* Vertical spacing between lines */
+        transition: all 0.3s ease; /* Smooth transition for animation */
       }
       .nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(5px, 5px); /* Rotates first line for X */
       }
       .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
+        opacity: 0; /* Hides middle line */
       }
       .nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
+        transform: rotate(-45deg) translate(7px, -7px); /* Rotates last line for X */
       }
     }
 
+    /* Media query for desktop (min-width: 769px) */
     @media (min-width: 769px) {
       .nav-toggle {
-        display: none;
+        display: none; /* Hides hamburger toggle on desktop */
       }
       nav ul {
-        display: flex;
-        gap: 1rem;
+        display: flex; /* Show default ul on desktop */
+        gap: 1rem; /* Replaces space-x-4 with gap for consistency */
       }
     }
 
+    /* Media query for smaller mobile devices (max-width: 480px) */
     @media (max-width: 480px) {
       .hero {
-        min-height: 150px;
+        min-height: 150px; /* Further reduces hero height */
       }
-      h2 {
-        font-size: 1.5rem; /* 24px */
+      .hero .text-4xl {
+        font-size: 2rem; /* Reduces heading size */
       }
-      .hero h2 {
-        font-size: 1.875rem; /* 30px */
-      }
-      p, .about-content p, .expandable-content p {
-        font-size: 0.875rem; /* 14px */
+      .hero .text-lg {
+        font-size: 1rem; /* Reduces paragraph size */
+    }
+    .family-image {
+        display: none; /* Hide family image on smaller mobile */
       }
     }
   </style>
 </head>
 <body class="bg-gray-100">
+  <!-- Navigation section, sticky at the top -->
   <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">Jay Shelley</h1>
-      <button class="nav-toggle md:hidden" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="container mx-auto flex justify-between items-center"> <!-- Centers content and spaces nav items -->
+      <h1 class="text-xl font-bold">Jay Shelley</h1> <!-- Site title or logo -->
+      <button class="nav-toggle md:hidden" aria-label="Toggle menu"> <!-- Hamburger toggle, hidden on desktop -->
+        <span></span> <!-- First line of hamburger -->
+        <span></span> <!-- Second line of hamburger -->
+        <span></span> <!-- Third line of hamburger -->
       </button>
-      <ul>
-        <li><a href="#home" class="hover:underline">Home</a></li>
-        <li><a href="#about" class="hover:underline">About</a></li>
-        <li><a href="#experience" class="hover:underline">Experience</a></li>
-        <li><a href="#platform" class="hover:underline">Platform</a></li>
-        <li><a href="#faq" class="hover:underline">FAQ</a></li>
-        <li><a href="#involved" class="hover:underline">Ask</a></li>
-        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      <ul> <!-- Single navigation list, styling controlled by media queries -->
+        <li><a href="#home" class="hover:underline">Home</a></li> <!-- Home link -->
+        <li><a href="#about" class="hover:underline">About</a></li> <!-- About link -->
+        <li><a href="#platform" class="hover:underline">Platform</a></li> <!-- Platform link -->
+        <li><a href="#ideas" class="hover:underline">Ideas</a></li> <!-- Platform link -->        
+        <li><a href="#experience" class="hover:underline">Experience</a></li> <!-- Experience link -->
+        <li><a href="#faq" class="hover:underline">FAQ</a></li> <!-- FAQ link -->
+        <li><a href="#involved" class="hover:underline">Ask</a></li> <!-- Get Involved link -->
+        <li><a href="#expenses" class="hover:underline">Expenses</a></li> <!-- Get Involved link -->
+        <li><a href="#contact" class="hover:underline">Contact</a></li> <!-- Contact link -->
       </ul>
     </div>
   </nav>
 
-  <section id="home" class="hero relative text-white py-12">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image-800.webp');"></div>
-    <div class="container mx-auto relative z-1 px-4 pt-12 flex items-center justify-center">
-      <div class="flex items-center max-w-4xl w-full">
-        <div class="family-image hidden md:block mr-8">
-          <img src="images/family-image-800.webp" 
-               srcset="images/family-image-400.webp 400w, images/family-image-800.webp 800w" 
-               sizes="(max-width: 600px) 100vw, 50vw" 
-               loading="lazy" 
-               alt="My family" 
-               class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover">
-        </div>
-        <div class="text-content text-center flex-1">
-          <h2 class="text-2.25rem md:text-5xl font-bold mb-6 whitespace-pre-wrap">Jay Shelley<br>for<br>Timpanogos<br>School Board</h2>
-          <a href="#involved" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Ask Me Anything</a>
-        </div>
+  <!-- Hero section with background image and main content -->
+  <section id="home" class="hero relative text-white py-20">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div> <!-- Background image covering the section -->
+    <div class="container mx-auto relative z-1 px-4 pt-16"> <!-- Container for hero content -->
+      <div class="family-image float-left mr-8"> <!-- Family image floated left -->
+        <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover"> <!-- Family photo -->
+    </div>
+      <div class="text-content text-center mx-auto max-w-md"> <!-- Centered text content -->
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
+for
+Timpanogos
+School Board</h2> <!-- Main heading with line breaks -->
+        <!-- <p class="text-lg md:text-xl mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p> --> <!-- Commented out subheading -->
+        <a href="#involved" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Ask Me Anything</a> <!-- Call-to-action button -->
       </div>
+      <div class="w-32 md:w-48"></div> <!-- Spacer to balance layout -->
     </div>
   </section>
 
+
+  <!-- About section with expandable content -->
   <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-5">About</h2>
-      <div class="flex flex-col items-center">
-        <div>
-          <div class="about-content">
-            <p class="text-base">I am a father of 5 with kids in both public and private schools, so I’ve seen the best of both worlds and seen what we can improve. I have a Masters of Accounting from BYU and studied entrepreneurship. I’ve spent my career in public accounting, four technology startups, and investing in public and private companies, so I care not only about being fiscally responsible, but also about the value we receive for money spent. As PTA Treasurer at Cascade Elementary I implemented changes that have been organically adopted throughout our PTA council and even into Utah State PTA.</p>
-            <div class="expandable-content"><p class="text-base">Check back. More details coming soon.</p></div>
+    <div class="container mx-auto px-4"> <!-- Container with padding -->
+      <h2 class="text-3xl font-bold text-center mb-8">About</h2> <!-- Section heading -->
+      <div class="flex flex-col items-center"> <!-- Flex column for centering -->
+        <div> <!-- Content wrapper -->
+          <div class="about-content"> <!-- First about paragraph -->
+          <p class="text-lg">I am a father of 5 with kids in both public and private schools, so I’ve seen the best of both worlds and seen what we can improve. I have a Masters of Accounting from BYU and studied entrepreneurship. I’ve spent my career in public accounting, four technology startups, and investing in public and private companies, so I care not only about being fiscally responsible, but also about the value we receive for money spent. As PTA Treasurer at Cascade Elementary I implemented changes that have been organically adopted throughout our PTA council and even into Utah State PTA.
+            <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a> -->
+          </p>
+            <div class="expandable-content"> <!-- Hidden additional content -->
+            <p class="text-lg">Check back. More details coming soon.</p>
+            </div>
           </div>
-          <div class="about-content mt-4">
-            <p class="text-base">I want to help negotiate the split up of Alpine’s assets, set up our district with more transparency and accountability, and encourage increased parent-teacher involvement. I will work to implement creative solutions that will incentivize administrators to be in touch with what’s happening in the classrooms and reduce school closures, while saving financially in a significant way. Sound impossible? Let’s talk.</p>
-            <div class="expandable-content"><p class="text-base">Check back. More details coming soon.</p></div>
+          <div class="about-content mt-4"> <!-- Second about paragraph -->
+            <p class="text-lg">I want to help negotiate the split up of Alpine’s assets, set up our district with more transparency and accountability, and encourage increased parent-teacher involvement. I will work to implement creative solutions that will incentivize administrators to be in touch with what’s happening in the classrooms and reduce school closures, while saving financially in a significant way. Sound impossible? Let’s talk.
+              <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a> -->
+            </p>
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p class="text-lg">Check back. More details coming soon.</p>
+            </div>
           </div>
-          <div class="about-content mt-4">
-            <p class="text-base">Most importantly, our children need to like school and thrive academically. We have a huge opportunity to improve the educational lives of our children, let’s not squander it! I'd love to talk with you! Please text or call me at 925-231-5196.</p>
-            <div class="expandable-content"><p class="text-base">Check back. More details coming soon.</p></div>
+          <div class="about-content mt-4"> <!-- Third about paragraph -->
+          <p class="text-lg">Most importantly, our children need to like school and thrive academically. We have a huge opportunity to improve the educational lives of our children, let’s not squander it! I'd love to talk with you! Please text or call me at 925-231-5196.
+            <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a> -->
+          </p>
+            <div class="expandable-content"> <!-- Hidden additional content -->
+            <p class="text-lg">Check back. More details coming soon.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+
+<!-- Platform section with expandable content -->
+  <section id="platform" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4"> <!-- Container with padding -->
+      <h2 class="text-3xl font-bold text-center mb-8">Platform</h2> <!-- Section heading -->
+      <div> <!-- Content wrapper -->
+        <div class="about-content mt-4"> <!-- Creative solutions -->
+          <p class="text-lg"><strong>CREATIVE SOLUTIONS:</strong> We can keep more schools open, while reducing costs, and incentivize administrators to understand first-hand the issues in our schools. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
+          <div class="expandable-content text-lg">
+            <p>Most everyone I’ve met agrees that we want:</p>
+            <ul class="list-disc pl-5">
+              <li>Our new school district to be fiscally sound and not be constantly increasing taxes</li>
+              <li>Keep our smaller community schools open and reduce school closures</li>
+              <li>Administrators who listen to parents, teachers, and students</li>
+            </ul>
+          <p>Because we won’t have an administrative office after the split, we could put ⅓ of the administrative offices in some unused rooms in a school that has had a declining student population, and do that at three different schools. This would:</p>  
+            <ol class="list-decimal pl-5">
+              <li>Utilize the buildings we already have, and eliminate the problem of where should we house the administrators</li>
+              <li>Help keep those in administration directly in touch with what’s going on in the schools rather than moving them to an office away from what’s happening in the classrooms, which helps them see what's happening daily</li>
+              <li>Saves our new district the cost associated with building offices and prevents tax increases.</li>
+            </ol>
+          <p>Where most people see insurmountable problems, I look for creative solutions.</p>
+        </div>
+          <div class="about-content mt-4">
+            <!-- Parent involvement -->
+            <p class="text-lg">
+              <strong>PARENT INVOLVEMENT:</strong> Teachers, students and parents all benefit
+              when we work together.
+              <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
+            </p>
+            <div class="expandable-content text-lg">
+              <!-- Hidden additional content -->
+              <p>Unfortunately, there’s been a trend in schools of parents becoming critical and scrutinizing teachers, and teachers requesting to have less parental involvement in classrooms. This results in parents not understanding how to best help their children at home, and not having firsthand experience seeing the incredibly difficult job teachers do.</p>
+              <p>It further results in lower test scores and increased costs, which leads to increased class sizes and hiring more teacher aides.</p>
+              <p>Students benefit most when they have the support of both teachers and parents. Parents can better provide support when they are able to observe classes and be directly involved both at home and at school. Teachers do best when students and parents are both involved in the classroom and care about what’s best for all.</p>
+              <p><strong>When we break the cycle of distrust between educators and parents and work for the good of children, we achieve the best learning outcomes for students, more sanity for teachers, and a fiscally responsible school district.</strong></p>
+        </div>
+        <div class="about-content mt-4">
+          <!-- Fiscal responsibility -->
+          <p class="text-lg">
+            <strong>FISCAL RESPONSIBILITY:</strong> Cost of education is rising, while learning outcomes have been diminishing.
+            <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
+          </p>
+          <div class="expandable-content text-lg">
+            <!-- Hidden additional content -->
+            <p>Because Alpine is one of the largest school districts in the country there were financial benefits of scale for administrative costs. When we split we will lose the administrative financial benefits of scale, and will need to be cognizant to operate efficiently to prevent expenses that directly impact students’ education.</p>
+            <p>We have three important decisions to make that will directly impact the trajectory of financial responsibility in our new district:</p>
+            <ol class="list-decimal pl-5">
+                <li>
+                  Negotiating the division of ASD assets.
+                </li>
+                <li>
+                  Setting in place administrative policies that will shape our district for years to come.
+                </li>
+                <li>
+                  Hiring a financially responsible Superintendent and Business Administrator.
+                </li>
+              </ol>
+              <p>These decisions will determine taxes for all our residents, both those with children attending school, and those who don’t have children in public schools.</p>
+              <p><strong>In our new district we can achieve high learning outcomes and do it cost effectively, but it’s not going to happen unless we are deliberate and think creatively about both.</strong></p>
+          </div>
+        </div>
+        <div class="about-content mt-4"> <!-- Transparency -->
+          <p class="text-lg"><strong>TRANSPARENCY:</strong> What results are we getting for the taxpayer money we’re spending? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
+          <div class="expandable-content text-lg"> <!-- Hidden additional content -->
+            <p>Principals know. For example, our children are in the Chinese immersion program and I’ve asked the Junior High Principal for details regarding students’ how many students stick with the program after elementary school, and about students’ performance on the AP Chinese Exam. The principal shared a large amount of data with me, which was very effective in helping our children determine how they wanted to proceed in the program. Additionally our Principal knew which teachers were able to take a class of struggling post-covid students and meet them where they were – at about half a grade behind – and helped them get half a grade ahead, all within a single year. They know the educational outcomes so why don’t parents?</p>
+            <p>We need to recognize and reward teachers who are this amazing, and we ought to be much more transparent with how we are doing at educating.</p>
+            <p>I believe we have a responsibility to be transparent not only financially, but also with the results achieved, and we should recognize teachers who are so amazing. <strong>When our new district is established on a foundation of transparency and driven to help students achieve, we’ll naturally attract the best teachers and administrators who are happy to be recognized for their amazing contributions.</strong></p>
+          </div>
+        </div>
+        <div class="about-content mt-4"> <!-- Excitement for learning -->
+          <p class="text-lg"><strong>EXCITEMENT FOR LEARNING:</strong> How excited are our children to learn? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
+          <div class="expandable-content text-lg"> <!-- Hidden additional content -->
+            <p>Our children are our future -  they will be our doctors and lawyers, our electricians and plumbers. Their education and excitement for learning is critical to our collective future. Unfortunately, when I ask children what their favorite subjects are in school it’s uncommon that I find anyone who mentions a core academic subject. All too frequently I hear jokes or comments like: “Schools are made of bricks, and prisons are made of bricks” (followed by a look that says, don’t you see they’re the same) - what a shame! We can, and must, do better for our children.</p>
+            <p>I believe in a future where children are excited to attend school, and excited to learn! This isn’t rocket science. The surveys Alpine has done through the years need to be more than lip-service and fake listening. Students have amazing ideas and contribute to the direction of our schools, but currently ASD has primarily listened only to the State and those who sue. We haven’t even gotten to really collaborating with parents in an effective way, and really we should be going past just parents and also involve the students in a much larger way than I’ve ever seen in public education.</p>
+            <p><strong>We ought to listen to our children to create an environment where they want to learn, rather than obligatory learning.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Your Ideas -->
+  <section id="ideas" class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
+      <h2 class="text-3xl font-bold mb-8">Share Your Ideas</h2> <!-- Section heading -->
+      <!-- <p class="text-lg mb-6">Join our campaign for Timpanogos students!</p> Call to action -->
+      <!-- Question Submission Form -->
+      <div class="mb-8"> <!-- Form container with margin below -->
+        <!-- <h3 class="text-xl font-bold mb-4">Submit your own ideas!</h3> Form heading -->
+        <iframe src="https://jayshelley.fider.io" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" class="rounded-lg shadow-md">Loading Fider.io Feedback…</iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience section with detailed lists -->
   <section id="experience" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-5">Experience</h2>
-      <div>
-        <div class="about-content">
-          <h3 class="text-lg font-semibold mb-2">Public School Volunteer Experience</h3>
-          <ul class="list-disc pl-5 text-base">
+    <div class="container mx-auto px-4"> <!-- Container with padding -->
+      <h2 class="text-3xl font-bold text-center mb-8">Experience</h2> <!-- Section heading -->
+      <div> <!-- Content wrapper -->
+        <div class="about-content"> <!-- Public school experience -->
+          <h3 class="text-lg font-semibold mb-2">Public School Volunteer Experience</h3> <!-- Subsection heading -->
+          <ul class="list-disc pl-5 text-lg"> <!-- Bulleted list with padding -->
             <li>Watch DOGS</li>
             <li>School Parties</li>
             <li>PTA Treasurer</li>
@@ -309,507 +403,537 @@
             <li>Science/STEM Fair</li>
             <li>Clothing Drive Fundraising</li>
             <li>Spirit Wear sales and printing</li>
-            <li>Worked with Betty Shaw and Karen Beebe at UTA PTA to get Venmo accepted, eliminate fees from donations through PayPal’s Giving Fund, get free Zettle card readers, and let them know about how to lower insurance costs and maximize funds to teachers through DonorsChoose</li>
+            <li>Worked with Betty Shaw and Karen Beebe at Utah PTA to get Venmo accepted, eliminate fees from donations through PayPal’s Giving Fund, get free Zettle card readers, and let them know about how to lower insurance costs and maximize funds to teachers through DonorsChoose</li>
           </ul>
+          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div> -->
         </div>
-        <div class="about-content mt-4">
-          <h3 class="text-lg font-semibold mb-2">Private School Volunteer Experience</h3>
-          <ul class="list-disc pl-5 text-base">
+        <div class="about-content mt-4"> <!-- Private school experience -->
+          <h3 class="text-lg font-semibold mb-2">Private School Volunteer Experience</h3> <!-- Subsection heading -->
+          <ul class="list-disc pl-5 text-lg"> <!-- Bulleted list with padding -->
             <li>Field Trip Chaperone</li>
-            <li>Recruiting Track Coach</li>
-            <li>Chaperoning for 2 week Choir Tour</li>
+            <li>Recruited Track Coach</li>
+            <li>Chaperoned for 2 week Choir Tour</li>
             <li>Mock Trial Assistant Coach</li>
-            <li>Advocating for Chinese Classes in Middle School and receiving approval from administration</li>
+            <li>Advocated for Chinese Classes in Middle School and receiving approval from administration</li>
           </ul>
+          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div> -->
         </div>
-        <div class="about-content mt-4">
-          <h3 class="text-lg font-semibold mb-2">Relevant Degrees and Experience</h3>
-          <ul class="list-disc pl-5 text-base">
+        <div class="about-content mt-4"> <!-- Degrees and work experience -->
+          <h3 class="text-lg font-semibold mb-2">Relevant Degrees and Experience</h3> <!-- Subsection heading -->
+          <ul class="list-disc pl-5 text-lg"> <!-- Bulleted list with padding -->
             <li>Master of Accounting from Brigham Young University</li>
             <li>Took all entrepreneurship classes offered in undergrad and MBA programs</li>
             <li>Managed software development teams in four startups (our new district is in essence a new startup)</li>
-            <li>State and County Delegate twice, and Precinct Vice Chair once</li>
+            <li>State and County Delegate twice, and Pre-cinct Vice Chair once</li>
             <li>Investing in Public and Private Companies</li>
             <li>Worked with ASD’s Paul Lewis to improve parent statements on bullying and technology</li>
-            <li>Thoroughly evaluated Prop 2, including 30 minutes asking Todd Peterson questions on stage, and spending 3 hours in a 1:1 deep dive with Jason Sundberg on school finances to make an informed decision during Prop 2.</li>
+            <li>Thoroughly evalauated Prop 2, including 30 minutes asking Todd Peterson questions on stage, and spending 3 hours in a 1:1 deep dive with Jason Sundberg on school finances to make an informed decision during Prop 2.</li>
           </ul>
+          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
+          <div class="expandable-content">
+            <p class="text-lg">Check back. More details coming soon.</p>
+          </div> -->
         </div>
       </div>
     </div>
   </section>
+  
 
-  <section id="platform" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-5">Platform</h2>
-      <div>
-        <div class="about-content">
-          <p class="text-base"><strong>CREATIVE SOLUTIONS:</strong> We can keep more schools open, while reducing costs, and incentivize administrators to understand first-hand the issues in our schools. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">Most everyone I’ve met agrees that we want:</p>
-            <ul class="list-disc pl-5 text-base">
-              <li>Our new school district to be fiscally sound and not be constantly increasing taxes</li>
-              <li>Keep our smaller community schools open and reduce school closures</li>
-              <li>Administrators who listen to parents, teachers, and students</li>
-            </ul>
-            <p class="text-base">Because we won’t have an administrative office after the split, we could put ⅓ of the administrative offices in some unused rooms in a school that has had a declining student population, and do that at three different schools. This would:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>Utilize the buildings we already have, and eliminate the problem of where should we house the administrators</li>
-              <li>Help keep those in administration directly in touch with what’s going on in the schools rather than moving them to an office away from what’s happening in the classrooms, which helps them see what's happening daily</li>
-              <li>Saves our new district the cost associated with building offices and prevents tax increases.</li>
-            </ol>
-            <p class="text-base">Where most people see insurmountable problems, I look for creative solutions.</p>
-          </div>
+  <!-- FAQ section with sample questions -->
+  <section id="faq" class="py-16 bg-white">
+    <div class="container mx-auto px-4"> <!-- Container with padding -->
+      <h2 class="text-3xl font-bold text-center mb-8">Voter Questions</h2> <!-- Section heading -->
+      <p class="text-lg text-center mb-6">See what others are asking or <a href="#involved" class="hover:underline text-blue-600 hover:text-blue-700">ask your own question</a> below!</p> <!-- Introductory text -->
+      <div class="space-y-0"> <!-- Container for FAQ items with vertical spacing -->
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: Why are you running for School Board? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I’m running for School Board because PTA members, from my time as PTA Treasurer, urged me to step up because they believe I could make a meaningful impact. Before registering, I reached out to two of the three other candidates and asked, “What are two things you think Alpine School District did well that we should keep, and two things we can improve as we start our new district?”</p> <!-- Answer -->
+              <p>Their responses left me underwhelmed—most candidates seemed uninterested in real change or seizing the incredible opportunity we have starting a new district. That confirmed my decision to run. If the community wants me to help shape our new district, I’m happy to serve. However, if voters prefer the status quo, I have other things I’d love to do with my time and our family feels like we’re navigating schools well for our children.</p>
+            </div>
         </div>
-        <div class="about-content mt-4">
-          <p class="text-base"><strong>PARENT INVOLVEMENT:</strong> Teachers, students and parents all benefit when we work together. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">Unfortunately, there’s been a trend in schools of parents becoming critical and scrutinizing teachers, and teachers requesting to have less parental involvement in classrooms. This results in parents not understanding how to best help their children at home, and not having firsthand experience seeing the incredibly difficult job teachers do.</p>
-            <p class="text-base">It further results in lower test scores and increased costs, which leads to increased class sizes and hiring more teacher aides.</p>
-            <p class="text-base">Students benefit most when they have the support of both teachers and parents. Parents can better provide support when they are able to observe classes and be directly involved both at home and at school. Teachers do best when students and parents are both involved in the classroom and care about what’s best for all.</p>
-            <p class="text-base"><strong>When we break the cycle of distrust between educators and parents and work for the good of children, we achieve the best learning outcomes for students, more sanity for teachers, and a fiscally responsible school district.</strong></p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What is your background in education? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: We five children in both public and private schools, so I’ve become deeply invested in education, because its critical to their future. Over the years, my involvement has grown through volunteer roles, allowing me to contribute meaningfully to our schools and community.</p> <!-- Answer -->
+              <p>Public School Volunteer Experience:</p>
+              <ul class="list-disc pl-5">
+                <li>PTA Treasurer</li>
+                <li>Watch DOGS volunteer</li>
+                <li>School party organizer</li>
+                <li>Bi-weekly reading assessments with 5th graders</li>
+                <li>Battle of the Books Coordinator</li>
+                <li>Head of PTA Nominating Committee</li>
+                <li>Led Teacher Grants</li>
+                <li>Science/STEM Fair volunteer</li>
+                <li>Organized clothing drive fundraiser</li>
+                <li>Coordinated Spirit Wear sales and printing</li>
+                <li>Collaborated with Betty Shaw and Karen Beebe at UTA PTA to enable Venmo payments, secure free Zettle card readers, eliminate PayPal Giving Fund donation fees, reduce insurance costs, and maximize teacher funding through DonorsChoose.</li>
+                <li>Worked with ASD’s Paul Lewis to enhance parent statements on bullying and technology</li>
+              </ul>
+              <p>Private School Volunteer Experience:</p>
+                <ul class="list-disc pl-5">
+                  <li>Field trip chaperone</li>
+                  <li>Recruiting track coach</li>
+                  <li>Chaperone for a two-week choir tour</li>
+                  <li>Advocate for Chinese language classes in middle school</li>
+                  <li>Mock Trial assistant coach</li>
+                </ul>
+              <p>These experiences have helped me have a deep understanding of our schools’ needs and a passion for fostering collaboration among parents, teachers, and students to create the best possible educational environment.</p>
+            </div>
         </div>
-        <div class="about-content mt-4">
-          <p class="text-base"><strong>FISCAL RESPONSIBILITY:</strong> Cost of education is rising, while learning outcomes have been diminishing. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">Because Alpine is one of the largest school districts in the country there were financial benefits of scale for administrative costs. When we split we will lose the administrative financial benefits of scale, and will need to be cognizant to operate efficiently to prevent expenses that directly impact students’ education.</p>
-            <p class="text-base">We have three important decisions to make that will directly impact the trajectory of financial responsibility in our new district:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>Negotiating the division of ASD assets.</li>
-              <li>Setting in place administrative policies that will shape our district for years to come.</li>
-              <li>Hiring a financially responsible Superintendent and Business Administrator.</li>
-            </ol>
-            <p class="text-base">These decisions will determine taxes for all our residents, both those with children attending school, and those who don’t have children in public schools.</p>
-            <p class="text-base"><strong>In our new district we can achieve high learning outcomes and do it cost effectively, but it’s not going to happen unless we are deliberate and think creatively about both.</strong></p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What differentiates you from the other candidates and/or board members? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: </p>
+              <ol class="list-disc pl-5">
+                <li>Masters in Accounting and experience finding 100k missing during an audit, as well as collaborating to catching a financial fraud.</li>
+                <li>Public & Private education school experiences. Half of our children are in public school, and half are in private school. I've been surprised to realize that the things that makes private school compelling for most people have nothing to do with finances, it has everything to do with policies and mission; these are absolutely things public school can do but public schools need to value doing what's best for students as if their funding depends on it. Currently far too much of what I see in public schools are attitudes and actions nearly identical to when a business has a monopoly. I don't blame the people in public education, it's about incentives when working for a government entity. It won't be easy to change, but I think it's absolutely possible through structuring incentives differently in our new district.</li>
+                <li>From talking with the other candidates I don't feel like others see innovative opportunities. I believe they're likely to continue operating nearly identical to how Alpine operated. I'd like to see a very significant increase in transparency and accountability, along with involving the community and students in coming up with more creative ideas to difficult problems, rather than simply thinking linearly and spending more money. Creativity loves constraints, and unfortunately most people do not spend enough mental effort or spend the time to creatively collaborate. If you think more money is the solution, you haven't identified the problem.</li>
+              </ol>
+              </div>
         </div>
-        <div class="about-content mt-4">
-          <p class="text-base"><strong>TRANSPARENCY:</strong> What results are we getting for the taxpayer money we’re spending? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">Principals know. For example, our children are in the Chinese immersion program and I’ve asked the Junior High Principal for details regarding how many students stick with the program after elementary school, and about students’ performance on the AP Chinese Exam. The principal shared a large amount of data with me, which was very effective in helping our children determine how they wanted to proceed in the program. Additionally our Principal knew which teachers were able to take a class of struggling post-covid students and meet them where they were – at about half a grade behind – and helped them get half a grade ahead, all within a single year. They know the educational outcomes so why don’t parents?</p>
-            <p class="text-base">We need to recognize and reward teachers who are this amazing, and we ought to be much more transparent with how we are doing at educating.</p>
-            <p class="text-base">I believe we have a responsibility to be transparent not only financially, but also with the results achieved, and we should recognize teachers who are so amazing. <strong>When our new district is established on a foundation of transparency and driven to help students achieve, we’ll naturally attract the best teachers and administrators who are happy to be recognized for their amazing contributions.</strong></p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: Who is supporting your campaign? Have you received any endorsements of note from elected oﬃcials or organizations? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I personally paid the $50 filing fee, and haven't spent any other money. I've had some offers for sponsorship and I'm happy to be endorsed, but I will remain accountable to: </p>
+              <ol class="list-disc pl-5">
+                  <li>What's best for the students
+                  <li>What's best for all other stakeholders (teachers, community, parents, etc)
+              </ol>
+              <p>I won't be bought through money or endorsements. I want to be persuaded and convinced, not bought or beholden to anyone or any group other than the best good for students and stakeholders.</p>
+              </div>
         </div>
-        <div class="about-content mt-4">
-          <p class="text-base"><strong>EXCITEMENT FOR LEARNING:</strong> How excited are our children to learn? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">Our children are our future - they will be our doctors and lawyers, our electricians and plumbers. Their education and excitement for learning is critical to our collective future. Unfortunately, when I ask children what their favorite subjects are in school it’s uncommon that I find anyone who mentions a core academic subject. All too frequently I hear jokes or comments like: “Schools are made of bricks, and prisons are made of bricks” (followed by a look that says, don’t you see they’re the same) - what a shame! We can, and must, do better for our children.</p>
-            <p class="text-base">I believe in a future where children are excited to attend school, and excited to learn! This isn’t rocket science. The surveys Alpine has done through the years need to be more than lip-service and fake listening. Students have amazing ideas and contribute to the direction of our schools, but currently ASD has primarily listened only to the State and those who sue. We haven’t even gotten to really collaborating with parents in an effective way, and really we should be going past just parents and also involve the students in a much larger way than I’ve ever seen in public education.</p>
-            <p class="text-base"><strong>We ought to listen to our children to create an environment where they want to learn, rather than obligatory learning.</strong></p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What other relevant experience do you have (public service, councils, boards, working with others, large scale finances, etc)? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: </p> <!-- Answer -->
+                <ul class="list-disc pl-5">
+                  <li>Masters of Accounting from Brigham Young University</li>
+                  <li>Took all entrepreneurship classes offered in undergrad and MBA programs</li>
+                  <li>Worked at High Net Worth Individual Tax Firm</li>
+                  <li>Oversaw accounting of 15 million revenue business</li>
+                  <li>Managed product development in three startups (our new district is in essence a new startup)</li>
+                  <li>State and County Delegate two times</li>
+                  <li>Investing in Public and Private Companies</li>
+                  <li>Identified fraud at two private companies and also embezzling money in another</li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-5">Voter Questions</h2>
-      <p class="text-base text-center mb-4">See what others are asking or <a href="#involved" class="hover:underline">ask your own question</a> below!</p>
-      <div class="space-y-0">
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: Why are you running for School Board? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">I’m running for School Board because PTA members, from my time as PTA Treasurer, urged me to step up because they believe I could make a meaningful impact. Before registering, I reached out to two of the three other candidates and asked, “What are two things you think Alpine School District did well that we should keep, and two things we can improve as we start our new district?”</p>
-            <p class="text-base">Their responses left me underwhelmed—most candidates seemed uninterested in real change or seizing the incredible opportunity we have starting a new district. That confirmed my decision to run. If the community wants me to help shape our new district, I’m happy to serve. However, if voters prefer the status quo, I have other things I’d love to do with my time and our family feels like we’re navigating schools well for our children.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: The Alpine School district has a long history of working collaboratively with the Alpine Education Association. In your new district, would you continue this tradition of collaboration? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: If it's in the best interest of students and stakeholders, then yes, I love collaborating with others. If AEA isn't focused first on the best interests of the students, then no.</p> <!-- Answer -->
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What is your background in education? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">We have five children in both public and private schools, so I’ve become deeply invested in education, because it’s critical to their future. Over the years, my involvement has grown through volunteer roles, allowing me to contribute meaningfully to our schools and community.</p>
-            <p class="text-base">Public School Volunteer Experience:</p>
-            <ul class="list-disc pl-5 text-base">
-              <li>PTA Treasurer</li>
-              <li>Watch DOGS volunteer</li>
-              <li>School party organizer</li>
-              <li>Bi-weekly reading assessments with 5th graders</li>
-              <li>Battle of the Books Coordinator</li>
-              <li>Head of PTA Nominating Committee</li>
-              <li>Led Teacher Grants</li>
-              <li>Science/STEM Fair volunteer</li>
-              <li>Organized clothing drive fundraiser</li>
-              <li>Coordinated Spirit Wear sales and printing</li>
-              <li>Collaborated with Betty Shaw and Karen Beebe at UTA PTA to enable Venmo payments, secure free Zettle card readers, eliminate PayPal Giving Fund donation fees, reduce insurance costs, and maximize teacher funding through DonorsChoose.</li>
-              <li>Worked with ASD’s Paul Lewis to enhance parent statements on bullying and technology</li>
-            </ul>
-            <p class="text-base">Private School Volunteer Experience:</p>
-            <ul class="list-disc pl-5 text-base">
-              <li>Field trip chaperone</li>
-              <li>Recruiting track coach</li>
-              <li>Chaperone for a two-week choir tour</li>
-              <li>Advocate for Chinese language classes in middle school</li>
-              <li>Mock Trial assistant coach</li>
-            </ul>
-            <p class="text-base">These experiences have helped me have a deep understanding of our schools’ needs and a passion for fostering collaboration among parents, teachers, and students to create the best possible educational environment.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: How long have you lived in the area? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: 11 years</p> <!-- Answer -->
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What differentiates you from the other candidates and/or board members? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>Masters in Accounting and experience finding 100k missing during an audit, as well as collaborating to catch a financial fraud.</li>
-              <li>Public & Private education school experiences. Half of our children are in public school, and half are in private school. I've been surprised to realize that the things that make private school compelling for most people have nothing to do with finances, it has everything to do with policies and mission; these are absolutely things public school can do but public schools need to value doing what's best for students as if their funding depends on it. Currently far too much of what I see in public schools are attitudes and actions nearly identical to when a business has a monopoly. I don't blame the people in public education, it's about incentives when working for a government entity. It won't be easy to change, but I think it's absolutely possible through structuring incentives differently in our new district.</li>
-              <li>From talking with the other candidates I don't feel like others see innovative opportunities. I believe they're likely to continue operating nearly identical to how Alpine operated. I'd like to see a very significant increase in transparency and accountability, along with involving the community and students in coming up with more creative ideas to difficult problems, rather than simply thinking linearly and spending more money. Creativity loves constraints, and unfortunately most people do not spend enough mental effort or spend the time to creatively collaborate. If you think more money is the solution, you haven't identified the problem.</li>
-            </ol>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What do you feel would be your role as a board member? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: </p> <!-- Answer -->
+              <ol class="list-decimal pl-5">
+                <li>
+                  Negotiate the split of Alpine's assets
+                </li>
+                <li>
+                  Hire the best Superintendent we can to set us on the right path forward
+                </li>
+                <li>
+                  Work with other board members to set policies that incentivize the best outcomes in our district
+                </li>
+              </ol>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: Who is supporting your campaign? Have you received any endorsements of note from elected officials or organizations? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">I personally paid the $50 filing fee, and haven't spent any other money. I've had some offers for sponsorship and I'm happy to be endorsed, but I will remain accountable to:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>What's best for the students</li>
-              <li>What's best for all other stakeholders (teachers, community, parents, etc)</li>
-            </ol>
-            <p class="text-base">I won't be bought through money or endorsements. I want to be persuaded and convinced, not bought or beholden to anyone or any group other than the best good for students and stakeholders.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: How will you ensure that you represent your constituents? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I will represent our constituents effectively by focusing on open communication and collaboration:</p> <!-- Answer -->
+              <ol class="list-decimal pl-5">
+                <li>
+                  I welcome ideas from everyone and believe the best solutions emerge from listening to all perspectives on an issue.
+                </li>
+                <li>
+                  Before any vote, I will share my thought process in writing, making it publicly available and inviting feedback and alternative viewpoints.
+                </li>
+                <li>
+                  When appropriate, I will use surveys or polls to gather constituents’ opinions and understand their reasoning.
+                </li>
+              </ol>
+              <p>I firmly believe the best ideas come from working together. Time and again, others have shared ideas far better than my own, and my role as a school board member will be to champion the best ideas that create the greatest positive impact for our students and community.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What other relevant experience do you have (public service, councils, boards, working with others, large scale finances, etc)? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A:</p>
-            <ul class="list-disc pl-5 text-base">
-              <li>Masters of Accounting from Brigham Young University</li>
-              <li>Took all entrepreneurship classes offered in undergrad and MBA programs</li>
-              <li>Worked at High Net Worth Individual Tax Firm</li>
-              <li>Oversaw accounting of 15 million revenue business</li>
-              <li>Managed product development in three startups (our new district is in essence a new startup)</li>
-              <li>State and County Delegate two times</li>
-              <li>Investing in Public and Private Companies</li>
-              <li>Identified fraud at two private companies and also embezzling money in another</li>
-            </ul>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What is your vision for the new school district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: Our schools must support parents in their sacred role of educating their children, and our new school district must prioritize this partnership by empowering families, not sidelining them, in the educational process. Children are our future, and they deserve to love learning. Too often, schools stifle students’ natural curiosity. Our district should not only actively listen to parents and involve them as much as possible but also take student feedback to heart. I envision students contributing to teacher hiring and evaluating new course materials. True engagement of parents and students requires unwavering transparency. I’ve noticed a troubling trend of parents overly scrutinizing teachers and teachers pushing parents out of classrooms and volunteer roles—a dynamic I want to reverse. When teachers and parents collaborate with the student’s best interests at heart, we achieve the strongest learning outcomes.</p> <!-- Answer -->
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: The Alpine School district has a long history of working collaboratively with the Alpine Education Association. In your new district, would you continue this tradition of collaboration? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: If it's in the best interest of students and stakeholders, then yes, I love collaborating with others. If AEA isn't focused first on the best interests of the students, then no.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What do you feel are the greatest assets in our new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: Our dedicated teachers and engaged parents are our district’s greatest assets. The ability to shape our own future as a new school district is also a huge asset -- both a tremendous opportunity and a significant responsibility.</p> <!-- Answer -->
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: How long have you lived in the area? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: 11 years</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What do you feel are the greatest challenges facing our district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: Over the next decade, as enrollment declines and school choice options expand, managing finances will be critical. That said, I’m confident we can make it work. I spent three hours with Jason Sundberg at my home, diving into the details of Prop 2’s numbers during the vote. While I recognize the challenge, I believe we must think creatively about solutions rather than relying solely on linear approaches.</p>
+              <p>Beyond enrollment and finances, building our new district brings other hurdles, like recruiting and retaining top teachers. With the district split, teachers will have more nearby districts to choose from. We must make our district a stable, attractive employer to keep the best educators.</p>
+              <p>Inevitably, we’ll face legal battles, political obstacles, and public confidence issues, especially in the early years. By addressing these challenges with transparency and collaboration, I believe we will be able to build a great new school district.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What do you feel would be your role as a board member? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>Negotiate the split of Alpine's assets</li>
-              <li>Hire the best Superintendent we can to set us on the right path forward</li>
-              <li>Work with other board members to set policies that incentivize the best outcomes in our district</li>
-            </ol>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What are your thoughts on potential school closures? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I love tackling difficult problems by thinking creatively and exploring all possibilities. Often, we can solve one issue by addressing another. For instance, I believe we can reduce school closures, cut costs, and ensure our new district’s administrators stay connected to daily classroom realities, all with one simple solution:</p>
+              <p>Since we won’t have a dedicated administrative building—it’s in American Fork—we could place about a third of our administrators in unused classrooms in a school facing potential closure, then do the same in two other buildings. This approach maximizes existing space, eliminates the need for a separate administrative office, and brings administrators closer to students. Imagine the financial savings and non-financial benefits, like fostering a deeper understanding of classroom dynamics. By embedding administrators in schools, where they work alongside and listen to students, parents, and teachers, we reduce the risk of out-of-touch administrative decisions.</p>
+              <p>That said, some school closures may be necessary. When they occur, we must involve the community as much as possible, collaborating to ensure decisions benefit not only our schools but also our neighborhoods and broader community.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: How will you ensure that you represent your constituents? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: I will represent our constituents effectively by focusing on open communication and collaboration:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>I welcome ideas from everyone and believe the best solutions emerge from listening to all perspectives on an issue.</li>
-              <li>Before any vote, I will share my thought process in writing, making it publicly available and inviting feedback and alternative viewpoints.</li>
-              <li>When appropriate, I will use surveys or polls to gather constituents’ opinions and understand their reasoning.</li>
-            </ol>
-            <p class="text-base">I firmly believe the best ideas come from working together. Time and again, others have shared ideas far better than my own, and my role as a school board member will be to champion the best ideas that create the greatest positive impact for our students and community.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What are you looking for in a superintendent and business administrator? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: </p>
+              <ol class="list-decimal pl-5">
+                <li>Honest</li>
+                <li>Love for children and their education</li>
+                <li>Deep understanding of education and trends</li>
+                <li>Communicates transparently</li>
+                <li>Balances long-term and short-term needs effectively</li>
+                <li>Works well with teachers, parents, the board, and the community</li>
+                <li>Creative problem solver</li>
+                <li>Great listener and champions the best ideas</li>
+              </ol>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What is your vision for the new school district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: Our schools must support parents in their sacred role of educating their children, and our new school district must prioritize this partnership by empowering families, not sidelining them, in the educational process. Children are our future, and they deserve to love learning. Too often, schools stifle students’ natural curiosity. Our district should not only actively listen to parents and involve them as much as possible but also take student feedback to heart. I envision students contributing to teacher hiring and evaluating new course materials. True engagement of parents and students requires unwavering transparency. I’ve noticed a troubling trend of parents overly scrutinizing teachers and teachers pushing parents out of classrooms and volunteer roles—a dynamic I want to reverse. When teachers and parents collaborate with the student’s best interests at heart, we achieve the strongest learning outcomes.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What innovative ideas do you hope to bring to the new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: </p>
+              <ol class="list-decimal pl-5"></ol>
+                <li>Reducing school closures by putting administrative offices in school buildings.</li>
+                <li>Have administrators teach one class to keep relevant and in touch with students.</li>
+                <li>Directly involving students in hiring, curriculum, and any decisions they want to help with - it's their education.</li>
+                <li>Using technology when it benefits student learning, not only because it makes it easier for teachers.</li>
+                <li>Increasing collaboration with parents and the community rather than removing them from classrooms.</li>
+              </ol>
+              <p>My "innovative" ideas are certainly not the most important. Ideas are a dime a dozen. The most important thing is fostering an environment where the community will share their ideas and we can champion ideas from everyone.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What do you feel are the greatest assets in our new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: Our dedicated teachers and engaged parents are our district’s greatest assets. The ability to shape our own future as a new school district is also a huge asset -- both a tremendous opportunity and a significant responsibility.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What ideas do you have to encourage those who have left public education for alternatives to come back? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: 
+                <p>When I originally answered this question I assumed this was talking about teachers who have left public education. In hindsight I believe this is actually more focused on students. We are that family because we have half of our children in public schools and half in private schools. I'd really like to outcompete the private schools. Public schools have many advantages, like: </p>
+                  <ol class="list-decimal pl-5"></ol>
+                    <li>some of the most amazing teachers that we really miss</li>
+                    <li>free to attend</li>
+                    <li>closer to home</li>
+                    <li>friends living nearby</li>
+                    <li>sports programs are generally better</li>
+                    <li>language immersion</li>
+                  </ol>
+                <p>We have to play to our advantages to make students and parents CHOOSE our public schools over the alternatives. In my opinion most of that comes down to good policies, especially related to:</p>
+                  <ol class="list-decimal pl-5"></ol>
+                    <li><strong>Technology</strong> needs to be used to enhance the educational experience. Currently it's all too frequently used to make grading easier on teachers, at the expense of students' education.</li>
+                    <li><strong>Curriculum</strong>: we need to trust teachers so they can teach what they love, rather than forcing curriculum on them that they aren't excited about.</li>
+                    <li><strong>Teachers</strong> should be evaluated by students before hiring, and periodicly. One Principal I know would love to have one "free" fire each year, to prevent the red-tape they have to jump through.</li>
+                    <li>Our <strong>Cell phone policy</strong>  can make a major difference in students engaging with classmates and teachers.</li>
+                    <li><strong>Involving parents</strong> in major decisions. School counselors, teachers, administrators and parents should all work together for the good of students. No one trusted adult should take advantage of a situation to undermine other adults who are important in each student's education.</li>
+                  </ol>
+                <p>In addition to all these ideas, one of the top reasons we made a change was because it felt like we were having to augment the education our kids were receiving as soon as they got home through music, sports, homework, and tutoring which left no time for our family to do other things that mattered. Students should come back from school as better members of our families, rather than needing significant decompressing from an extremely anxiety-inducing day at school.</p>
+                <p>While I haven’t fully explored this issue and I’m not yet certain it’s a top priority, my approach would mirror how I’ve tackled challenges in businesses: listen deeply and find creative solutions. I’d reach out to former educators who left for early retirement, private schools, charter schools, or homeschooling and ask them to share their stories. By asking thoughtful questions, I’d uncover the root reasons for their departure, especially non-monetary factors, as people often cite money when deeper issues—like feeling valued or heard—are at play. After gathering these insights, I’d reflect on them, often finding clarity during everyday moments like gardening or washing dishes. Solving complex problems isn’t about sitting in an office—it’s about listening closely to people, thinking deeply, and letting ideas emerge naturally.
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What do you feel are the greatest challenges facing our district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: Over the next decade, as enrollment declines and school choice options expand, managing finances will be critical. That said, I’m confident we can make it work. I spent three hours with Jason Sundberg at my home, diving into the details of Prop 2’s numbers during the vote. While I recognize the challenge, I believe we must think creatively about solutions rather than relying solely on linear approaches.</p>
-            <p class="text-base">Beyond enrollment and finances, building our new district brings other hurdles, like recruiting and retaining top teachers. With the district split, teachers will have more nearby districts to choose from. We must make our district a stable, attractive employer to keep the best educators.</p>
-            <p class="text-base">Inevitably, we’ll face legal battles, political obstacles, and public confidence issues, especially in the early years. By addressing these challenges with transparency and collaboration, I believe we will be able to build a great new school district.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What ideas do you have to encourage those who have left public education for alternatives to come back? (Original Response) <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: To encourage families and educators who have left public education for alternatives to return, I’d tap into the power of community involvement and genuine listening. Some of the best teachers I’ve known were adjunct faculty or volunteers. I’d love to invite skilled community members—retirees, parents, or professionals—to contribute by teaching classes, mentoring, or reading with struggling students. There are countless ways to engage our community’s talent and passion.</p>
+              <p>While I haven’t fully explored this issue and I’m not yet certain it’s a top priority, my approach would mirror how I’ve tackled challenges in businesses: listen deeply and find creative solutions. I’d reach out to former educators who left for early retirement, private schools, charter schools, or homeschooling and ask them to share their stories. By asking thoughtful questions, I’d uncover the root reasons for their departure, especially non-monetary factors, as people often cite money when deeper issues—like feeling valued or heard—are at play. After gathering these insights, I’d reflect on them, often finding clarity during everyday moments like gardening or washing dishes. Solving complex problems isn’t about sitting in an office—it’s about listening closely to people, thinking deeply, and letting ideas emerge naturally.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What are your thoughts on potential school closures? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: I love tackling difficult problems by thinking creatively and exploring all possibilities. Often, we can solve one issue by addressing another. For instance, I believe we can reduce school closures, cut costs, and ensure our new district’s administrators stay connected to daily classroom realities, all with one simple solution:</p>
-            <p class="text-base">Since we won’t have a dedicated administrative building—it’s in American Fork—we could place about a third of our administrators in unused classrooms in a school facing potential closure, then do the same in two other buildings. This approach maximizes existing space, eliminates the need for a separate administrative office, and brings administrators closer to students. Imagine the financial savings and non-financial benefits, like fostering a deeper understanding of classroom dynamics. By embedding administrators in schools, where they work alongside and listen to students, parents, and teachers, we reduce the risk of out-of-touch administrative decisions.</p>
-            <p class="text-base">That said, some school closures may be necessary. When they occur, we must involve the community as much as possible, collaborating to ensure decisions benefit not only our schools but also our neighborhoods and broader community.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What principles guide your policy decision-making? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <ol class="list-decimal pl-5"></ol>
+                <li>What is best for the student, not only in the short-term, but in the long-term as well?</li>
+                <li>How can we best support our teachers to do what's best for the students' education?</li>
+                <li>Transparency - let's be as open, inclusive, and honest as we can.</li>
+                <li>Fiscal Responsibility - we need to operate on a sustainable path and not spend before we have the funds available.</li>
+                <li>Receiving the best value for money spent - oftentimes people assuming costs are whatever they are, but when we collaborate we can find significant cost savings AND get the best goods and services.</li>
+              </ol>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What are you looking for in a superintendent and business administrator? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>Honest</li>
-              <li>Love for children and their education</li>
-              <li>Deep understanding of education and trends</li>
-              <li>Communicates transparently</li>
-              <li>Balances long-term and short-term needs effectively</li>
-              <li>Works well with teachers, parents, the board, and the community</li>
-              <li>Creative problem solver</li>
-              <li>Great listener and champions the best ideas</li>
-            </ol>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What will you do to ensure that you and the board are being transparent with the community? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I will advocate for publishing not only the required detailed financial statements, but also establishing robust reporting on learning outcomes from the outset of our new school district. By prioritizing comprehensive transparency from day one—sharing more data than has been typical in the past—we can set a strong precedent. It will be difficult for future administrators to reduce transparent reporting without sparking community concern. This approach, rooted in the belief that sunlight is the best disinfectant, ensures our community stays well-informed and engaged, fostering trust and accountability in our schools.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What innovative ideas do you hope to bring to the new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>Reducing school closures by putting administrative offices in school buildings.</li>
-              <li>Have administrators teach one class to keep relevant and in touch with students.</li>
-              <li>Directly involving students in hiring, curriculum, and any decisions they want to help with - it's their education.</li>
-              <li>Using technology when it benefits student learning, not only because it makes it easier for teachers.</li>
-              <li>Increasing collaboration with parents and the community rather than removing them from classrooms.</li>
-            </ol>
-            <p class="text-base">My "innovative" ideas are certainly not the most important. Ideas are a dime a dozen. The most important thing is fostering an environment where the community will share their ideas and we can champion ideas from everyone.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: How do you feel about diversity of thought vs reaching consensus and compromise on the school board? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: This is a great question! I strongly value diversity of thought as the foundation for innovative solutions, but I also recognize the need for consensus and compromise to move forward effectively. The best approach involves two phases. First, a divergent thinking phase where all ideas are welcomed, no matter how unconventional, and everyone feels safe to share without fear of judgment or dismissal. This creates a space for creative, bold solutions to emerge.</p>
+              <p>Then, we transition to a convergent phase, where we carefully evaluate ideas to identify the most promising ones. This involves scrutinizing proposals, prioritizing those worth exploring through experiments or further research, and collaboratively refining them. I’ve taught this process at DevMountain and in various companies and groups to foster productive collaboration while avoiding groupthink. By balancing open ideation with focused decision-making, we can harness diverse perspectives to build consensus that serves our students and community.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What ideas do you have to encourage those who have left public education for alternatives to come back? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A:</p>
-            <p class="text-base">When I originally answered this question I assumed this was talking about teachers who have left public education. In hindsight I believe this is actually more focused on students. We are that family because we have half of our children in public schools and half in private schools. I'd really like to outcompete the private schools. Public schools have many advantages, like:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>some of the most amazing teachers that we really miss</li>
-              <li>free to attend</li>
-              <li>closer to home</li>
-              <li>friends living nearby</li>
-              <li>sports programs are generally better</li>
-              <li>language immersion</li>
-            </ol>
-            <p class="text-base">We have to play to our advantages to make students and parents CHOOSE our public schools over the alternatives. In my opinion most of that comes down to good policies, especially related to:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li><strong>Technology</strong> needs to be used to enhance the educational experience. Currently it's all too frequently used to make grading easier on teachers, at the expense of students' education.</li>
-              <li><strong>Curriculum</strong>: we need to trust teachers so they can teach what they love, rather than forcing curriculum on them that they aren't excited about.</li>
-              <li><strong>Teachers</strong> should be evaluated by students before hiring, and periodically. One Principal I know would love to have one "free" fire each year, to prevent the red-tape they have to jump through.</li>
-              <li>Our <strong>Cell phone policy</strong> can make a major difference in students engaging with classmates and teachers.</li>
-              <li><strong>Involving parents</strong> in major decisions. School counselors, teachers, administrators and parents should all work together for the good of students. No one trusted adult should take advantage of a situation to undermine other adults who are important in each student's education.</li>
-            </ol>
-            <p class="text-base">In addition to all these ideas, one of the top reasons we made a change was because it felt like we were having to augment the education our kids were receiving as soon as they got home through music, sports, homework, and tutoring which left no time for our family to do other things that mattered. Students should come back from school as better members of our families, rather than needing significant decompressing from an extremely anxiety-inducing day at school.</p>
-            <p class="text-base">While I haven’t fully explored this issue and I’m not yet certain it’s a top priority, my approach would mirror how I’ve tackled challenges in businesses: listen deeply and find creative solutions. I’d reach out to former educators who left for early retirement, private schools, charter schools, or homeschooling and ask them to share their stories. By asking thoughtful questions, I’d uncover the root reasons for their departure, especially non-monetary factors, as people often cite money when deeper issues—like feeling valued or heard—are at play. After gathering these insights, I’d reflect on them, often finding clarity during everyday moments like gardening or washing dishes. Solving complex problems isn’t about sitting in an office—it’s about listening closely to people, thinking deeply, and letting ideas emerge naturally.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: How would you approach controversial issues like books in libraries, religious beliefs, diversity initiatives, or school safety? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: Books in School Libraries:</p>
+              <p>School libraries should provide age-appropriate materials tailored to students’ needs. Not every book needs to be included in a school library, and if a student wants a book that’s unavailable, they can access it through the public library. For books with sensitive topics that are deemed appropriate for school libraries, I propose keeping them behind the librarian’s desk. This ensures they are not chosen accidentally but can still be accessed by students who intentionally seek them out.</p>
+              <p>Religious Beliefs:</p>
+              <p>Everyone should have the freedom to worship as they choose. Just as schools should not impose religious beliefs on students, they should also avoid pushing diversity initiatives in a way that feels coercive. I’m encouraged by Utah schools’ growing focus on safety, implemented in practical and effective ways, which supports a respectful and inclusive environment for all students.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What ideas do you have to encourage those who have left public education for alternatives to come back? (Original Response) <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: To encourage families and educators who have left public education for alternatives to return, I’d tap into the power of community involvement and genuine listening. Some of the best teachers I’ve known were adjunct faculty or volunteers. I’d love to invite skilled community members—retirees, parents, or professionals—to contribute by teaching classes, mentoring, or reading with struggling students. There are countless ways to engage our community’s talent and passion.</p>
-            <p class="text-base">While I haven’t fully explored this issue and I’m not yet certain it’s a top priority, my approach would mirror how I’ve tackled challenges in businesses: listen deeply and find creative solutions. I’d reach out to former educators who left for early retirement, private schools, charter schools, or homeschooling and ask them to share their stories. By asking thoughtful questions, I’d uncover the root reasons for their departure, especially non-monetary factors, as people often cite money when deeper issues—like feeling valued or heard—are at play. After gathering these insights, I’d reflect on them, often finding clarity during everyday moments like gardening or washing dishes. Solving complex problems isn’t about sitting in an office—it’s about listening closely to people, thinking deeply, and letting ideas emerge naturally.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: How will you approach budget issues in our new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: We shouldn't spend money we don't have, and we need to be wise in spending because such a large portion of taxes is for education. At the end of the day it's the lack of fiscal discipline that results in increased taxes for all of us. With that said, our children's education is extremely important and so is rewarding teachers for the incredible work they do.</p>
+              <p>While I was the PTA Treasurer when we gave out Teacher Grants initially my committee was impressed with the great things teachers were buying to help in their classrooms, but upon further inspection, many teachers didn't realize we had those same supplies in the school louge for the teachers to use. I believe the same goes for any budget -- people oftentimes don't know they have access to other things and no one scrutinizes the purchasing, but we can and will review purchasing.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What principles guide your policy decision-making? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <ol class="list-decimal pl-5 text-base">
-              <li>What is best for the student, not only in the short-term, but in the long-term as well?</li>
-              <li>How can we best support our teachers to do what's best for the students' education?</li>
-              <li>Transparency - let's be as open, inclusive, and honest as we can.</li>
-              <li>Fiscal Responsibility - we need to operate on a sustainable path and not spend before we have the funds available.</li>
-              <li>Receiving the best value for money spent - oftentimes people assume costs are whatever they are, but when we collaborate we can find significant cost savings AND get the best goods and services.</li>
-            </ol>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: How do you balance keeping taxes low, fixing our building issues, and keeping class and school sizes low? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: Balancing low taxes, addressing building issues, and maintaining small class and school sizes requires creative and careful solutions. As I’ve noted before, complex problems often have straightforward answers. One idea is to place administrative offices in schools with extra capacity, reducing the need for separate facilities while preserving school buildings and keeping class sizes manageable.</p>
+              <p>I will treat taxpayer money with the same care I apply to my own, scrutinizing every expense and seeking cost-effective alternatives. In addressing building issues, I’ve learned that contractors often inflate estimates when plans are vague, but detailed and complete plans can yield significant savings by reducing uncertainty for contractors. I will proactively engage with contractors to understand how our district can streamline processes, save time, and cut costs, ensuring we maximize value while maintaining quality education environments.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What will you do to ensure that you and the board are being transparent with the community? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: I will advocate for publishing not only the required detailed financial statements, but also establishing robust reporting on learning outcomes from the outset of our new school district. By prioritizing comprehensive transparency from day one—sharing more data than has been typical in the past—we can set a strong precedent. It will be difficult for future administrators to reduce transparent reporting without sparking community concern. This approach, rooted in the belief that sunlight is the best disinfectant, ensures our community stays well-informed and engaged, fostering trust and accountability in our schools.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What are your thoughts on programs like Special Education (Sped), Advanced Learning Labs (ALL), Dual Language Immersion (DLI), etc? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I’m a strong supporter of specialized programs like Special Education (Sped), Advanced Learning Labs (ALL), and Dual Language Immersion (DLI). Each child is unique in their needs and superpowers. My wife and I have children who are all over the board from advanced and needing faster paced learning, to needing some accommodations.</p>
+              <p>Our five children have thrived in Chinese Dual Language Immersion, which has been an incredible experience for our family, enriching their education and cultural understanding. We’ve also worked with a speech pathologist and completed ALL testing, giving me firsthand insight into the value of tailored educational support. We've had one advanced kid and one who has superpowers and learning to harness them. One of our friends had such an incredibly difficult time with a kid who is so obviously on the spectrum because ASD took 3 years to agree to an IEP - that can't be happening!</p>
+              <p>I believe these programs are vital for meeting diverse student needs. Often, students who face the greatest challenges in school have the highest potential to become future leaders. Our new district must prioritize providing every student with the resources and support they need to succeed.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: How do you feel about diversity of thought vs reaching consensus and compromise on the school board? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: This is a great question! I strongly value diversity of thought as the foundation for innovative solutions, but I also recognize the need for consensus and compromise to move forward effectively. The best approach involves two phases. First, a divergent thinking phase where all ideas are welcomed, no matter how unconventional, and everyone feels safe to share without fear of judgment or dismissal. This creates a space for creative, bold solutions to emerge.</p>
-            <p class="text-base">Then, we transition to a convergent phase, where we carefully evaluate ideas to identify the most promising ones. This involves scrutinizing proposals, prioritizing those worth exploring through experiments or further research, and collaboratively refining them. I’ve taught this process at DevMountain and in various companies and groups to foster productive collaboration while avoiding groupthink. By balancing open ideation with focused decision-making, we can harness diverse perspectives to build consensus that serves our students and community.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: Describe how you would provide quality education for a diverse student population: i.e. the gifted and talented, the standard student, special education, the academically challenged, English as a Second Language (ESL) and cultural differences. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I care a lot about this. We have a child who is on the spectrum, we have a child who tested at the 15th grade level in math and 17th in reading while in 5th grade, and all of our childen are in the Chinese Immersion program. Some of our children more closely fit the mold of a "standard student." We have ESL students as neighbors who we care a lot about.</p>
+              <p>Each child is so unique, and education ought to accommodate and meet each child where they are. How do we do this? Let's start with the baseline of what we currently have with ASD - I believe many things have gone fairly well and ASD has cared, but the areas I see for significant improvement are:</p>
+              <ol class="list-decimal pl-5"></ol>
+                <li>It's far too difficult to get an IEP today for many students. I know of some who have spent years working with ASD and after a massive amount of struggle they've finally gotten and IEP when their child's case is about as obvious as it gets. It's SO hard on families with the district fights against the parents in getting their students' the help they need. This ought to be much more collaborative.</li>
+                <li>How come my student's teachers didn't have any sense that our child was completely bored in school, or that he was FAR ahead? How come he was asked for 3 years to help teach everyone else in class and help with their math? This is awesome that teachers are employing the children to help others, but 3 years of this is far too much. We're underserving children who excel, and this is a shame. Educators know very well that children who are bored in school and never have to do homework because it's so easy struggle severely in college because their work ethic is not developed. We can and should identify cases where students are bored. This isn't hard to do, but takes a little effort.</li>
+                <li>I understand that teachers can't suggest to parents when they suspect a child is on the spectrum, but I believe there's more we can do, even without an IEP, to help accommodate those who struggle with executive functioning and we don't have to wait until after they fail.</li>
+                <li>I'm sure there's plenty more we can do and I will absolutely encourage more individualized education, but also in fiscally responsible ways.</li>
+              </ol>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: How would you approach controversial issues like books in libraries, religious beliefs, diversity initiatives, or school safety? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: Books in School Libraries:</p>
-            <p class="text-base">School libraries should provide age-appropriate materials tailored to students’ needs. Not every book needs to be included in a school library, and if a student wants a book that’s unavailable, they can access it through the public library. For books with sensitive topics that are deemed appropriate for school libraries, I propose keeping them behind the librarian’s desk. This ensures they are not chosen accidentally but can still be accessed by students who intentionally seek them out.</p>
-            <p class="text-base">Religious Beliefs:</p>
-            <p class="text-base">Everyone should have the freedom to worship as they choose. Just as schools should not impose religious beliefs on students, they should also avoid pushing diversity initiatives in a way that feels coercive. I’m encouraged by Utah schools’ growing focus on safety, implemented in practical and effective ways, which supports a respectful and inclusive environment for all students.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: Do you think our public schools are adequately funded? Do you have ideas on how the district can increase revenue? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I don't think schools will ever feel adequately funded, and comparing to other states, we're less funded.</p>
+              <ol class="list-decimal pl-5"></ol>
+                <li>Creativity loves constraints and I don't believe the answer to all problems is more funding. I realize this is very idealistic to say. We have a larger K-12 population than most states, and we also have a lower income earning tax base than many states, so we need to be careful in raising funds responsibly.</li>
+                <li>We can increase outcomes without increasing funding if we're creative. For example, my neighbor is retired and has helped children with their reading at the school every week, but our school has decided to terminate that program with volunteers. Additionally, my favorite teachers have been unpaid adjunct faculty who care about their subject matter and want to give back. I believe there's lots of opportunities to increase educational experiences like this without increasing funding. Theoretically if we were able to recruit volunteer experts in their fields to teach a class or two, there would be more funds to increase pay for the teachers we have.</li>
+                <li>I'm not currently in the know on what can be done, but I'd support merit-based bonuses or pay options for the best teachers. This would have to be done very carefully because teachers know that a huge amount of excellent learning outcomes happen when teachers are assisted by involved parents at home helping their children, so we don't want to encourage a situation where teachers want all the best students/homes.</li>
+                <li>I'm sure there's plenty more we can do and I will absolutely encourage more individualized education, but also in fiscally responsible ways.</li>
+              </ol>
+              <p>I have a history of supporting teachers in our school by creative means and will absolutel champion means to help teachers as best we can. I'm not yet involved in the details enough to know what can be done, but maybe there's some emergent opportunities that will arise and I'm excited to help find them, while collaborating with others to do the best we can for our teachers.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: How will you approach budget issues in our new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: We shouldn't spend money we don't have, and we need to be wise in spending because such a large portion of taxes is for education. At the end of the day it's the lack of fiscal discipline that results in increased taxes for all of us. With that said, our children's education is extremely important and so is rewarding teachers for the incredible work they do.</p>
-            <p class="text-base">While I was the PTA Treasurer when we gave out Teacher Grants initially my committee was impressed with the great things teachers were buying to help in their classrooms, but upon further inspection, many teachers didn't realize we had those same supplies in the school lounge for the teachers to use. I believe the same goes for any budget -- people oftentimes don't know they have access to other things and no one scrutinizes the purchasing, but we can and will review purchasing.</p>
-          </div>
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: What is the best way to address differences of opinion on the board or between the board and the administration? Do you believe that school board members should be involved in the day-to-day administrative decisions of the school district, or would you prefer to be involved in policy decisions, leaving management to the managers? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: I believe the board is different from the Superintendent and don't have to be involved day-to-day, but ought to have a relationship of respect where they can work collaboratively together. The Superintendent and Business Administrator have big jobs, and I would hope they would leverage the board to help in research and finding solutions when they don't have the time to really go deep into important decisions. Ultimately the board is responsible for hiring and firing the administration.</p>
+              <p>How would I address differences? Conversation and persuasion would be the first step. If at the end of the day the Administration doesn't agree with my opinion or the rest of us as a board, but they can explain their reasoning and measure results objectively, then I'd be happy to be proven wrong as long as the results are in the best interest of students and their education.</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: How do you balance keeping taxes low, fixing our building issues, and keeping class and school sizes low? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: Balancing low taxes, addressing building issues, and maintaining small class and school sizes requires creative and careful solutions. As I’ve noted before, complex problems often have straightforward answers. One idea is to place administrative offices in schools with extra capacity, reducing the need for separate facilities while preserving school buildings and keeping class sizes manageable.</p>
-            <p class="text-base">I will treat taxpayer money with the same care I apply to my own, scrutinizing every expense and seeking cost-effective alternatives. In addressing building issues, I’ve learned that contractors often inflate estimates when plans are vague, but detailed and complete plans can yield significant savings by reducing uncertainty for contractors. I will proactively engage with contractors to understand how our district can streamline processes, save time, and cut costs, ensuring we maximize value while maintaining quality education environments.</p>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What are your thoughts on programs like Special Education (Sped), Advanced Learning Labs (ALL), Dual Language Immersion (DLI), etc? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: I’m a strong supporter of specialized programs like Special Education (Sped), Advanced Learning Labs (ALL), and Dual Language Immersion (DLI). Each child is unique in their needs and superpowers. My wife and I have children who are all over the board from advanced and needing faster paced learning, to needing some accommodations.</p>
-            <p class="text-base">Our five children have thrived in Chinese Dual Language Immersion, which has been an incredible experience for our family, enriching their education and cultural understanding. We’ve also worked with a speech pathologist and completed ALL testing, giving me firsthand insight into the value of tailored educational support. We've had one advanced kid and one who has superpowers and learning to harness them. One of our friends had such an incredibly difficult time with a kid who is so obviously on the spectrum because ASD took 3 years to agree to an IEP - that can't be happening!</p>
-            <p class="text-base">I believe these programs are vital for meeting diverse student needs. Often, students who face the greatest challenges in school have the highest potential to become future leaders. Our new district must prioritize providing every student with the resources and support they need to succeed.</p>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: Describe how you would provide quality education for a diverse student population: i.e. the gifted and talented, the standard student, special education, the academically challenged, English as a Second Language (ESL) and cultural differences. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: I care a lot about this. We have a child who is on the spectrum, we have a child who tested at the 15th grade level in math and 17th in reading while in 5th grade, and all of our children are in the Chinese Immersion program. Some of our children more closely fit the mold of a "standard student." We have ESL students as neighbors who we care a lot about.</p>
-            <p class="text-base">Each child is so unique, and education ought to accommodate and meet each child where they are. How do we do this? Let's start with the baseline of what we currently have with ASD - I believe many things have gone fairly well and ASD has cared, but the areas I see for significant improvement are:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>It's far too difficult to get an IEP today for many students. I know of some who have spent years working with ASD and after a massive amount of struggle they've finally gotten an IEP when their child's case is about as obvious as it gets. It's SO hard on families with the district fighting against the parents in getting their students the help they need. This ought to be much more collaborative.</li>
-              <li>How come my student's teachers didn't have any sense that our child was completely bored in school, or that he was FAR ahead? How come he was asked for 3 years to help teach everyone else in class and help with their math? This is awesome that teachers are employing the children to help others, but 3 years of this is far too much. We're underserving children who excel, and this is a shame. Educators know very well that children who are bored in school and never have to do homework because it's so easy struggle severely in college because their work ethic is not developed. We can and should identify cases where students are bored. This isn't hard to do, but takes a little effort.</li>
-              <li>I understand that teachers can't suggest to parents when they suspect a child is on the spectrum, but I believe there's more we can do, even without an IEP, to help accommodate those who struggle with executive functioning and we don't have to wait until after they fail.</li>
-              <li>I'm sure there's plenty more we can do and I will absolutely encourage more individualized education, but also in fiscally responsible ways.</li>
-            </ol>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: Do you think our public schools are adequately funded? Do you have ideas on how the district can increase revenue? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: I don't think schools will ever feel adequately funded, and comparing to other states, we're less funded.</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li>Creativity loves constraints and I don't believe the answer to all problems is more funding. I realize this is very idealistic to say. We have a larger K-12 population than most states, and we also have a lower income earning tax base than many states, so we need to be careful in raising funds responsibly.</li>
-              <li>We can increase outcomes without increasing funding if we're creative. For example, my neighbor is retired and has helped children with their reading at the school every week, but our school has decided to terminate that program with volunteers. Additionally, my favorite teachers have been unpaid adjunct faculty who care about their subject matter and want to give back. I believe there's lots of opportunities to increase educational experiences like this without increasing funding. Theoretically if we were able to recruit volunteer experts in their fields to teach a class or two, there would be more funds to increase pay for the teachers we have.</li>
-              <li>I'm not currently in the know on what can be done, but I'd support merit-based bonuses or pay options for the best teachers. This would have to be done very carefully because teachers know that a huge amount of excellent learning outcomes happen when teachers are assisted by involved parents at home helping their children, so we don't want to encourage a situation where teachers want all the best students/homes.</li>
-              <li>I'm sure there's plenty more we can do and I will absolutely encourage more individualized education, but also in fiscally responsible ways.</li>
-            </ol>
-            <p class="text-base">I have a history of supporting teachers in our school by creative means and will absolutely champion means to help teachers as best we can. I'm not yet involved in the details enough to know what can be done, but maybe there's some emergent opportunities that will arise and I'm excited to help find them, while collaborating with others to do the best we can for our teachers.</p>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: What is the best way to address differences of opinion on the board or between the board and the administration? Do you believe that school board members should be involved in the day-to-day administrative decisions of the school district, or would you prefer to be involved in policy decisions, leaving management to the managers? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A: I believe the board is different from the Superintendent and don't have to be involved day-to-day, but ought to have a relationship of respect where they can work collaboratively together. The Superintendent and Business Administrator have big jobs, and I would hope they would leverage the board to help in research and finding solutions when they don't have the time to really go deep into important decisions. Ultimately the board is responsible for hiring and firing the administration.</p>
-            <p class="text-base">How would I address differences? Conversation and persuasion would be the first step. If at the end of the day the Administration doesn't agree with my opinion or the rest of us as a board, but they can explain their reasoning and measure results objectively, then I'd be happy to be proven wrong as long as the results are in the best interest of students and their education.</p>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded about-content">
-          <p class="font-bold">Q: Describe your top three priorities, if you are elected to the school board. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-          <div class="expandable-content">
-            <p class="text-base">A:</p>
-            <ol class="list-decimal pl-5 text-base">
-              <li><strong>EXCITEMENT FOR LEARNING:</strong> How excited are our children to learn? Our children are our future - they will be our doctors and lawyers, our electricians and plumbers. Their education and excitement for learning is critical to our collective future. Unfortunately, when I ask children what their favorite subjects are in school it’s uncommon that I find anyone who mentions a core academic subject. All too frequently I hear jokes or comments like: “Schools are made of bricks, and prisons are made of bricks” (followed by a look that says, don’t you see they’re the same) - what a shame! We can, and must, do better for our children.</p>
-              <p class="text-base">I believe in a future where children are excited to attend school, and excited to learn! This isn’t rocket science. The surveys Alpine has done through the years need to be more than lip-service and fake listening. Students have amazing ideas and contribute to the direction of our schools, but currently ASD has primarily listened only to the State and those who sue. We haven’t even gotten to really collaborating with parents in an effective way, and really we should be going past just parents and also involve the students in a much larger way than I’ve ever seen in public education.</p></li>
-              <li><strong>TRANSPARENCY:</strong> What results are we getting for the taxpayer money we’re spending? Principals know. For example, our children are in the Chinese immersion program and I’ve asked the Junior High Principal for details regarding how many students stick with the program after elementary school, and about students’ performance on the AP Chinese Exam. The principal shared a large amount of data with me, which was very effective in helping our children determine how they wanted to proceed in the program. Additionally, our Principal knew which teachers were able to take a class of struggling post-covid students and meet them where they were – at about half a grade behind – and helped them get half a grade ahead, all within a single year. They know the educational outcomes so why don’t parents?</p>
-              <p class="text-base">We need to recognize and reward teachers who are this amazing, and we ought to be much more transparent with how we are doing at educating. I believe we have a responsibility to be transparent not only financially, but also with the results achieved, and we should recognize teachers who are so amazing. When our new district is established on a foundation of transparency and driven to help students achieve, we’ll naturally attract the best teachers and administrators who are happy to be recognized for their amazing contributions.</p></li>
-              <li><strong>CREATIVE SOLUTIONS:</strong> Here's one example of a possible creative solution to a big problem:</p>
-              <p class="text-base">We can keep more schools open, while reducing costs, and incentivize administrators to understand first-hand the issues in our schools. Most everyone I’ve met agrees that we want:</p>
-              <ol class="list-decimal pl-5 text-base">
+        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+          <p class="font-bold">Q: Describe your top three priorities, if you are elected to the school board. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+            <div class="expandable-content"> <!-- Hidden additional content -->
+              <p>A: </p>
+              <ol class="list-decimal pl-5"></ol>
+                <li><strong>EXCITEMENT FOR LEARNING:</strong> How excited are our children to learn? Our children are our
+future - they will be our doctors and lawyers, our electricians and plumbers. Their education
+and excitement for learning is critical to our collective future. Unfortunately, when I ask
+children what their favorite subjects are in school it’s uncommon that I find anyone who
+mentions a core academic subject. All too frequently I hear jokes or comments like:
+“Schools are made of bricks, and prisons are made of bricks” (followed by a look that says,
+don’t you see they’re the same) - what a shame! We can, and must, do better for our
+children.
+<p>I believe in a future where children are excited to attend school, and excited to learn! This
+isn’t rocket science. The surveys Alpine has done through the years need to be more than
+lip-service and fake listening. Students have amazing ideas and contribute to the direction
+of our schools, but currently ASD has primarily listened only to the State and those who sue.
+We haven’t even gotten to really collaborating with parents in an effective way, and really we
+should be going past just parents and also involve the students in a much larger way than
+I’ve ever seen in public education.</p></li>
+<li><strong>TRANSPARENCY:</strong> What results are we getting for the taxpayer money we’re spending?
+Principals know. For example, our children are in the Chinese immersion program and I’ve
+asked the Junior High Principal for details regarding students’ how many students stick with
+the program after elementary school, and about students’ performance on the AP Chinese
+Exam. The principal shared a large amount of data with me, which was very effective in
+helping our children determine how they wanted to proceed in the program. Additionally, our
+Principal knew which teachers were able to take a class of struggling post-covid students
+and meet them where they were – at about half a grade behind – and helped them get half a
+grade ahead, all within a single year. They know the educational outcomes so why don’t
+parents?
+<p>We need to recognize and reward teachers who are this amazing, and we ought to be much
+more transparent with how we are doing at educating.
+I believe we have a responsibility to be transparent not only financially, but also with the
+results achieved, and we should recognize teachers who are so amazing. When our new
+district is established on a foundation of transparency and driven to help students achieve,
+we’ll naturally attract the best teachers and administrators who are happy to be recognized
+for their amazing contributions.</p></li>
+<li><strong>CREATIVE SOLUTIONS:</strong> Here's one example of a possible creative solution to a big
+problem:
+<p>We can keep more schools open, while reducing costs, and incentivize administrators to
+understand first-hand the issues in our schools. Most everyone I’ve met agrees that we
+want:</p>
+              <ol class="list-decimal pl-5"></ol>
                 <li>Our new school district to be fiscally sound and not be constantly increasing taxes</li>
                 <li>Keep our smaller community schools open and reduce school closures</li>
                 <li>Administrators who listen to parents, teachers, and students</li>
               </ol>
-              <p class="text-base">Because we won’t have an administrative office after the split, we could put ⅓ of the district administrative offices in some unused rooms in a school that has had a declining student population, and do that at three different schools. This would:</p>
-              <ol class="list-decimal pl-5 text-base">
+              <p>Because we won’t have an administrative office after the split, we could put ⅓ of the district administrative offices in some unused rooms in a school that has had a declining student population, and do that at three different schools. This would:</p>
+              <ol class="list-decimal pl-5"></ol>
                 <li>Utilize the buildings we already have, and eliminate the problem of where should we house the administrators</li>
-                <li>Help keep those in administration directly in touch with what’s going on in the schools rather than moving them to an office away from what’s happening in the classrooms, which helps them see what's happening daily</li>
+                <li>Help keep those in administration directly in touch with what’s going on in the schools rather than moving them to an office away from the what’s happening in the classrooms, which helps them see what's happening daily</li>
                 <li>Saves our new district the cost associated with building offices and prevents tax increases.</li>
               </ol>
-              <p class="text-base">Where most people see insurmountable problems, I look for creative solutions.</p>
-            </ol>
-          </div>
+              <p>Where most people see insurmountable problems, I look for creative solutions.</p>
+            </div> 
         </div>
       </div>
     </div>
   </section>
 
-  <section id="involved" class="py-16 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-5">Ask your own question</h2>
-      <div class="mb-8">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlCrAat3j5OF-ehGbeu9H3_RUHIUVHaZyssB7Jy1tc2UMoKg/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <!-- Get Involved section with form and buttons -->
+  <section id="involved" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
+      <h2 class="text-3xl font-bold mb-8">Ask your own question</h2> <!-- Section heading -->
+      <!-- <p class="text-lg mb-6">Join our campaign for Timpanogos students!</p> Call to action -->
+      <!-- Question Submission Form -->
+      <div class="mb-8"> <!-- Form container with margin below -->
+        <!-- <h3 class="text-xl font-bold mb-4">Ask your own question</h3> Form heading -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlCrAat3j5OF-ehGbeu9H3_RUHIUVHaZyssB7Jy1tc2UMoKg/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> <!-- Embedded Google Form -->
       </div>
     </div>
   </section>
 
+  <!-- Contact section with contact details -->
+  <section id="expenses" class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
+      <h2 class="text-3xl font-bold mb-8">Campaign Expenses</h2> <!-- Section heading -->
+      <p>Do you want a fiscally responsible Board Member?</p>
+      <p></p>
+      <p></p>
+      <br>
+      <p>$50 Registration Filing Fee - this is the only expense I've made</p>
+      <p>FREE Website coding by Jay with AI help from Grok</p>
+      <p>FREE Hosting from GitHub Pages</p>
+      <p>FREE Chat from Tawk.to</p>
+      <p>FREE Idea Submission & Voting from Fider.io</p>
+      <p>FREE Email from Gmail</p>
+      <br>
+      <p>Shelley isn't shelling out on the campaign, and Shelley won't sell out our school disctrict!</p>
+    </div>
+  </section>
+
+
+  <!-- Contact section with contact details -->
   <section id="contact" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-5">Contact Jay</h2>
-      <p class="text-base mb-4 py-8">Email: <a href="mailto:votejayshelley@gmail.com">votejayshelley@gmail.com</a></p>
-      <p class="text-base mb-4 py-0">Text/Phone: (925) 231-5196</p>
-      <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-        <a id="chatLiveButton" class="chat-live-button bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500">Chat Live</a>
-        <a href="https://vote.utahcounty.gov" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-full hover:bg-gray-700">Voter Info</a>
+    <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
+      <h2 class="text-3xl font-bold mb-8">Contact Jay</h2> <!-- Section heading -->
+      <p></p>
+      <p class="text-lg mb-4 py-8">Email: <a href="mailto:votejayshelley@gmail.com" class="text-blue-600">votejayshelley@gmail.com</a></p> <!-- Email link -->
+      <p class="text-lg mb-4 py-0">Text/Phone: (925) 231-5196</p> <!-- Phone number -->
+      <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4"> <!-- Button container, stacked on mobile, row on desktop -->
+        <a id="chatLiveButton" class="chat-live-button bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500">Chat Live</a> <!-- Chat button -->        
+        <a href="https://vote.utahcounty.gov" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-full hover:bg-gray-700">Voter Info</a> <!-- Voter info link -->
       </div>
-      <div class="flex justify-center space-x-4">
-        <!-- Social media icons can be added here if desired -->
+      <div class="flex justify-center space-x-4"> <!-- Social media icons container -->
+        <!-- <a href="https://facebook.com" target="_blank"><img src="https://via.placeholder.com/32" alt="Facebook"></a> Facebook link with placeholder image -->
+        <!-- <a href="https://twitter.com" target="_blank"><img src="https://via.placeholder.com/32" alt="Twitter"></a> Twitter link with placeholder image -->
       </div>
     </div>
   </section>
 
+
+
+  <!-- Footer section with credits -->
   <footer class="bg-blue-600 text-white p-4 text-center">
-    <p>Built FREE by Jay Shelley</p>
-    <p>Grok for FREE coding, GitHub Pages for FREE hosting, Tawk.to for FREE Chat</p>
-    <p>© 2025 Jay Shelley. All rights reserved.</p>
+    <p>Built FREE by Jay Shelley</p> <!-- Credit for building the site -->
+    <p>FREE Website coding from Grok AI</p>
+    <p>FREE Hosting from GitHub Pages, FREE Chat from Tawk.to</p>
+    <p>© 2025 Jay Shelley. All rights reserved.</p> <!-- Copyright notice -->
   </footer>
 
+  <!-- Smooth Scroll and Toggle Script -->
   <script>
+    // Adds smooth scrolling to all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevents default anchor behavior
         document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+          behavior: 'smooth' // Enables smooth scrolling
         });
+        // Closes mobile menu after clicking a link
         if (window.innerWidth <= 768) {
-          const navToggle = document.querySelector('.nav-toggle');
-          const navMenu = document.querySelector('nav ul');
-          navToggle.classList.remove('active');
-          navMenu.classList.remove('active');
+          const navToggle = document.querySelector('.nav-toggle'); // Gets hamburger toggle
+          const navMenu = document.querySelector('nav ul'); // Gets nav menu
+          navToggle.classList.remove('active'); // Resets toggle state
+          navMenu.classList.remove('active'); // Hides menu
         }
       });
     });
 
+    // Toggles expandable content
     function toggleExpand(link) {
-      const content = link.parentElement.querySelector('.expandable-content');
-      const section = link.closest('.about-content');
+      const content = link.parentElement.querySelector('.expandable-content'); // Finds the expandable content
+      const section = link.closest('.about-content'); // Finds the parent section
       if (section) {
-        section.classList.toggle('expanded');
-        link.textContent = section.classList.contains('expanded') ? 'Show less' : 'Show more';
+        section.classList.toggle('expanded'); // Toggles expanded class
+        link.textContent = section.classList.contains('expanded') ? 'Show less' : 'Show more'; // Updates link text
       } else {
-        console.error('No .about-content parent found for this link');
+        console.error('No .about-content parent found for this link'); // Logs error if parent not found
       }
     }
 
+    // Hamburger menu toggle functionality
     document.querySelector('.nav-toggle').addEventListener('click', function () {
-      this.classList.toggle('active');
-      const navMenu = document.querySelector('nav ul');
-      navMenu.classList.toggle('active');
+      this.classList.toggle('active'); // Toggles active class on hamburger
+      const navMenu = document.querySelector('nav ul'); // Gets nav menu
+      navMenu.classList.toggle('active'); // Toggles active class on menu
     });
   </script>
 
+  <!--Start of Tawk.to Script for live chat -->
   <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); // Initializes Tawk.to API
     (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/684e1916e0e28c190a926b2a/1itoh40cc';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; // Creates script element
+      s1.async=true; // Loads script asynchronously
+      s1.src='https://embed.tawk.to/684e1916e0e28c190a926b2a/1itoh40cc'; // Tawk.to script source
+      s1.charset='UTF-8'; // Sets character encoding
+      s1.setAttribute('crossorigin','*'); // Allows cross-origin loading
+      s0.parentNode.insertBefore(s1,s0); // Inserts script before the first script tag
     })();
   </script>
+  <!--End of Tawk.to Script--> 
 
   <script type="text/javascript">
+    // Adds click event to chat live button
     document.getElementById('chatLiveButton').addEventListener('click', function(event) {
-      event.preventDefault();
+      event.preventDefault(); // Prevents default link behavior
       if (typeof Tawk_API !== 'undefined' && Tawk_API.toggle) {
-        Tawk_API.toggle();
+        Tawk_API.toggle(); // Toggles Tawk.to chat window
       } else {
-        console.log('Tawk.to API not loaded yet. Please wait and try again.');
+        console.log('Tawk.to API not loaded yet. Please wait and try again.'); // Logs error if API not ready
       }
     });
   </script>
