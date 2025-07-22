@@ -193,11 +193,28 @@
     nav a {
       border-bottom: none;
       font-weight: 500;
+      color: white;
+      transition: opacity 0.2s ease;
     }
     
     nav a:hover {
       text-decoration: none;
       border-bottom: none;
+      opacity: 0.8;
+    }
+    
+    /* Navigation list styling */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    nav li {
+      margin: 0;
     }
     
     /* Lists */
@@ -342,7 +359,7 @@
     }
     
     .hero-cta:hover {
-      background-color: #1d4ed8;
+      background-color: #3b82f6;
       transform: translateY(-2px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       border-bottom: none;
@@ -817,10 +834,15 @@
     .card-icon svg {
       width: 2rem;
       height: 2rem;
-      fill: currentColor;
-      opacity: 0.8;
       position: absolute;
+      z-index: 1;
     }
+    
+    .platform-card-creative .card-icon svg { fill: #2563eb; }
+    .platform-card-parents .card-icon svg { fill: #16a34a; }
+    .platform-card-fiscal .card-icon svg { fill: #dc2626; }
+    .platform-card-transparency .card-icon svg { fill: #7c3aed; }
+    .platform-card-learning .card-icon svg { fill: #ea580c; }
     
     .card-title {
       font-size: 1.5rem;
@@ -1152,22 +1174,22 @@
   <!-- Navigation section, sticky at the top -->
   <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10 shadow-lg">
     <div class="container mx-auto flex justify-between items-center"> <!-- Centers content and spaces nav items -->
-      <span class="text-lg font-medium">Campaign 2025</span> <!-- Campaign identifier -->
+      <span class="text-lg font-semibold">For School Board</span> <!-- Campaign identifier -->
       <button class="nav-toggle md:hidden" aria-label="Toggle menu"> <!-- Hamburger toggle, hidden on desktop -->
         <span></span> <!-- First line of hamburger -->
         <span></span> <!-- Second line of hamburger -->
         <span></span> <!-- Third line of hamburger -->
       </button>
       <ul> <!-- Single navigation list, styling controlled by media queries -->
-        <li><a href="#home" class="hover:underline font-medium">Home</a></li> <!-- Home link -->
-        <li><a href="#about" class="hover:underline font-medium">About</a></li> <!-- About link -->
-        <li><a href="#platform" class="hover:underline font-medium">Platform</a></li> <!-- Platform link -->
-        <li><a href="#ideas" class="hover:underline font-medium">Ideas</a></li> <!-- Platform link -->        
-        <li><a href="#experience" class="hover:underline font-medium">Experience</a></li> <!-- Experience link -->
-        <li><a href="#faq" class="hover:underline font-medium">FAQ</a></li> <!-- FAQ link -->
-        <li><a href="#involved" class="hover:underline font-medium">Ask</a></li> <!-- Get Involved link -->
-        <li><a href="#expenses" class="hover:underline font-medium">Expenses</a></li> <!-- Get Involved link -->
-        <li><a href="#contact" class="hover:underline font-medium">Contact</a></li> <!-- Contact link -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#ideas">Ideas</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#involved">Ask</a></li>
+        <li><a href="#expenses">Expenses</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -1843,7 +1865,7 @@
         <!-- Education & Programs Section -->
         <div class="faq-category">
           <h3 class="faq-category-title">
-            <svg class="inline-block w-6 h-6 mr-2 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"></path></svg>
+            <svg class="inline-block w-6 h-6 mr-2 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
             Education & Programs
           </h3>
           <div class="faq-grid">
@@ -1994,8 +2016,7 @@ want:</p>
     <div class="container mx-auto px-4">
       <h2 class="text-2xl font-semibold mb-6 text-white">Contact Jay Shelley</h2>
       <p class="mb-3">Phone/Text: <a href="tel:925-231-5196" class="hover:text-white transition-colors">925-231-5196</a></p>
-      <p class="mb-3">Campaign Email: <a href="mailto:votejayshelley@gmail.com" class="hover:text-white transition-colors">votejayshelley@gmail.com</a></p>
-      <p class="mb-6">General Email: <a href="mailto:info@jayshelley.com" class="hover:text-white transition-colors">info@jayshelley.com</a></p>
+      <p class="mb-6">Email: <a href="mailto:votejayshelley@gmail.com" class="hover:text-white transition-colors">votejayshelley@gmail.com</a></p>
       
       <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-8">
         <a id="chatLiveButton" class="chat-live-button bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Chat Live</a>
