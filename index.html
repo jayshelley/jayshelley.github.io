@@ -619,6 +619,110 @@
       transform: rotate(180deg);
     }
     
+    /* Experience section styling */
+    .experience-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .experience-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .experience-card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    
+    .experience-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .experience-icon-wrapper {
+      width: 3rem;
+      height: 3rem;
+      background: #eff6ff;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .experience-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #2563eb;
+    }
+    
+    .experience-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 1rem;
+    }
+    
+    .experience-content {
+      space-y: 1rem;
+    }
+    
+    .experience-highlight {
+      background: #f9fafb;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .highlight-label {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    
+    .highlight-value {
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    
+    .experience-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .experience-item {
+      background: #f3f4f6;
+      padding: 0.375rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      color: #374151;
+    }
+    
+    .experience-achievement {
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: #4b5563;
+    }
+    
+    .experience-achievement strong {
+      color: var(--color-text-primary);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
     /* FAQ section styling */
     .faq-category {
       margin-bottom: var(--space-3xl);
@@ -1058,60 +1162,92 @@
     </div>
   </section>
 
-  <!-- Experience section with detailed lists -->
+  <!-- Experience section with visual cards -->
   <section id="experience" class="bg-gray-50">
-    <div class="container mx-auto px-4"> <!-- Container with padding -->
-      <h2 class="text-4xl font-bold text-center mb-8">My Experience</h2> <!-- Section heading -->
-      <div> <!-- Content wrapper -->
-        <div class="about-content"> <!-- Public school experience -->
-          <h3 class="text-lg font-semibold mb-2">Public School Volunteer Experience</h3> <!-- Subsection heading -->
-          <ul class="list-disc pl-5 text-lg"> <!-- Bulleted list with padding -->
-            <li>Watch DOGS</li>
-            <li>School Parties</li>
-            <li>PTA Treasurer</li>
-            <li>Bi-weekly Reading assessments with 5th graders</li>
-            <li>Battle of the Books Coordinator</li>
-            <li>Nominating Committee</li>
-            <li>Teacher Grants</li>
-            <li>Science/STEM Fair</li>
-            <li>Clothing Drive Fundraising</li>
-            <li>Spirit Wear sales and printing</li>
-            <li>Worked with Betty Shaw and Karen Beebe at Utah PTA to get Venmo accepted, eliminate fees from donations through PayPal’s Giving Fund, get free Zettle card readers, and let them know about how to lower insurance costs and maximize funds to teachers through DonorsChoose</li>
-          </ul>
-          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
-          <div class="expandable-content">
-            <p class="text-lg">Check back. More details coming soon.</p>
-          </div> -->
+    <div class="container mx-auto px-4">
+      <h2 class="section-heading text-4xl font-bold text-center mb-4">My Experience</h2>
+      <p class="section-subtitle">A comprehensive background in education, finance, and community service</p>
+      
+      <div class="experience-grid">
+        <!-- Public School Experience Card -->
+        <div class="experience-card">
+          <div class="experience-icon-wrapper">
+            <svg class="experience-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+            </svg>
+          </div>
+          <h3 class="experience-title">Public School Leadership</h3>
+          <div class="experience-content">
+            <div class="experience-highlight">
+              <span class="highlight-label">Key Role:</span>
+              <span class="highlight-value">PTA Treasurer</span>
+            </div>
+            <div class="experience-items">
+              <div class="experience-item">Watch DOGS Volunteer</div>
+              <div class="experience-item">Reading Assessment Leader</div>
+              <div class="experience-item">Battle of the Books</div>
+              <div class="experience-item">Teacher Grant Admin</div>
+              <div class="experience-item">STEM Fair Organizer</div>
+              <div class="experience-item">Fundraising Coordinator</div>
+            </div>
+            <div class="experience-achievement">
+              <strong>Major Achievement:</strong> Partnered with Utah PTA leadership to implement Venmo payments, secure free card readers, and maximize teacher funding through DonorsChoose
+            </div>
+          </div>
         </div>
-        <div class="about-content mt-4"> <!-- Private school experience -->
-          <h3 class="text-lg font-semibold mb-2">Private School Volunteer Experience</h3> <!-- Subsection heading -->
-          <ul class="list-disc pl-5 text-lg"> <!-- Bulleted list with padding -->
-            <li>Field Trip Chaperone</li>
-            <li>Recruited Track Coach</li>
-            <li>Chaperoned for 2 week Choir Tour</li>
-            <li>Mock Trial Assistant Coach</li>
-            <li>Advocated for Chinese Classes in Middle School and receiving approval from administration</li>
-          </ul>
-          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
-          <div class="expandable-content">
-            <p class="text-lg">Check back. More details coming soon.</p>
-          </div> -->
+
+        <!-- Private School Experience Card -->
+        <div class="experience-card">
+          <div class="experience-icon-wrapper">
+            <svg class="experience-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+            </svg>
+          </div>
+          <h3 class="experience-title">Private School Engagement</h3>
+          <div class="experience-content">
+            <div class="experience-highlight">
+              <span class="highlight-label">Key Role:</span>
+              <span class="highlight-value">Program Advocate</span>
+            </div>
+            <div class="experience-items">
+              <div class="experience-item">Field Trip Coordinator</div>
+              <div class="experience-item">Track Coach Recruiter</div>
+              <div class="experience-item">Choir Tour Chaperone</div>
+              <div class="experience-item">Mock Trial Coach</div>
+              <div class="experience-item">Language Advocate</div>
+            </div>
+            <div class="experience-achievement">
+              <strong>Major Achievement:</strong> Successfully advocated for and helped implement Chinese language classes in middle school
+            </div>
+          </div>
         </div>
-        <div class="about-content mt-4"> <!-- Degrees and work experience -->
-          <h3 class="text-lg font-semibold mb-2">Relevant Degrees and Experience</h3> <!-- Subsection heading -->
-          <ul class="list-disc pl-5 text-lg"> <!-- Bulleted list with padding -->
-            <li>Master of Accounting from Brigham Young University</li>
-            <li>Took all entrepreneurship classes offered in undergrad and MBA programs</li>
-            <li>Managed software development teams in four startups (our new district is in essence a new startup)</li>
-            <li>State and County Delegate twice, and Pre-cinct Vice Chair once</li>
-            <li>Investing in Public and Private Companies</li>
-            <li>Worked with ASD’s Paul Lewis to improve parent statements on bullying and technology</li>
-            <li>Thoroughly evalauated Prop 2, including 30 minutes asking Todd Peterson questions on stage, and spending 3 hours in a 1:1 deep dive with Jason Sundberg on school finances to make an informed decision during Prop 2.</li>
-          </ul>
-          <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
-          <div class="expandable-content">
-            <p class="text-lg">Check back. More details coming soon.</p>
-          </div> -->
+
+        <!-- Professional Experience Card -->
+        <div class="experience-card">
+          <div class="experience-icon-wrapper">
+            <svg class="experience-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+            </svg>
+          </div>
+          <h3 class="experience-title">Professional Background</h3>
+          <div class="experience-content">
+            <div class="experience-highlight">
+              <span class="highlight-label">Education:</span>
+              <span class="highlight-value">Masters in Accounting, BYU</span>
+            </div>
+            <div class="experience-items">
+              <div class="experience-item">4 Startup Experience</div>
+              <div class="experience-item">State Delegate (2x)</div>
+              <div class="experience-item">Financial Analysis</div>
+              <div class="experience-item">Investment Expert</div>
+              <div class="experience-item">Policy Development</div>
+              <div class="experience-item">Prop 2 Analysis</div>
+            </div>
+            <div class="experience-achievement">
+              <strong>Major Achievement:</strong> Deep-dive analysis with district leadership on school finances, helping shape informed policy decisions
+            </div>
+          </div>
         </div>
       </div>
     </div>
