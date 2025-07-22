@@ -293,21 +293,36 @@
     
     /* Hero title styling */
     .hero-title {
-      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-size: clamp(3rem, 7vw, 4.5rem);
       font-weight: 900;
-      line-height: 0.9;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.25rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
       color: var(--color-text-primary);
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
     }
     
     /* Hero subtitle styling */
     .hero-subtitle {
-      font-size: clamp(1.25rem, 4vw, 2rem);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
       font-weight: 400;
       line-height: 1.2;
       color: var(--color-text-secondary);
       margin-bottom: 2rem;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 640px) {
+      .hero-subtitle {
+        font-size: 1.25rem;
+        white-space: normal;
+      }
     }
     
     /* Hero CTA button styling */
@@ -571,30 +586,33 @@
 
     /* Styling for show more/less links */
     .show-more-less {
-      color: var(--color-text-accent); /* Sets link color */
-      cursor: pointer; /* Indicates clickable element */
-      text-decoration: none; /* Removes underline */
-      margin-left: var(--space-xs); /* Adds small left margin */
-      font-weight: 500;
-      font-size: var(--text-sm);
-      text-transform: uppercase;
-      letter-spacing: var(--tracking-wider);
+      color: #6b7280;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 0.5rem;
+      font-weight: 400;
+      font-size: 0.875rem;
+      text-transform: none;
+      letter-spacing: normal;
       transition: all 0.2s ease;
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.25rem;
     }
     
     .show-more-less:hover {
-      color: #1e3a8a; /* Darkens color on hover for interactivity */
+      color: #2563eb;
+      background-color: #eff6ff;
       text-decoration: none;
       border-bottom: none;
     }
     
     .show-more-less::after {
-      content: '↓';
+      content: '▼';
+      font-size: 0.625rem;
       transition: transform 0.2s ease;
-      font-size: 0.75rem;
     }
     
     .expanded .show-more-less::after {
@@ -611,12 +629,20 @@
     }
     
     .faq-category-title {
-      font-size: var(--text-2xl);
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--color-text-primary);
-      margin-bottom: var(--space-xl);
-      padding-bottom: var(--space-md);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
       border-bottom: 2px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .faq-category-title svg {
+      width: 1.5rem;
+      height: 1.5rem;
     }
     
     .faq-category-description {
@@ -638,31 +664,54 @@
     }
     
     .faq-item {
-      background-color: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 0.75rem;
-      padding: var(--space-xl);
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-sm);
+      background-color: #fafbfc;
+      border: 1px solid #e1e4e8;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
     }
     
     .faq-item:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-      border-color: rgba(0, 0, 0, 0.15);
+      background-color: #ffffff;
+      border-color: #d1d5db;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+    
+    .faq-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background-color: #3b82f6;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    
+    .faq-item:hover::before {
+      opacity: 1;
     }
     
     .faq-question {
       font-weight: 600;
-      font-size: var(--text-lg);
+      font-size: 1rem;
       color: var(--color-text-primary);
-      margin-bottom: var(--space-sm);
-      line-height: var(--leading-snug);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    
+    .faq-item p.font-bold {
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
     }
     
     @media (min-width: 768px) {
       .faq-item {
-        padding: var(--space-2xl);
+        padding: 2rem;
       }
     }
     
@@ -791,7 +840,7 @@
   <!-- Navigation section, sticky at the top -->
   <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10 shadow-lg">
     <div class="container mx-auto flex justify-between items-center"> <!-- Centers content and spaces nav items -->
-      <h1 class="text-xl font-semibold tracking-wide">Jay Shelley</h1> <!-- Site title or logo -->
+      <span class="text-lg font-medium">Campaign 2025</span> <!-- Campaign identifier -->
       <button class="nav-toggle md:hidden" aria-label="Toggle menu"> <!-- Hamburger toggle, hidden on desktop -->
         <span></span> <!-- First line of hamburger -->
         <span></span> <!-- Second line of hamburger -->
@@ -820,7 +869,7 @@
     </div>
       <div class="hero-content text-center mx-auto max-w-2xl px-4"> <!-- Hero content container -->
         <h1 class="hero-title">Jay Shelley</h1>
-        <p class="hero-subtitle">for Timpanogos School Board</p>
+        <p class="hero-subtitle">Timpanogos School Board</p>
         <a href="#involved" class="hero-cta">
           Ask Me Anything
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1072,8 +1121,8 @@
   <!-- FAQ section with sample questions -->
   <section id="faq" class="bg-white">
     <div class="container mx-auto px-4"> <!-- Container with padding -->
-      <h2 class="text-4xl font-bold text-center mb-8">Frequently Asked Questions</h2> <!-- Section heading -->
-      <p class="text-lg text-center mb-8 text-gray-600">Browse through these frequently asked questions organized by topic to learn more about my candidacy and vision for our school district.</p>
+      <h2 class="section-heading text-4xl font-bold text-center mb-4">Frequently Asked Questions</h2> <!-- Section heading -->
+      <p class="section-subtitle">Browse through these frequently asked questions organized by topic to learn more about my candidacy and vision for our school district.</p>
       
       <div id="faq-content" class="space-y-12"> <!-- Container for FAQ items -->
         
