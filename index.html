@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design by setting viewport to device width and initial zoom level -->
   <title>Jay Shelley for Timpanogos School Board</title> <!-- Sets the page title displayed in the browser tab -->
   <meta name="description" content="Jay Shelley, candidate for Timpanogos School Board, committed to building stronger schools in Utah."> <!-- Provides a description for search engines -->
+  
+  <!-- Professional Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script> <!-- Imports Tailwind CSS for styling via CDN -->
   
   <!-- Google tag (gtag.js) -->
@@ -18,16 +24,349 @@
   </script>
   
   <style>
-    /* General styling for the body, setting a custom font */
-    body { font-family: 'Roboto', sans-serif; }
+    /* Professional Typography System */
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      --font-serif: 'Merriweather', 'Georgia', serif;
+      
+      /* Refined type scale */
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 2rem;
+      --text-4xl: 2.5rem;
+      --text-5xl: 3.5rem;
+      --text-6xl: 4rem;
+      
+      /* Line heights */
+      --leading-none: 1;
+      --leading-tight: 1.2;
+      --leading-snug: 1.375;
+      --leading-normal: 1.5;
+      --leading-relaxed: 1.75;
+      --leading-loose: 2;
+      
+      /* Letter spacing */
+      --tracking-tighter: -0.05em;
+      --tracking-tight: -0.025em;
+      --tracking-normal: 0em;
+      --tracking-wide: 0.025em;
+      --tracking-wider: 0.05em;
+      
+      /* Colors - Improved contrast */
+      --color-text-primary: #0f172a;
+      --color-text-secondary: #334155;
+      --color-text-muted: #64748b;
+      --color-text-accent: #2563eb;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 0.75rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4rem;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    /* Base typography */
+    body { 
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-primary);
+      font-weight: 400;
+      letter-spacing: var(--tracking-normal);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    
+    @media (min-width: 768px) {
+      body {
+        font-size: 1.0625rem;
+      }
+    }
+    
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      color: var(--color-text-primary);
+      margin-top: 0;
+      text-rendering: optimizeLegibility;
+    }
+    
+    h1 {
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      letter-spacing: var(--tracking-tighter);
+      margin-bottom: var(--space-lg);
+    }
+    
+    @media (min-width: 768px) {
+      h1 {
+        font-size: var(--text-5xl);
+      }
+    }
+    
+    h2 {
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      margin-bottom: var(--space-lg);
+    }
+    
+    @media (min-width: 768px) {
+      h2 {
+        font-size: var(--text-4xl);
+        margin-bottom: var(--space-xl);
+      }
+    }
+    
+    h3 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    
+    @media (min-width: 768px) {
+      h3 {
+        font-size: var(--text-2xl);
+      }
+    }
+    
+    h4 {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+    }
+    
+    /* Body text */
+    p {
+      margin-bottom: var(--space-lg);
+      line-height: var(--leading-relaxed);
+    }
+    
+    p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Lead text */
+    .lead {
+      font-size: var(--text-lg);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-secondary);
+      font-weight: 400;
+    }
+    
+    @media (min-width: 768px) {
+      .lead {
+        font-size: var(--text-xl);
+      }
+    }
+    
+    /* Links */
+    a {
+      color: var(--color-text-accent);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+    
+    a:hover {
+      color: #1e3a8a;
+      border-bottom-color: currentColor;
+    }
+    
+    /* Navigation links */
+    nav a {
+      border-bottom: none;
+      font-weight: 500;
+      color: white;
+      transition: opacity 0.2s ease;
+    }
+    
+    nav a:hover {
+      text-decoration: none;
+      border-bottom: none;
+      opacity: 0.8;
+    }
+    
+    /* Navigation list styling */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    nav li {
+      margin: 0;
+    }
+    
+    /* Lists */
+    ul, ol {
+      margin-bottom: var(--space-lg);
+      padding-left: var(--space-xl);
+    }
+    
+    li {
+      margin-bottom: var(--space-sm);
+      line-height: var(--leading-relaxed);
+    }
+    
+    li:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Nested lists */
+    li ul, li ol {
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-sm);
+    }
+    
+    /* Strong text */
+    strong {
+      font-weight: 700;
+      color: var(--color-text-primary);
+    }
+    
+    /* Improved section spacing */
+    section {
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-3xl);
+    }
+    
+    @media (min-width: 768px) {
+      section {
+        padding-top: calc(var(--space-3xl) * 1.5);
+        padding-bottom: calc(var(--space-3xl) * 1.5);
+      }
+    }
+    
+    /* Container width constraints */
+    .container {
+      max-width: 1200px;
+    }
+    
+    /* Content width for readability */
+    .prose {
+      max-width: 65ch;
+    }
+    
+    /* Text sizes for different contexts */
+    .text-xs { font-size: var(--text-xs); }
+    .text-sm { font-size: var(--text-sm); }
+    .text-base { font-size: var(--text-base); }
+    .text-lg { 
+      font-size: var(--text-lg); 
+      line-height: var(--leading-relaxed);
+    }
+    .text-xl { font-size: var(--text-xl); }
+    .text-2xl { font-size: var(--text-2xl); }
+    .text-3xl { font-size: var(--text-3xl); }
+    .text-4xl { font-size: var(--text-4xl); }
+    .text-5xl { font-size: var(--text-5xl); }
 
     /* Hero section styling, creating a full-width background with content overlay */
     .hero {
-      background: none; /* No background color, relying on image */
-      min-height: 250px; /* Minimum height for the hero section */
-      position: relative; /* Relative positioning for absolute child elements */
-      overflow: hidden; /* Prevents content overflow */
-      padding-top: 64px; /* Adds space at the top for navigation overlap */
+      background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-3xl);
+      display: flex;
+      align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .hero {
+        min-height: 600px;
+        padding-top: calc(var(--space-3xl) * 2);
+        padding-bottom: calc(var(--space-3xl) * 2);
+      }
+    }
+    
+    /* Hero content container */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    
+    /* Hero title styling */
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary);
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
+    
+    /* Hero subtitle styling */
+    .hero-subtitle {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--color-text-secondary);
+      margin-bottom: 2rem;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 640px) {
+      .hero-subtitle {
+        font-size: 1.25rem;
+        white-space: normal;
+      }
+    }
+    
+    /* Hero CTA button styling */
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #2563eb;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .hero-cta:hover {
+      background-color: #3b82f6;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      border-bottom: none;
+    }
+    
+    .hero-cta:active {
+      transform: translateY(0);
     }
 
     /* Styles for the background image within the hero section */
@@ -52,12 +391,14 @@
   .hero img {
       object-fit: cover; /* Ensures image fits within its container */
       border: 4px solid white; /* Adds a white border around images */
+      box-shadow: var(--shadow-lg);
   }
 
     /* Styling for the family image, floating it left with margin */
   .family-image {
       float: left; /* Positions image to the left of text */
-      margin-right: 2rem; /* Adds space between image and text */
+      margin-right: var(--space-xl); /* Adds space between image and text */
+      filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
   }
 
     /* Styling for the text content within the hero */
@@ -84,12 +425,11 @@
         background-position: 80% center; /* Adjusts image position for larger screens */
     }
     .family-image {
-        margin-right: 2rem; /* Maintains right margin */
+        margin-right: var(--space-2xl); /* Maintains right margin */
     }
     .text-content {
       margin-left: 0; /* Removes left margin for alignment */
     }
-    /* do not accept the image width 100px */
   }
 
     /* Navigation bar styling, keeping it sticky at the top */
@@ -97,11 +437,46 @@
       z-index: 10; /* Ensures nav stays above other content */
       position: sticky; /* Sticks nav to the top on scroll */
       top: 0; /* Aligns to the top of the viewport */
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(10px);
+      background-color: rgba(37, 99, 235, 0.95);
   }
 
-    /* Aligns about content to the left */
+    /* About content styling */
   .about-content {
       text-align: left; /* Left-aligns text in about sections */
+      margin-bottom: var(--space-2xl);
+  }
+  
+  .about-content:last-child {
+      margin-bottom: 0;
+  }
+  
+  /* Platform section improvements */
+  .platform-item {
+      margin-bottom: var(--space-2xl);
+      padding-bottom: var(--space-2xl);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .platform-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+  }
+  
+  /* Section headers */
+  .section-header {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+  }
+  
+  .section-subtitle {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      margin-top: var(--space-md);
   }
 
     /* Styling for the chat live button to indicate interactivity */
@@ -117,24 +492,613 @@
     /* Shows expandable content when parent has .expanded class */
     .expanded .expandable-content {
       display: block; /* Displays content when expanded */
+      margin-top: 1rem; /* Add space above expandable content */
+      padding: 1.5rem 0; /* Add vertical padding */
     }
+    
+    /* Improved typography for expandable content */
+    .expandable-content p {
+      margin-bottom: 1.25rem; /* Space between paragraphs */
+      line-height: var(--leading-relaxed); /* Better line height for readability */
+      color: var(--color-text-secondary);
+    }
+    
+    .expandable-content p:last-child {
+      margin-bottom: 0; /* Remove margin from last paragraph */
+    }
+    
+    /* Better list formatting in expandable content */
+    .expandable-content ul, 
+    .expandable-content ol {
+      margin: 1.25rem 0; /* Vertical spacing around lists */
+      padding-left: 1.75rem; /* Proper indentation */
+    }
+    
+    .expandable-content li {
+      margin-bottom: 0.625rem; /* Space between list items */
+      line-height: var(--leading-relaxed); /* Readable line height for lists */
+      color: var(--color-text-secondary);
+    }
+    
+    .expandable-content li:last-child {
+      margin-bottom: 0; /* Remove margin from last item */
+    }
+    
+    /* Headers within expandable content */
+    .expandable-content h3,
+    .expandable-content h4 {
+      margin-top: 1.5rem; /* Space above headers */
+      margin-bottom: 0.75rem; /* Space below headers */
+      font-weight: 600; /* Semi-bold headers */
+    }
+    
+    .expandable-content h3:first-child,
+    .expandable-content h4:first-child {
+      margin-top: 0; /* No top margin for first header */
+    }
+    
+    /* Strong text emphasis */
+    .expandable-content strong {
+      font-weight: 600; /* Make bold text slightly less heavy */
+      color: var(--color-text-primary); /* Slightly darker color for emphasis */
+    }
+    
+    /* Button styling */
+    .btn {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      letter-spacing: var(--tracking-wide);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    
+    .btn:active {
+      transform: translateY(0);
+    }
+    
+    /* Card styling */
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-xl);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    
+    @media (min-width: 768px) {
+      .card {
+        padding: var(--space-2xl);
+      }
+    }
+    
+    /* Professional color adjustments */
+    .bg-blue-600 { background-color: #2563eb; }
+    .bg-blue-700 { background-color: #1d4ed8; }
+    .hover\:bg-blue-700:hover { background-color: #1d4ed8; }
+    .hover\:bg-blue-800:hover { background-color: #1e3a8a; }
+    
+    /* Text colors */
+    .text-primary { color: var(--color-text-primary); }
+    .text-secondary { color: var(--color-text-secondary); }
+    .text-muted { color: var(--color-text-muted); }
+    
+    /* Fix contrast for light gray text */
+    .text-gray-600 { color: var(--color-text-secondary) !important; }
+    .text-gray-700 { color: var(--color-text-primary) !important; }
+    .text-gray-800 { color: var(--color-text-primary) !important; }
 
     /* Styling for show more/less links */
     .show-more-less {
-      color: #2563EB; /* Sets link color */
-      cursor: pointer; /* Indicates clickable element */
-      text-decoration: none; /* Removes underline */
-      margin-left: 0.125rem; /* Adds small left margin */
+      color: #6b7280;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 0.5rem;
+      font-weight: 400;
+      font-size: 0.875rem;
+      text-transform: none;
+      letter-spacing: normal;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.25rem;
     }
 
     .show-more-less:hover {
-      color: #1D4ED8; /* Darkens color on hover for interactivity */
+      color: #2563eb;
+      background-color: #eff6ff;
+      text-decoration: none;
+      border-bottom: none;
+    }
+    
+    .show-more-less::after {
+      content: '▼';
+      font-size: 0.625rem;
+      transition: transform 0.2s ease;
+    }
+    
+    .expanded .show-more-less::after {
+      transform: rotate(180deg);
+    }
+    
+    /* Experience section styling */
+    .experience-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .experience-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .experience-card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    
+    .experience-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .experience-icon-wrapper {
+      width: 3rem;
+      height: 3rem;
+      background: #eff6ff;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .experience-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #2563eb;
+    }
+    
+    .experience-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 1rem;
+    }
+    
+    .experience-content {
+      space-y: 1rem;
+    }
+    
+    .experience-highlight {
+      background: #f9fafb;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .highlight-label {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    
+    .highlight-value {
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    
+    .experience-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .experience-item {
+      background: #f3f4f6;
+      padding: 0.375rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      color: #374151;
+    }
+    
+    .experience-achievement {
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: #4b5563;
+    }
+    
+    .experience-achievement strong {
+      color: var(--color-text-primary);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    /* Platform section styling */
+    .platform-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+    
+    .platform-hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .platform-headline {
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--color-text-primary);
+      margin-bottom: 1rem;
+    }
+    
+    .platform-subheadline {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      color: var(--color-text-secondary);
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+    
+    .platform-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .platform-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .platform-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .platform-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .platform-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .platform-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: currentColor;
+      opacity: 0.8;
+    }
+    
+    .platform-card-creative { color: #2563eb; }
+    .platform-card-parents { color: #16a34a; }
+    .platform-card-fiscal { color: #dc2626; }
+    .platform-card-transparency { color: #7c3aed; }
+    .platform-card-learning { color: #ea580c; }
+    
+    .card-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      background: currentColor;
+      opacity: 0.1;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .card-icon svg {
+      width: 2rem;
+      height: 2rem;
+      fill: currentColor;
+      opacity: 1;
+    }
+    
+    .platform-card-creative .card-icon { color: #2563eb; }
+    .platform-card-parents .card-icon { color: #16a34a; }
+    .platform-card-fiscal .card-icon { color: #dc2626; }
+    .platform-card-transparency .card-icon { color: #7c3aed; }
+    .platform-card-learning .card-icon { color: #ea580c; }
+    
+    /* Icons removed for simplicity */
+    
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .card-subtitle {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    
+    .card-metrics {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .metric {
+      text-align: center;
+    }
+    
+    .metric-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 900;
+      color: currentColor;
+      opacity: 0.8;
+    }
+    
+    .metric-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.25rem;
+    }
+    
+    .card-highlight {
+      background: #f9fafb;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: var(--color-text-secondary);
+      border-left: 3px solid currentColor;
+    }
+    
+    .card-quote {
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      color: var(--color-text-primary);
+      position: relative;
+    }
+    
+    .card-quote span {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.5rem;
+      font-style: normal;
+    }
+    
+    .card-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .card-content p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .benefit-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .benefit-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.75rem;
+      position: relative;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    
+    .benefit-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: currentColor;
+      font-weight: 700;
+      opacity: 0.6;
+    }
+    
+    @media (min-width: 1024px) {
+      .platform-card-creative {
+        grid-column: span 2;
+      }
+    }
+    
+    /* FAQ section styling */
+    .faq-category {
+      margin-bottom: var(--space-3xl);
+    }
+    
+    .faq-category:last-child {
+      margin-bottom: 0;
+    }
+    
+    .faq-category-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .faq-category-title svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    
+    .faq-category-description {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-xl);
+      font-style: italic;
+    }
+    
+    .faq-grid {
+      display: grid;
+      row-gap: 0.125rem;
+      gap: var(--space-sm);
+    }
+    
+    @media (min-width: 768px) {
+      .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 0.125rem;
+        gap: var(--space-sm);
+      }
+    }
+    
+    .faq-item {
+      background-color: #fafbfc;
+      border: 1px solid #e1e4e8;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .faq-item:hover {
+      background-color: #ffffff;
+      border-color: #d1d5db;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+    
+    .faq-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background-color: #3b82f6;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    
+    .faq-item:hover::before {
+      opacity: 1;
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    
+    .faq-item p.font-bold {
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+    
+    @media (min-width: 768px) {
+      .faq-item {
+        padding: 2rem;
+      }
+    }
+    
+    /* Tabs for FAQ categories */
+    .faq-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-2xl);
+      border-bottom: 2px solid #e5e7eb;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .faq-tab {
+      padding: var(--space-md) var(--space-xl);
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      margin-bottom: -2px;
+    }
+    
+    .faq-tab:hover {
+      color: var(--color-text-primary);
+      background-color: #f9fafb;
+    }
+    
+    .faq-tab.active {
+      color: var(--color-text-accent);
+      border-bottom-color: var(--color-text-accent);
+      font-weight: 600;
     }
 
     /* Media query for mobile devices (max-width: 768px) */
     @media (max-width: 768px) {
       .hero {
-        min-height: 200px; /* Reduces hero height on mobile */
+        min-height: 400px; /* Maintains good hero presence on mobile */
+      }
+      .hero-title {
+        margin-bottom: 0.5rem;
+      }
+      .hero-subtitle {
+        margin-bottom: 1.5rem;
       }
     .family-image {
         display: none; /* Hides family image on mobile */
@@ -211,26 +1175,26 @@
     }
   </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50">
   <!-- Navigation section, sticky at the top -->
-  <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
+  <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10 shadow-lg">
     <div class="container mx-auto flex justify-between items-center"> <!-- Centers content and spaces nav items -->
-      <h1 class="text-xl font-bold">Jay Shelley</h1> <!-- Site title or logo -->
+      <span class="text-lg font-semibold">For School Board</span> <!-- Campaign identifier -->
       <button class="nav-toggle md:hidden" aria-label="Toggle menu"> <!-- Hamburger toggle, hidden on desktop -->
         <span></span> <!-- First line of hamburger -->
         <span></span> <!-- Second line of hamburger -->
         <span></span> <!-- Third line of hamburger -->
       </button>
       <ul> <!-- Single navigation list, styling controlled by media queries -->
-        <li><a href="#home" class="hover:underline">Home</a></li> <!-- Home link -->
-        <li><a href="#about" class="hover:underline">About</a></li> <!-- About link -->
-        <li><a href="#platform" class="hover:underline">Platform</a></li> <!-- Platform link -->
-        <li><a href="#ideas" class="hover:underline">Ideas</a></li> <!-- Platform link -->        
-        <li><a href="#experience" class="hover:underline">Experience</a></li> <!-- Experience link -->
-        <li><a href="#faq" class="hover:underline">FAQ</a></li> <!-- FAQ link -->
-        <li><a href="#involved" class="hover:underline">Ask</a></li> <!-- Get Involved link -->
-        <li><a href="#expenses" class="hover:underline">Expenses</a></li> <!-- Get Involved link -->
-        <li><a href="#contact" class="hover:underline">Contact</a></li> <!-- Contact link -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#ideas">Ideas</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#involved">Ask</a></li>
+        <li><a href="#expenses">Expenses</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -240,15 +1204,17 @@
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/profile-image.jpg');"></div> <!-- Background image covering the section -->
     <div class="container mx-auto relative z-1 px-4 pt-16"> <!-- Container for hero content -->
       <div class="family-image float-left mr-8"> <!-- Family image floated left -->
-        <img src="images/family-image.jpg" alt="My family" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover"> <!-- Family photo -->
+        <img src="images/family-image.jpg" alt="My family" class="hero-image w-60 h-60 md:w-80 md:h-80 rounded-full object-cover shadow-2xl border-4 border-white/50 backdrop-blur-sm"> <!-- Family photo -->
     </div>
-      <div class="text-content text-center mx-auto max-w-md"> <!-- Centered text content -->
-      <h2 class="text-4xl md:text-5xl font-bold mb-4 whitespace-pre-wrap">Jay Shelley
-for
-Timpanogos
-School Board</h2> <!-- Main heading with line breaks -->
-        <!-- <p class="text-lg md:text-xl mb-6">Building a stronger Timpanogos with tech-forward, community-driven solutions.</p> --> <!-- Commented out subheading -->
-        <a href="https://chatgpt.com/g/g-687ae0e67c108191aa99ae72f4d6c2c6-jay-shelley-s-ai-campaign-agent" target="_blank" title="Interactively learn and ask your questions" class="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Ask Jay's ChatBot</a> <!-- Call-to-action button -->
+      <div class="hero-content text-center mx-auto max-w-2xl px-4"> <!-- Hero content container -->
+        <h1 class="hero-title">Jay Shelley</h1>
+        <p class="hero-subtitle">Timpanogos School Board</p>
+        <a href="https://chatgpt.com/g/g-687ae0e67c108191aa99ae72f4d6c2c6-jay-shelley-s-ai-campaign-agent" target="_blank" title="Interactively learn and ask your questions" class="hero-cta">
+          Ask Jay's AI
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
       </div>
       <div class="w-32 md:w-48"></div> <!-- Spacer to balance layout -->
     </div>
@@ -258,7 +1224,7 @@ School Board</h2> <!-- Main heading with line breaks -->
   <!-- About section with expandable content -->
   <section id="about" class="py-16 bg-white">
     <div class="container mx-auto px-4"> <!-- Container with padding -->
-      <h2 class="text-3xl font-bold text-center mb-8">About</h2> <!-- Section heading -->
+      <h2 class="text-4xl font-bold text-center mb-8">About Me</h2> <!-- Section heading -->
       <div class="flex flex-col items-center"> <!-- Flex column for centering -->
         <div> <!-- Content wrapper -->
           <div class="about-content"> <!-- First about paragraph -->
@@ -270,7 +1236,7 @@ School Board</h2> <!-- Main heading with line breaks -->
             </div>
           </div>
           <div class="about-content mt-4"> <!-- Second about paragraph -->
-            <p class="text-lg">I want to help negotiate the split of Alpine’s assets, set up our district with more transparency and accountability, and encourage increased parent-teacher involvement. I will work to implement creative solutions that will incentivize administrators to be in touch with what’s happening in the classrooms and reduce school closures, while saving financially in a significant way. Sound impossible? Let’s talk.</p>
+            <p class="text-lg">I want to help negotiate the split up of Alpine’s assets, set up our district with more transparency and accountability, and encourage increased parent-teacher involvement. I will work to implement creative solutions that will incentivize administrators to be in touch with what’s happening in the classrooms and reduce school closures, while saving financially in a significant way. Sound impossible? Let’s talk.
               <!-- <a class="show-more-less" onclick="toggleExpand(this)">Show more</a> -->
             </p>
             <div class="expandable-content"> <!-- Hidden additional content -->
@@ -278,10 +1244,10 @@ School Board</h2> <!-- Main heading with line breaks -->
             </div>
           </div>
           <div class="about-content mt-4"> <!-- Third about paragraph -->
-          <p class="text-lg">Most importantly, our children need to like school and thrive academically. We have a huge opportunity to improve the educational lives of our children, let’s not squander it! I'd love to talk with you! Please text or call me at 925-231-5196.<a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p>
-            <div class="expandable-content text-lg"> <!-- Hidden additional content -->
-            <p></p>
-            <p></p>
+          <p class="text-lg">Most importantly, our children need to like school and thrive academically. We have a huge opportunity to improve the educational lives of our children, let’s not squander it! I'd love to talk with you! Please text or call me at 925-231-5196.
+            <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
+          </p>
+            <div class="expandable-content"> <!-- Hidden additional content -->
             <p class="text-lg">We moved from California to Utah in 2014, just before our oldest entered elementary school. We chose to move to Utah for two reasons. First, we wanted to provide our children with the best opportunities for an excellent education. Second, we wanted to avoid a move in their most formative years, so we looked for an educational community that we felt would meet their needs through their entire educational experience.</p>
             <p class="text-lg">My cousin teaches in Utah’s Dual Language Immersion (DLI) program. She believes enrolling children in a DLI program is a fairly easy step a parent can take that will pay dividends throughout a child’s life. She cited a number of reasons we should enroll our children in a DLI school. She told us children naturally learn languages more easily when they are young, and the constant game of charades teachers have to play to communicate in the classroom is really beneficial because learners are receiving both audible and visual queues, which is much more engaging and effective. Our conversations sparked my interest, so we started our home search by visiting the Chinese immersion schools in Utah County. After our visit to Cascade Elementary, we decided it was the best fit for our family. We even purchased a house within viewing distance of the school.</p>
             <p class="text-lg">Over time I became so involved in my career that even when I was home I was not very present, or involved in our childrens’ education. This all changed when I was asked to be a “Watch DOG” by my first grader. The Watch DOGS program seeks to involve fathers by encouraging them to help out at the school one day during the school year. My child’s teacher, Mr. Abbott, asked me to sit in the hall and help students who were struggling with math. I spent a short five minutes with each student. It was simple, but I saw first hand how helping with the little things can make a difference – for teachers and students alike. Our teachers have an enormous challenge educating so many children at once, all while managing classroom logistics and minutiae. After this experience, I became more involved in my children’s education.</p>
@@ -316,7 +1282,8 @@ School Board</h2> <!-- Main heading with line breaks -->
               <li>Language Immersion - this has been really challenging because we moved to Utah to a large degree to do Chinese Immersion. We would love for our kids to continue at least until they take the AP Chinese Exam.</li>
             </ol>
             <p>The decision to stay in public school or to move to private school has been difficult for each of our children and has weighed heavily on my wife and me. Public schools need to give parents and students reasons to stay–currently they act too much like a monopoly (not held accountable for poor results/low satisfaction). I believe public schools can outcompete private schools, charter schools and homeschool. However, we need to take steps to do so, especially considering the addition of the Utah Fits All Scholarship. Let’s give parents and students more reasons to choose their local public school!</p>
-            <p>So, what can we improve upon or change to make the decision easier for families to choose our public schools? I have listed a few of those ideas on my platform. Ultimately, we are taking a huge step forward with the division of Alpine School District, allowing for more local control. However, we need to be deliberate in taking the best of what we currently have from ASD, and introduce improvements that benefit our students and teachers. We need purposeful ideas, policies and direction that will encourage the love of learning, challenge them to succeed beyond the classroom, and improve our world by looking outside themselves. Let’s do our best for the good of our children and our community, so families will want to move to Orem, Lindon, Pleasant Grove and Vineyard. Let’s make our school district the place families want to be, because our schools are the optimal places of learning and assist students in becoming their best versions of themselves!</p> -->
+            <p>So, what can we improve upon or change to make the decision easier for families to choose our public schools? I have listed a few of those ideas on my platform. Ultimately, we are taking a huge step forward with the division of Alpine School District, allowing for more local control. However, we need to be deliberate in taking the best of what we currently have from ASD, and introduce improvements that benefit our students and teachers. We need purposeful ideas, policies and direction that will encourage the love of learning, challenge them to succeed beyond the classroom, and improve our world by looking outside themselves. Let’s do our best for the good of our children and our community, so families will want to move to Orem, Lindon, Pleasant Grove and Vineyard. Let’s make our school district the place families want to be, because our schools are the optimal places of learning and assist students in becoming their best versions of themselves!</p>
+        
           </div>
           </div>
         </div>
@@ -347,6 +1314,7 @@ School Board</h2> <!-- Main heading with line breaks -->
             </ol>
           <p>Where most people see insurmountable problems, I look for creative solutions.</p>
         </div>
+        </div>
           <div class="about-content mt-4">
             <!-- Parent involvement -->
             <p class="text-lg">
@@ -354,14 +1322,15 @@ School Board</h2> <!-- Main heading with line breaks -->
               when we work together.
               <a class="show-more-less" onclick="toggleExpand(this)">Show more</a>
             </p>
-            <div class="expandable-content text-lg">
+          <div class="expandable-content text-lg">
               <!-- Hidden additional content -->
               <p>Unfortunately, there’s been a trend in schools of parents becoming critical and scrutinizing teachers, and teachers requesting to have less parental involvement in classrooms. This results in parents not understanding how to best help their children at home, and not having firsthand experience seeing the incredibly difficult job teachers do.</p>
               <p>It further results in lower test scores and increased costs, which leads to increased class sizes and hiring more teacher aides.</p>
               <p>Students benefit most when they have the support of both teachers and parents. Parents can better provide support when they are able to observe classes and be directly involved both at home and at school. Teachers do best when students and parents are both involved in the classroom and care about what’s best for all.</p>
               <p><strong>When we break the cycle of distrust between educators and parents and work for the good of children, we achieve the best learning outcomes for students, more sanity for teachers, and a fiscally responsible school district.</strong></p>
             </div>
-        <div class="about-content mt-4">
+          </div>
+          <div class="about-content mt-4">
           <!-- Fiscal responsibility -->
           <p class="text-lg">
             <strong>FISCAL RESPONSIBILITY:</strong> Cost of education is rising, while learning outcomes have been diminishing.
@@ -409,12 +1378,58 @@ School Board</h2> <!-- Main heading with line breaks -->
 <!-- Your Ideas -->
   <section id="ideas" class="py-16 bg-white">
     <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
-      <h2 class="text-3xl font-bold mb-8">Share Your Ideas</h2> <!-- Section heading -->
+      <h2 class="text-4xl font-bold mb-8">Share Your Ideas</h2> <!-- Section heading -->
       <p class="text-lg mb-6">To share your ideas, comment on others' ideas, and upvote the best ideas, use the full webapp: <a href="https://jayshelley.fider.io" target="_blank" class="hover:underline text-blue-600 hover:text-blue-700">jayshelley.fider.io</a></p>
       <!-- Question Submission Form -->
       <div class="mb-8"> <!-- Form container with margin below -->
         <!-- <h3 class="text-xl font-bold mb-4">Submit your own ideas!</h3> Form heading -->
-        <iframe src="https://jayshelley.fider.io" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" class="rounded-lg shadow-md">Loading Fider.io Feedback…</iframe>
+        <!-- Fider.io integration with cookie warning and alternative access -->
+        <div id="fider-container" class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div id="fider-iframe-wrapper">
+            <iframe src="https://jayshelley.fider.io" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" class="rounded-lg" sandbox="allow-same-origin allow-scripts allow-forms allow-popups">Loading Fider.io Feedback…</iframe>
+          </div>
+          <div id="fider-cookie-notice" class="hidden bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-yellow-700">
+                  If you're having trouble accessing the feedback form due to browser cookie restrictions, you can:
+                </p>
+                <div class="mt-2">
+                  <a href="https://jayshelley.fider.io" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-yellow-700 underline hover:text-yellow-600">
+                    Open feedback form in a new tab →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          // Check if iframe loads properly and show alternative if needed
+          window.addEventListener('load', function() {
+            const iframe = document.querySelector('#fider-container iframe');
+            const cookieNotice = document.getElementById('fider-cookie-notice');
+            
+            // Give iframe time to load
+            setTimeout(function() {
+              try {
+                // Try to access iframe content (will fail if blocked)
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                if (!iframeDoc || iframeDoc.body.innerHTML.length < 100) {
+                  cookieNotice.classList.remove('hidden');
+                }
+              } catch (e) {
+                // Cross-origin or cookie blocking error
+                cookieNotice.classList.remove('hidden');
+              }
+            }, 3000);
+          });
+        </script>
       </div>
     </div>
   </section>
@@ -480,19 +1495,29 @@ School Board</h2> <!-- Main heading with line breaks -->
   
 
   <!-- FAQ section with sample questions -->
-  <section id="faq" class="py-16 bg-white">
+  <section id="faq" class="bg-white">
     <div class="container mx-auto px-4"> <!-- Container with padding -->
-      <h2 class="text-3xl font-bold text-center mb-8">Voter Questions</h2> <!-- Section heading -->
-      <p class="text-lg text-center mb-6">See what others are asking or <a href="#involved" class="hover:underline text-blue-600 hover:text-blue-700">ask your own question</a> below!</p> <!-- Introductory text -->
-      <div class="space-y-0"> <!-- Container for FAQ items with vertical spacing -->
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+      <h2 class="section-heading text-4xl font-bold text-center mb-4">Frequently Asked Questions</h2> <!-- Section heading -->
+      <p class="section-subtitle">Browse through these frequently asked questions organized by topic to learn more about my candidacy and vision for our school district.</p>
+      
+      <div id="faq-content" class="space-y-12"> <!-- Container for FAQ items -->
+        
+        <!-- About Me & Background Section -->
+        <div class="faq-category">
+          <h3 class="faq-category-title">
+            <svg class="inline-block w-6 h-6 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+            About Me & Background
+          </h3>
+          <div class="faq-grid">
+        
+        <div class="faq-item about-content">
           <p class="font-bold">Q: Why are you running for School Board? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: I’m running for School Board because PTA members, from my time as PTA Treasurer, urged me to step up because they believe I could make a meaningful impact. Before registering, I reached out to two of the three other candidates and asked, “What are two things you think Alpine School District did well that we should keep, and two things we can improve as we start our new district?”</p> <!-- Answer -->
               <p>Their responses left me underwhelmed—most candidates seemed uninterested in real change or seizing the incredible opportunity we have starting a new district. That confirmed my decision to run. If the community wants me to help shape our new district, I’m happy to serve. However, if voters prefer the status quo, I have other things I’d love to do with my time and our family feels like we’re navigating schools well for our children.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What is your background in education? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: We five children in both public and private schools, so I’ve become deeply invested in education, because its critical to their future. Over the years, my involvement has grown through volunteer roles, allowing me to contribute meaningfully to our schools and community.</p> <!-- Answer -->
@@ -522,7 +1547,7 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>These experiences have helped me have a deep understanding of our schools’ needs and a passion for fostering collaboration among parents, teachers, and students to create the best possible educational environment.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What differentiates you from the other candidates and/or board members? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: </p>
@@ -533,10 +1558,10 @@ School Board</h2> <!-- Main heading with line breaks -->
               </ol>
               </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: Who is supporting your campaign? Have you received any endorsements of note from elected oﬃcials or organizations? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
-              <p>A: I haven't accepted any money. I personally paid the $50 filing fee, and haven't spent anything else. I've had some offers for sponsorship and I'm happy to be endorsed, but I will remain accountable to: </p>
+              <p>A: I personally paid the $50 filing fee, and haven't spent any other money. I've had some offers for sponsorship and I'm happy to be endorsed, but I will remain accountable to: </p>
               <ol class="list-disc pl-5">
                   <li>What's best for the students
                   <li>What's best for all other stakeholders (teachers, community, parents, etc)
@@ -544,7 +1569,7 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>I won't be bought through money or endorsements. I want to be persuaded and convinced, not bought or beholden to anyone or any group other than the best good for students and stakeholders.</p>
               </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What other relevant experience do you have (public service, councils, boards, working with others, large scale finances, etc)? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: </p> <!-- Answer -->
@@ -560,19 +1585,31 @@ School Board</h2> <!-- Main heading with line breaks -->
                 </ul>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: The Alpine School district has a long history of working collaboratively with the Alpine Education Association. In your new district, would you continue this tradition of collaboration? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: If it's in the best interest of students and stakeholders, then yes, I love collaborating with others. If AEA isn't focused first on the best interests of the students, then no.</p> <!-- Answer -->
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: How long have you lived in the area? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: 11 years</p> <!-- Answer -->
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        
+        </div>
+        </div>
+        
+        <!-- Vision & Leadership Section -->
+        <div class="faq-category">
+          <h3 class="faq-category-title">
+            <svg class="inline-block w-6 h-6 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
+            Vision & Leadership
+          </h3>
+          <div class="faq-grid">
+        
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What do you feel would be your role as a board member? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: </p> <!-- Answer -->
@@ -589,7 +1626,7 @@ School Board</h2> <!-- Main heading with line breaks -->
               </ol>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: How will you ensure that you represent your constituents? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: I will represent our constituents effectively by focusing on open communication and collaboration:</p> <!-- Answer -->
@@ -607,27 +1644,39 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>I firmly believe the best ideas come from working together. Time and again, others have shared ideas far better than my own, and my role as a school board member will be to champion the best ideas that create the greatest positive impact for our students and community.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What is your vision for the new school district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: Our schools must support parents in their sacred role of educating their children, and our new school district must prioritize this partnership by empowering families, not sidelining them, in the educational process. Children are our future, and they deserve to love learning. Too often, schools stifle students’ natural curiosity. Our district should not only actively listen to parents and involve them as much as possible but also take student feedback to heart. I envision students contributing to teacher hiring and evaluating new course materials. True engagement of parents and students requires unwavering transparency. I’ve noticed a troubling trend of parents overly scrutinizing teachers and teachers pushing parents out of classrooms and volunteer roles—a dynamic I want to reverse. When teachers and parents collaborate with the student’s best interests at heart, we achieve the strongest learning outcomes.</p> <!-- Answer -->
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
-          <p class="font-bold">Q: What do you feel are the greatest assets in our new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+        <div class="faq-item about-content">
+          <p class="font-bold">Q: What do you feel are the greatest assets in our new district?<a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
-              <p>A: Our dedicated teachers and engaged parents are our district’s greatest assets. The ability to shape our own future as a new school district is also a huge asset -- both a tremendous opportunity and a significant responsibility.</p> <!-- Answer -->
+              <p>A: Our dedicated teachers and engaged parents are our district’s greatest assets. The ability to shape our own future as a new school district is also a huge asset - both a tremendous opportunity and a significant responsibility.</p> <!-- Answer -->
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
-          <p class="font-bold">Q: What do you feel are the greatest challenges facing our district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
+        
+        </div>
+        </div>
+        
+        <!-- District Operations Section -->
+        <div class="faq-category">
+          <h3 class="faq-category-title">
+            <svg class="inline-block w-6 h-6 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3z" clip-rule="evenodd"></path></svg>
+            District Operations
+          </h3>
+          <div class="faq-grid">
+        
+        <div class="faq-item about-content">
+          <p class="font-bold">Q: What do you feel are the greatest challenges facing our district?<a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: Over the next decade, as enrollment declines and school choice options expand, managing finances will be critical. That said, I’m confident we can make it work. I spent three hours with Jason Sundberg at my home, diving into the details of Prop 2’s numbers during the vote. While I recognize the challenge, I believe we must think creatively about solutions rather than relying solely on linear approaches.</p>
               <p>Beyond enrollment and finances, building our new district brings other hurdles, like recruiting and retaining top teachers. With the district split, teachers will have more nearby districts to choose from. We must make our district a stable, attractive employer to keep the best educators.</p>
               <p>Inevitably, we’ll face legal battles, political obstacles, and public confidence issues, especially in the early years. By addressing these challenges with transparency and collaboration, I believe we will be able to build a great new school district.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What are your thoughts on potential school closures? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: I love tackling difficult problems by thinking creatively and exploring all possibilities. Often, we can solve one issue by addressing another. For instance, I believe we can reduce school closures, cut costs, and ensure our new district’s administrators stay connected to daily classroom realities, all with one simple solution:</p>
@@ -635,7 +1684,7 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>That said, some school closures may be necessary. When they occur, we must involve the community as much as possible, collaborating to ensure decisions benefit not only our schools but also our neighborhoods and broader community.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What are you looking for in a superintendent and business administrator? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: </p>
@@ -651,7 +1700,7 @@ School Board</h2> <!-- Main heading with line breaks -->
               </ol>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What innovative ideas do you hope to bring to the new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: </p>
@@ -665,7 +1714,7 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>My "innovative" ideas are certainly not the most important. Ideas are a dime a dozen. The most important thing is fostering an environment where the community will share their ideas and we can champion ideas from everyone.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What ideas do you have to encourage those who have left public education for alternatives to come back? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: 
@@ -690,14 +1739,14 @@ School Board</h2> <!-- Main heading with line breaks -->
                 <p>While I haven’t fully explored this issue and I’m not yet certain it’s a top priority, my approach would mirror how I’ve tackled challenges in businesses: listen deeply and find creative solutions. I’d reach out to former educators who left for early retirement, private schools, charter schools, or homeschooling and ask them to share their stories. By asking thoughtful questions, I’d uncover the root reasons for their departure, especially non-monetary factors, as people often cite money when deeper issues—like feeling valued or heard—are at play. After gathering these insights, I’d reflect on them, often finding clarity during everyday moments like gardening or washing dishes. Solving complex problems isn’t about sitting in an office—it’s about listening closely to people, thinking deeply, and letting ideas emerge naturally.
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What ideas do you have to encourage those who have left public education for alternatives to come back? (Original Response) <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: To encourage families and educators who have left public education for alternatives to return, I’d tap into the power of community involvement and genuine listening. Some of the best teachers I’ve known were adjunct faculty or volunteers. I’d love to invite skilled community members—retirees, parents, or professionals—to contribute by teaching classes, mentoring, or reading with struggling students. There are countless ways to engage our community’s talent and passion.</p>
               <p>While I haven’t fully explored this issue and I’m not yet certain it’s a top priority, my approach would mirror how I’ve tackled challenges in businesses: listen deeply and find creative solutions. I’d reach out to former educators who left for early retirement, private schools, charter schools, or homeschooling and ask them to share their stories. By asking thoughtful questions, I’d uncover the root reasons for their departure, especially non-monetary factors, as people often cite money when deeper issues—like feeling valued or heard—are at play. After gathering these insights, I’d reflect on them, often finding clarity during everyday moments like gardening or washing dishes. Solving complex problems isn’t about sitting in an office—it’s about listening closely to people, thinking deeply, and letting ideas emerge naturally.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What principles guide your policy decision-making? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <ol class="list-decimal pl-5"></ol>
@@ -709,20 +1758,20 @@ School Board</h2> <!-- Main heading with line breaks -->
               </ol>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What will you do to ensure that you and the board are being transparent with the community? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: I will advocate for publishing not only the required detailed financial statements, but also establishing robust reporting on learning outcomes from the outset of our new school district. By prioritizing comprehensive transparency from day one—sharing more data than has been typical in the past—we can set a strong precedent. It will be difficult for future administrators to reduce transparent reporting without sparking community concern. This approach, rooted in the belief that sunlight is the best disinfectant, ensures our community stays well-informed and engaged, fostering trust and accountability in our schools.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: How do you feel about diversity of thought vs reaching consensus and compromise on the school board? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: This is a great question! I strongly value diversity of thought as the foundation for innovative solutions, but I also recognize the need for consensus and compromise to move forward effectively. The best approach involves two phases. First, a divergent thinking phase where all ideas are welcomed, no matter how unconventional, and everyone feels safe to share without fear of judgment or dismissal. This creates a space for creative, bold solutions to emerge.</p>
               <p>Then, we transition to a convergent phase, where we carefully evaluate ideas to identify the most promising ones. This involves scrutinizing proposals, prioritizing those worth exploring through experiments or further research, and collaboratively refining them. I’ve taught this process at DevMountain and in various companies and groups to foster productive collaboration while avoiding groupthink. By balancing open ideation with focused decision-making, we can harness diverse perspectives to build consensus that serves our students and community.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: How would you approach controversial issues like books in libraries, religious beliefs, diversity initiatives, or school safety? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: Books in School Libraries:</p>
@@ -731,21 +1780,33 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>Everyone should have the freedom to worship as they choose. Just as schools should not impose religious beliefs on students, they should also avoid pushing diversity initiatives in a way that feels coercive. I’m encouraged by Utah schools’ growing focus on safety, implemented in practical and effective ways, which supports a respectful and inclusive environment for all students.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: How will you approach budget issues in our new district? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: We shouldn't spend money we don't have, and we need to be wise in spending because such a large portion of taxes is for education. At the end of the day it's the lack of fiscal discipline that results in increased taxes for all of us. With that said, our children's education is extremely important and so is rewarding teachers for the incredible work they do.</p>
               <p>While I was the PTA Treasurer when we gave out Teacher Grants initially my committee was impressed with the great things teachers were buying to help in their classrooms, but upon further inspection, many teachers didn't realize we had those same supplies in the school louge for the teachers to use. I believe the same goes for any budget -- people oftentimes don't know they have access to other things and no one scrutinizes the purchasing, but we can and will review purchasing.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: How do you balance keeping taxes low, fixing our building issues, and keeping class and school sizes low? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: Balancing low taxes, addressing building issues, and maintaining small class and school sizes requires creative and careful solutions. As I’ve noted before, complex problems often have straightforward answers. One idea is to place administrative offices in schools with extra capacity, reducing the need for separate facilities while preserving school buildings and keeping class sizes manageable.</p>
               <p>I will treat taxpayer money with the same care I apply to my own, scrutinizing every expense and seeking cost-effective alternatives. In addressing building issues, I’ve learned that contractors often inflate estimates when plans are vague, but detailed and complete plans can yield significant savings by reducing uncertainty for contractors. I will proactively engage with contractors to understand how our district can streamline processes, save time, and cut costs, ensuring we maximize value while maintaining quality education environments.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        
+        </div>
+        </div>
+        
+        <!-- Education & Programs Section -->
+        <div class="faq-category">
+          <h3 class="faq-category-title">
+            <svg class="inline-block w-6 h-6 mr-2 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
+            Education & Programs
+          </h3>
+          <div class="faq-grid">
+        
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What are your thoughts on programs like Special Education (Sped), Advanced Learning Labs (ALL), Dual Language Immersion (DLI), etc? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: I’m a strong supporter of specialized programs like Special Education (Sped), Advanced Learning Labs (ALL), and Dual Language Immersion (DLI). Each child is unique in their needs and superpowers. My wife and I have children who are all over the board from advanced and needing faster paced learning, to needing some accommodations.</p>
@@ -753,10 +1814,10 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>I believe these programs are vital for meeting diverse student needs. Often, students who face the greatest challenges in school have the highest potential to become future leaders. Our new district must prioritize providing every student with the resources and support they need to succeed.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: Describe how you would provide quality education for a diverse student population: i.e. the gifted and talented, the standard student, special education, the academically challenged, English as a Second Language (ESL) and cultural differences. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
-              <p>A: I care a lot about this. We have a child who is mildly on the spectrum, we have a child who tested at the 15th grade level in math and 17th in reading while in 5th grade, and all of our childen are in the Chinese Immersion program. Some of our children more closely fit the mold of a "standard student." We have ESL students as neighbors who we care a lot about.</p>
+              <p>A: I care a lot about this. We have a child who is on the spectrum, we have a child who tested at the 15th grade level in math and 17th in reading while in 5th grade, and all of our childen are in the Chinese Immersion program. Some of our children more closely fit the mold of a "standard student." We have ESL students as neighbors who we care a lot about.</p>
               <p>Each child is so unique, and education ought to accommodate and meet each child where they are. How do we do this? Let's start with the baseline of what we currently have with ASD - I believe many things have gone fairly well and ASD has cared, but the areas I see for significant improvement are:</p>
               <ol class="list-decimal pl-5"></ol>
                 <li>It's far too difficult to get an IEP today for many students. I know of some who have spent years working with ASD and after a massive amount of struggle they've finally gotten and IEP when their child's case is about as obvious as it gets. It's SO hard on families with the district fights against the parents in getting their students' the help they need. This ought to be much more collaborative.</li>
@@ -766,7 +1827,7 @@ School Board</h2> <!-- Main heading with line breaks -->
               </ol>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: Do you think our public schools are adequately funded? Do you have ideas on how the district can increase revenue? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: I don't think schools will ever feel adequately funded, and comparing to other states, we're less funded.</p>
@@ -779,14 +1840,14 @@ School Board</h2> <!-- Main heading with line breaks -->
               <p>I have a history of supporting teachers in our school by creative means and will absolutel champion means to help teachers as best we can. I'm not yet involved in the details enough to know what can be done, but maybe there's some emergent opportunities that will arise and I'm excited to help find them, while collaborating with others to do the best we can for our teachers.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: What is the best way to address differences of opinion on the board or between the board and the administration? Do you believe that school board members should be involved in the day-to-day administrative decisions of the school district, or would you prefer to be involved in policy decisions, leaving management to the managers? <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: I believe the board is different from the Superintendent and don't have to be involved day-to-day, but ought to have a relationship of respect where they can work collaboratively together. The Superintendent and Business Administrator have big jobs, and I would hope they would leverage the board to help in research and finding solutions when they don't have the time to really go deep into important decisions. Ultimately the board is responsible for hiring and firing the administration.</p>
               <p>How would I address differences? Conversation and persuasion would be the first step. If at the end of the day the Administration doesn't agree with my opinion or the rest of us as a board, but they can explain their reasoning and measure results objectively, then I'd be happy to be proven wrong as long as the results are in the best interest of students and their education.</p>
             </div>
         </div>
-        <div class="bg-white-100 p-4 rounded about-content"> <!-- First FAQ item with background and padding -->
+        <div class="faq-item about-content">
           <p class="font-bold">Q: Describe your top three priorities, if you are elected to the school board. <a class="show-more-less" onclick="toggleExpand(this)">Show more</a></p> <!-- Question -->
             <div class="expandable-content"> <!-- Hidden additional content -->
               <p>A: </p>
@@ -842,12 +1903,16 @@ want:</p>
               <p>Where most people see insurmountable problems, I look for creative solutions.</p>
             </div> 
         </div>
+        
+        </div>
+        </div>
+        
       </div>
     </div>
   </section>
 
   <!-- Get Involved section with form and buttons -->
-  <section id="involved" class="py-16 bg-gray-100">
+  <section id="involved" class="bg-gray-50">
     <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
       <h2 class="text-3xl font-bold mb-8">Ask your own question</h2> <!-- Section heading -->
       <!-- <p class="text-lg mb-6">Join our campaign for Timpanogos students!</p> Call to action -->
@@ -860,7 +1925,7 @@ want:</p>
   </section>
 
   <!-- Contact section with contact details -->
-  <section id="expenses" class="py-16 bg-white">
+  <section id="expenses" class="bg-white">
     <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
       <h2 class="text-3xl font-bold mb-8">Campaign Expenses</h2> <!-- Section heading -->
       <p>Do you want a fiscally responsible Board Member?</p>
@@ -868,7 +1933,7 @@ want:</p>
       <p></p>
       <br>
       <p>$50 Registration Filing Fee - this is the only expense I've made</p>
-      <p>FREE Website coding by Jay with AI help from Grok</p>
+      <p>FREE Website coding by Jay with AI help</p>
       <p>FREE Hosting from GitHub Pages</p>
       <p>FREE Chat from Tawk.to</p>
       <p>FREE Idea Submission & Voting from Fider.io</p>
@@ -879,32 +1944,25 @@ want:</p>
   </section>
 
 
-  <!-- Contact section with contact details -->
-  <section id="contact" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4 text-center"> <!-- Centered container with padding -->
-      <h2 class="text-3xl font-bold mb-8">Contact Jay</h2> <!-- Section heading -->
-      <p></p>
-      <p class="text-lg mb-4 py-8">Email: <a href="mailto:votejayshelley@gmail.com" class="text-blue-600">votejayshelley@gmail.com</a></p> <!-- Email link -->
-      <p class="text-lg mb-4 py-0">Text/Phone: (925) 231-5196</p> <!-- Phone number -->
-      <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4"> <!-- Button container, stacked on mobile, row on desktop -->
-        <a id="chatLiveButton" class="chat-live-button bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500">Chat Live</a> <!-- Chat button -->        
-        <a href="https://vote.utahcounty.gov" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-full hover:bg-gray-700">Voter Info</a> <!-- Voter info link -->
+
+
+
+  <!-- Footer section with contact information -->
+  <footer id="contact" class="bg-gray-900 text-gray-300 py-12 text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6 text-white">Contact Jay Shelley</h2>
+      <p class="mb-3">Phone/Text: <a href="tel:925-231-5196" class="hover:text-white transition-colors">925-231-5196</a></p>
+      <p class="mb-6">Email: <a href="mailto:votejayshelley@gmail.com" class="hover:text-white transition-colors">votejayshelley@gmail.com</a></p>
+      
+      <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-8">
+        <a id="chatLiveButton" class="chat-live-button bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 inline-block">Chat Live</a>
+        <a href="https://vote.utahcounty.gov" target="_blank" class="bg-gray-600 text-white px-6 py-3 rounded-full hover:bg-gray-700 inline-block">Voter Info</a>
       </div>
-      <div class="flex justify-center space-x-4"> <!-- Social media icons container -->
-        <!-- <a href="https://facebook.com" target="_blank"><img src="https://via.placeholder.com/32" alt="Facebook"></a> Facebook link with placeholder image -->
-        <!-- <a href="https://twitter.com" target="_blank"><img src="https://via.placeholder.com/32" alt="Twitter"></a> Twitter link with placeholder image -->
+      
+      <div class="mt-8 pt-8 border-t border-gray-700">
+        <p class="text-sm text-gray-400">&copy; 2025 Jay Shelley for School Board. All rights reserved.</p>
       </div>
     </div>
-  </section>
-
-
-
-  <!-- Footer section with credits -->
-  <footer class="bg-blue-600 text-white p-4 text-center">
-    <p>Built FREE by Jay Shelley</p> <!-- Credit for building the site -->
-    <p>FREE Website coding from Grok AI</p>
-    <p>FREE Hosting from GitHub Pages, FREE Chat from Tawk.to</p>
-    <p>© 2025 Jay Shelley. All rights reserved.</p> <!-- Copyright notice -->
   </footer>
 
   <!-- Smooth Scroll and Toggle Script -->
